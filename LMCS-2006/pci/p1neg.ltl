@@ -1,0 +1,1 @@
+!((((((G((req0)->((req0)U(grant=0))))&(G((req1)->((req1)U((grant=1)|(req0))))))&(G((req2)->((req2)U((grant=2)|((req1)|(req0)))))))&(G((req3)->((req3)U((grant=3)|((req2)|((req1)|(req0))))))))&(G((req4)->((req4)U((grant=4)|((req4)|((req3)|((req1)|(req0)))))))))&(G((req5)->((req5)U((grant=5)|((req5)|((req4)|((req3)|((req1)|(req0))))))))))

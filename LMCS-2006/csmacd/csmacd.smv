@@ -1,0 +1,792 @@
+MODULE ac_Mac(p_myName, p_medium, p_ID)
+DEFINE
+	qLength := 5;
+
+VAR
+	s_myId : boolean;
+	s_receivedSend : boolean;
+	s_br : boolean;
+	s_er : boolean;
+	s_col : boolean;
+	s_hasSent : boolean;
+	s_hasReceived : boolean;
+	s_colArrived : boolean;
+
+	mq : array 0..4 of {empty, ms_initial, ms_beginReceive, ms_endReceive, ms_start, ms_cState, ms_checkColArrived, ms_transfer, ms_aState, ms_dState, ms_gState, ms_collisiontrue, ms_collisionfalse};
+	sq : array 0..4 of {r_medium, r_mac1, r_mac2};
+	qtail : -1..5;
+	queueOverFlow : boolean;
+
+ASSIGN
+	init(queueOverFlow) := FALSE;
+	init(qtail) := 0;
+	init(mq[0]) := ms_initial;
+	init(mq[1]) := empty;
+	init(mq[2]) := empty;
+	init(mq[3]) := empty;
+	init(mq[4]) := empty;
+	init(sq[0]) := p_myName;
+	init(sq[1]) := p_myName;
+	init(sq[2]) := p_myName;
+	init(sq[3]) := p_myName;
+	init(sq[4]) := p_myName;
+	init(s_myId) := FALSE;
+	init(s_receivedSend) := FALSE;
+	init(s_br) := FALSE;
+	init(s_er) := FALSE;
+	init(s_col) := FALSE;
+	init(s_hasSent) := FALSE;
+	init(s_hasReceived) := FALSE;
+	init(s_colArrived) := FALSE;
+	next(s_colArrived) := 
+	case
+		(mq[0] = ms_initial) : FALSE;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) : FALSE;
+		(mq[0] = ms_collisiontrue) : TRUE;
+		(mq[0] = ms_collisionfalse) : TRUE;
+		1 : s_colArrived;
+	esac;
+	next(s_myId) := 
+	case
+		(mq[0] = ms_initial) : p_ID;
+		1 : s_myId;
+	esac;
+	next(s_receivedSend) := 
+	case
+		(mq[0] = ms_initial) : {FALSE, TRUE};
+		(((mq[0] = ms_start) & (s_br = TRUE)) & (s_receivedSend = FALSE)) : {FALSE, TRUE};
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) : FALSE;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) : {FALSE, TRUE};
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) : {FALSE, TRUE};
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) : FALSE;
+		((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) : {FALSE, TRUE};
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) : FALSE;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) : {FALSE, TRUE};
+		1 : s_receivedSend;
+	esac;
+	next(s_br) := 
+	case
+		(mq[0] = ms_initial) : FALSE;
+		(mq[0] = ms_beginReceive) : TRUE;
+		((mq[0] = ms_dState) & (s_er = TRUE)) : FALSE;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) : FALSE;
+		1 : s_br;
+	esac;
+	next(s_er) := 
+	case
+		(mq[0] = ms_initial) : FALSE;
+		(mq[0] = ms_endReceive) : TRUE;
+		1 : s_er;
+	esac;
+	next(s_col) := 
+	case
+		(mq[0] = ms_initial) : FALSE;
+		(mq[0] = ms_collisiontrue) : TRUE;
+		(mq[0] = ms_collisionfalse) : FALSE;
+		1 : s_col;
+	esac;
+	next(s_hasSent) := 
+	case
+		(mq[0] = ms_initial) : FALSE;
+		(mq[0] = ms_start) : FALSE;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) : TRUE;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) : TRUE;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) : TRUE;
+		1 : s_hasSent;
+	esac;
+	next(s_hasReceived) := 
+	case
+		(mq[0] = ms_initial) : FALSE;
+		(mq[0] = ms_endReceive) : TRUE;
+		(mq[0] = ms_start) : FALSE;
+		1 : s_hasReceived;
+	esac;
+	next(mq[0]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 0 : ms_start;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 0 : ms_aState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 0 : ms_cState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 0 : ms_start;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 0 : ms_dState;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 0 : ms_checkColArrived;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 0 : ms_transfer;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 0 : ms_checkColArrived;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 0 : ms_cState;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 0 : ms_start;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 0 : ms_dState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 0 : ms_gState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 0 : ms_aState;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 0 : ms_cState;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 0 : ms_dState;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 0 : ms_cState;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 0 : ms_start;
+		1 : mq[1];
+	esac;
+	next(mq[1]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 1 : ms_start;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 1 : ms_aState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 1 : ms_cState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 1 : ms_start;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 1 : ms_dState;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 1 : ms_checkColArrived;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 1 : ms_transfer;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 1 : ms_checkColArrived;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 1 : ms_cState;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 1 : ms_start;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 1 : ms_dState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 1 : ms_gState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 1 : ms_aState;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 1 : ms_cState;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 1 : ms_dState;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 1 : ms_cState;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 1 : ms_start;
+		1 : mq[2];
+	esac;
+	next(mq[2]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 2 : ms_start;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 2 : ms_aState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 2 : ms_cState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 2 : ms_start;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 2 : ms_dState;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 2 : ms_checkColArrived;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 2 : ms_transfer;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 2 : ms_checkColArrived;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 2 : ms_cState;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 2 : ms_start;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 2 : ms_dState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 2 : ms_gState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 2 : ms_aState;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 2 : ms_cState;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 2 : ms_dState;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 2 : ms_cState;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 2 : ms_start;
+		1 : mq[3];
+	esac;
+	next(mq[3]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 3 : ms_start;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 3 : ms_aState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 3 : ms_cState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 3 : ms_start;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 3 : ms_dState;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 3 : ms_checkColArrived;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 3 : ms_transfer;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 3 : ms_checkColArrived;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 3 : ms_cState;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 3 : ms_start;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 3 : ms_dState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 3 : ms_gState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 3 : ms_aState;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 3 : ms_cState;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 3 : ms_dState;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 3 : ms_cState;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 3 : ms_start;
+		1 : mq[4];
+	esac;
+	next(mq[4]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 4 : ms_start;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 4 : ms_aState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 4 : ms_cState;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 4 : ms_start;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 4 : ms_dState;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 4 : ms_checkColArrived;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 4 : ms_transfer;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 4 : ms_checkColArrived;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 4 : ms_cState;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 4 : ms_start;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 4 : ms_dState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 4 : ms_gState;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 4 : ms_aState;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 4 : ms_cState;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 4 : ms_dState;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 4 : ms_cState;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 4 : ms_start;
+		1 : empty;
+	esac;
+	next(sq[0]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 0 : p_myName;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 0 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 0 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 0 : p_myName;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 0 : p_myName;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 0 : p_myName;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 0 : p_myName;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 0 : p_myName;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 0 : p_myName;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 0 : p_myName;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 0 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 0 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 0 : p_myName;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 0 : p_myName;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 0 : p_myName;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 0 : p_myName;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 0 : p_myName;
+		1 : sq[1];
+	esac;
+	next(sq[1]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 1 : p_myName;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 1 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 1 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 1 : p_myName;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 1 : p_myName;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 1 : p_myName;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 1 : p_myName;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 1 : p_myName;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 1 : p_myName;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 1 : p_myName;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 1 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 1 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 1 : p_myName;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 1 : p_myName;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 1 : p_myName;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 1 : p_myName;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 1 : p_myName;
+		1 : sq[2];
+	esac;
+	next(sq[2]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 2 : p_myName;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 2 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 2 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 2 : p_myName;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 2 : p_myName;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 2 : p_myName;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 2 : p_myName;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 2 : p_myName;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 2 : p_myName;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 2 : p_myName;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 2 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 2 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 2 : p_myName;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 2 : p_myName;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 2 : p_myName;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 2 : p_myName;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 2 : p_myName;
+		1 : sq[3];
+	esac;
+	next(sq[3]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 3 : p_myName;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 3 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 3 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 3 : p_myName;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 3 : p_myName;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 3 : p_myName;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 3 : p_myName;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 3 : p_myName;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 3 : p_myName;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 3 : p_myName;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 3 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 3 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 3 : p_myName;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 3 : p_myName;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 3 : p_myName;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 3 : p_myName;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 3 : p_myName;
+		1 : sq[4];
+	esac;
+	next(sq[4]) := 
+	case
+		(mq[0] = ms_initial) & qtail = 4 : p_myName;
+		((mq[0] = ms_start) & (s_br = TRUE)) & qtail = 4 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) & qtail = 4 : p_myName;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) & qtail = 4 : p_myName;
+		((mq[0] = ms_cState) & (s_br = TRUE)) & qtail = 4 : p_myName;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) & qtail = 4 : p_myName;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) & qtail = 4 : p_myName;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) & qtail = 4 : p_myName;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) & qtail = 4 : p_myName;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) & qtail = 4 : p_myName;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) & qtail = 4 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) & qtail = 4 : p_myName;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) & qtail = 4 : p_myName;
+		((mq[0] = ms_dState) & (s_er = TRUE)) & qtail = 4 : p_myName;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) & qtail = 4 : p_myName;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) & qtail = 4 : p_myName;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) & qtail = 4 : p_myName;
+		1 : p_myName;
+	esac;
+	next(qtail) := 
+	case
+		(mq[0] = ms_initial) : qtail;
+		((mq[0] = ms_start) & (s_br = TRUE)) : qtail;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & (s_receivedSend = TRUE)) : qtail;
+		(((mq[0] = ms_start) & !(s_br = TRUE)) & !(s_receivedSend = TRUE)) : qtail;
+		((mq[0] = ms_cState) & (s_br = TRUE)) : qtail;
+		((mq[0] = ms_cState) & !(s_br = TRUE)) : qtail;
+		((mq[0] = ms_checkColArrived) & (s_colArrived)) : qtail;
+		((mq[0] = ms_checkColArrived) & !(s_colArrived)) : qtail;
+		((mq[0] = ms_transfer) & (s_col = TRUE)) : qtail;
+		((mq[0] = ms_transfer) & !(s_col = TRUE)) : qtail;
+		((mq[0] = ms_aState) & (s_receivedSend = TRUE)) : qtail;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & (s_er = TRUE)) : qtail;
+		(((mq[0] = ms_aState) & !(s_receivedSend = TRUE)) & !(s_er = TRUE)) : qtail;
+		((mq[0] = ms_dState) & (s_er = TRUE)) : qtail;
+		((mq[0] = ms_dState) & !(s_er = TRUE)) : qtail;
+		((mq[0] = ms_gState) & (s_receivedSend = TRUE)) : qtail;
+		((mq[0] = ms_gState) & !(s_receivedSend = TRUE)) : qtail;
+		qtail = -1 : -1;
+		1 : qtail - 1;
+	esac;
+	next(p_medium.mq[0]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = -1 : ms_b1;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = -1 : ms_b2;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = -1 : ms_e1;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = -1 : ms_e2;
+		1 : p_medium.mq[0];
+	esac;
+	next(p_medium.mq[1]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 0 : ms_b1;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 0 : ms_b2;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 0 : ms_e1;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 0 : ms_e2;
+		1 : p_medium.mq[1];
+	esac;
+	next(p_medium.mq[2]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 1 : ms_b1;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 1 : ms_b2;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 1 : ms_e1;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 1 : ms_e2;
+		1 : p_medium.mq[2];
+	esac;
+	next(p_medium.mq[3]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 2 : ms_b1;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 2 : ms_b2;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 2 : ms_e1;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 2 : ms_e2;
+		1 : p_medium.mq[3];
+	esac;
+	next(p_medium.mq[4]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 3 : ms_b1;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 3 : ms_b2;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 3 : ms_e1;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 3 : ms_e2;
+		1 : p_medium.mq[4];
+	esac;
+	next(p_medium.mq[5]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 4 : ms_b1;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 4 : ms_b2;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 4 : ms_e1;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 4 : ms_e2;
+		1 : p_medium.mq[5];
+	esac;
+	next(p_medium.mq[6]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 5 : ms_b1;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 5 : ms_b2;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 5 : ms_e1;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 5 : ms_e2;
+		1 : p_medium.mq[6];
+	esac;
+	next(p_medium.sq[0]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = -1 : p_myName;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = -1 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = -1 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = -1 : p_myName;
+		1 : p_medium.sq[0];
+	esac;
+	next(p_medium.sq[1]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 0 : p_myName;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 0 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 0 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 0 : p_myName;
+		1 : p_medium.sq[1];
+	esac;
+	next(p_medium.sq[2]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 1 : p_myName;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 1 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 1 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 1 : p_myName;
+		1 : p_medium.sq[2];
+	esac;
+	next(p_medium.sq[3]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 2 : p_myName;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 2 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 2 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 2 : p_myName;
+		1 : p_medium.sq[3];
+	esac;
+	next(p_medium.sq[4]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 3 : p_myName;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 3 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 3 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 3 : p_myName;
+		1 : p_medium.sq[4];
+	esac;
+	next(p_medium.sq[5]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 4 : p_myName;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 4 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 4 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 4 : p_myName;
+		1 : p_medium.sq[5];
+	esac;
+	next(p_medium.sq[6]) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 5 : p_myName;
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 5 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) & p_medium.qtail = 5 : p_myName;
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) & p_medium.qtail = 5 : p_myName;
+		1 : p_medium.sq[6];
+	esac;
+	next(p_medium.qtail) := 
+	case
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & (s_myId = TRUE)) : (p_medium.qtail + 1) mod (p_medium.qLength + 1);
+		(((mq[0] = ms_cState) & !(s_br = TRUE)) & !(s_myId = TRUE)) : (p_medium.qtail + 1) mod (p_medium.qLength + 1);
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & (s_myId = TRUE)) : (p_medium.qtail + 1) mod (p_medium.qLength + 1);
+		(((mq[0] = ms_transfer) & !(s_col = TRUE)) & !(s_myId = TRUE)) : (p_medium.qtail + 1) mod (p_medium.qLength + 1);
+		1 : p_medium.qtail;
+	esac;
+	next(queueOverFlow) :=
+	case
+		qtail=5 : TRUE;
+		1 : FALSE;
+	esac;
+FAIRNESS
+	running
+
+
+--------------------------------------------------------------------------------------
+MODULE ac_Medium(p_myName, p_mac1, p_mac2)
+DEFINE
+	qLength := 7;
+
+VAR
+	s_bb1 : boolean;
+	s_bb2 : boolean;
+
+	mq : array 0..6 of {empty, ms_initial, ms_b1, ms_b2, ms_e1, ms_e2};
+	sq : array 0..6 of {r_medium, r_mac1, r_mac2};
+	qtail : -1..7;
+	queueOverFlow : boolean;
+
+ASSIGN
+	init(queueOverFlow) := FALSE;
+	init(qtail) := 0;
+	init(mq[0]) := ms_initial;
+	init(mq[1]) := empty;
+	init(mq[2]) := empty;
+	init(mq[3]) := empty;
+	init(mq[4]) := empty;
+	init(mq[5]) := empty;
+	init(mq[6]) := empty;
+	init(sq[0]) := p_myName;
+	init(sq[1]) := p_myName;
+	init(sq[2]) := p_myName;
+	init(sq[3]) := p_myName;
+	init(sq[4]) := p_myName;
+	init(sq[5]) := p_myName;
+	init(sq[6]) := p_myName;
+	init(s_bb1) := FALSE;
+	init(s_bb2) := FALSE;
+	next(s_bb1) := 
+	case
+		(mq[0] = ms_initial) : FALSE;
+		(mq[0] = ms_b1) : TRUE;
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) : FALSE;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) : FALSE;
+		(mq[0] = ms_e1) : FALSE;
+		1 : s_bb1;
+	esac;
+	next(s_bb2) := 
+	case
+		(mq[0] = ms_initial) : FALSE;
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) : FALSE;
+		(mq[0] = ms_b2) : TRUE;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) : FALSE;
+		(mq[0] = ms_e2) : FALSE;
+		1 : s_bb2;
+	esac;
+	next(p_mac1.mq[0]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = -1 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = -1 : ms_collisionfalse;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = -1 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = -1 : ms_beginReceive;
+		(mq[0] = ms_e2) & p_mac1.qtail = -1 : ms_endReceive;
+		1 : p_mac1.mq[0];
+	esac;
+	next(p_mac1.mq[1]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = 0 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = 0 : ms_collisionfalse;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = 0 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = 0 : ms_beginReceive;
+		(mq[0] = ms_e2) & p_mac1.qtail = 0 : ms_endReceive;
+		1 : p_mac1.mq[1];
+	esac;
+	next(p_mac1.mq[2]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = 1 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = 1 : ms_collisionfalse;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = 1 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = 1 : ms_beginReceive;
+		(mq[0] = ms_e2) & p_mac1.qtail = 1 : ms_endReceive;
+		1 : p_mac1.mq[2];
+	esac;
+	next(p_mac1.mq[3]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = 2 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = 2 : ms_collisionfalse;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = 2 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = 2 : ms_beginReceive;
+		(mq[0] = ms_e2) & p_mac1.qtail = 2 : ms_endReceive;
+		1 : p_mac1.mq[3];
+	esac;
+	next(p_mac1.mq[4]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = 3 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = 3 : ms_collisionfalse;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = 3 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = 3 : ms_beginReceive;
+		(mq[0] = ms_e2) & p_mac1.qtail = 3 : ms_endReceive;
+		1 : p_mac1.mq[4];
+	esac;
+	next(p_mac1.sq[0]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = -1 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = -1 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = -1 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = -1 : p_myName;
+		(mq[0] = ms_e2) & p_mac1.qtail = -1 : p_myName;
+		1 : p_mac1.sq[0];
+	esac;
+	next(p_mac1.sq[1]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = 0 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = 0 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = 0 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = 0 : p_myName;
+		(mq[0] = ms_e2) & p_mac1.qtail = 0 : p_myName;
+		1 : p_mac1.sq[1];
+	esac;
+	next(p_mac1.sq[2]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = 1 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = 1 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = 1 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = 1 : p_myName;
+		(mq[0] = ms_e2) & p_mac1.qtail = 1 : p_myName;
+		1 : p_mac1.sq[2];
+	esac;
+	next(p_mac1.sq[3]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = 2 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = 2 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = 2 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = 2 : p_myName;
+		(mq[0] = ms_e2) & p_mac1.qtail = 2 : p_myName;
+		1 : p_mac1.sq[3];
+	esac;
+	next(p_mac1.sq[4]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac1.qtail = 3 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac1.qtail = 3 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac1.qtail = 3 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac1.qtail = 3 : p_myName;
+		(mq[0] = ms_e2) & p_mac1.qtail = 3 : p_myName;
+		1 : p_mac1.sq[4];
+	esac;
+	next(p_mac1.qtail) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) : (p_mac1.qtail + 1) mod (p_mac1.qLength + 1);
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) : (p_mac1.qtail + 1) mod (p_mac1.qLength + 1);
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) : (p_mac1.qtail + 1) mod (p_mac1.qLength + 1);
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) : (p_mac1.qtail + 1) mod (p_mac1.qLength + 1);
+		(mq[0] = ms_e2) : (p_mac1.qtail + 1) mod (p_mac1.qLength + 1);
+		1 : p_mac1.qtail;
+	esac;
+	next(p_mac2.mq[0]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = -1 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = -1 : ms_beginReceive;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = -1 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = -1 : ms_collisionfalse;
+		(mq[0] = ms_e1) & p_mac2.qtail = -1 : ms_endReceive;
+		1 : p_mac2.mq[0];
+	esac;
+	next(p_mac2.mq[1]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = 0 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = 0 : ms_beginReceive;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = 0 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = 0 : ms_collisionfalse;
+		(mq[0] = ms_e1) & p_mac2.qtail = 0 : ms_endReceive;
+		1 : p_mac2.mq[1];
+	esac;
+	next(p_mac2.mq[2]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = 1 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = 1 : ms_beginReceive;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = 1 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = 1 : ms_collisionfalse;
+		(mq[0] = ms_e1) & p_mac2.qtail = 1 : ms_endReceive;
+		1 : p_mac2.mq[2];
+	esac;
+	next(p_mac2.mq[3]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = 2 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = 2 : ms_beginReceive;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = 2 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = 2 : ms_collisionfalse;
+		(mq[0] = ms_e1) & p_mac2.qtail = 2 : ms_endReceive;
+		1 : p_mac2.mq[3];
+	esac;
+	next(p_mac2.mq[4]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = 3 : ms_collisiontrue;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = 3 : ms_beginReceive;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = 3 : ms_collisiontrue;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = 3 : ms_collisionfalse;
+		(mq[0] = ms_e1) & p_mac2.qtail = 3 : ms_endReceive;
+		1 : p_mac2.mq[4];
+	esac;
+	next(p_mac2.sq[0]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = -1 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = -1 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = -1 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = -1 : p_myName;
+		(mq[0] = ms_e1) & p_mac2.qtail = -1 : p_myName;
+		1 : p_mac2.sq[0];
+	esac;
+	next(p_mac2.sq[1]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = 0 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = 0 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = 0 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = 0 : p_myName;
+		(mq[0] = ms_e1) & p_mac2.qtail = 0 : p_myName;
+		1 : p_mac2.sq[1];
+	esac;
+	next(p_mac2.sq[2]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = 1 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = 1 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = 1 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = 1 : p_myName;
+		(mq[0] = ms_e1) & p_mac2.qtail = 1 : p_myName;
+		1 : p_mac2.sq[2];
+	esac;
+	next(p_mac2.sq[3]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = 2 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = 2 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = 2 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = 2 : p_myName;
+		(mq[0] = ms_e1) & p_mac2.qtail = 2 : p_myName;
+		1 : p_mac2.sq[3];
+	esac;
+	next(p_mac2.sq[4]) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) & p_mac2.qtail = 3 : p_myName;
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) & p_mac2.qtail = 3 : p_myName;
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) & p_mac2.qtail = 3 : p_myName;
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) & p_mac2.qtail = 3 : p_myName;
+		(mq[0] = ms_e1) & p_mac2.qtail = 3 : p_myName;
+		1 : p_mac2.sq[4];
+	esac;
+	next(p_mac2.qtail) := 
+	case
+		((mq[0] = ms_b1) & (s_bb2 = TRUE)) : (p_mac2.qtail + 1) mod (p_mac2.qLength + 1);
+		((mq[0] = ms_b1) & !(s_bb2 = TRUE)) : (p_mac2.qtail + 1) mod (p_mac2.qLength + 1);
+		((mq[0] = ms_b2) & (s_bb1 = TRUE)) : (p_mac2.qtail + 1) mod (p_mac2.qLength + 1);
+		((mq[0] = ms_b2) & !(s_bb1 = TRUE)) : (p_mac2.qtail + 1) mod (p_mac2.qLength + 1);
+		(mq[0] = ms_e1) : (p_mac2.qtail + 1) mod (p_mac2.qLength + 1);
+		1 : p_mac2.qtail;
+	esac;
+	next(qtail) := 
+	case
+		qtail = -1 : -1;
+		1 : qtail - 1;
+	esac;
+	next(mq[0]) := 
+	case
+		1 : mq[1];
+	esac;
+	next(sq[0]) := 
+	case
+		1 : sq[1];
+	esac;
+	next(mq[1]) := 
+	case
+		1 : mq[2];
+	esac;
+	next(sq[1]) := 
+	case
+		1 : sq[2];
+	esac;
+	next(mq[2]) := 
+	case
+		1 : mq[3];
+	esac;
+	next(sq[2]) := 
+	case
+		1 : sq[3];
+	esac;
+	next(mq[3]) := 
+	case
+		1 : mq[4];
+	esac;
+	next(sq[3]) := 
+	case
+		1 : sq[4];
+	esac;
+	next(mq[4]) := 
+	case
+		1 : mq[5];
+	esac;
+	next(sq[4]) := 
+	case
+		1 : sq[5];
+	esac;
+	next(mq[5]) := 
+	case
+		1 : mq[6];
+	esac;
+	next(sq[5]) := 
+	case
+		1 : sq[6];
+	esac;
+	next(mq[6]) := 
+	case
+		1 : empty;
+	esac;
+	next(sq[6]) := 
+	case
+		1 : p_myName;
+	esac;
+	next(queueOverFlow) :=
+	case
+		qtail=7 : TRUE;
+		1 : FALSE;
+	esac;
+FAIRNESS
+	running
+
+
+--------------------------------------------------------------------------------------
+MODULE main
+VAR
+	r_medium : process ac_Medium(r_medium, r_mac1, r_mac2);
+	r_mac1 : process ac_Mac(r_mac1, r_medium, TRUE);
+	r_mac2 : process ac_Mac(r_mac2, r_medium, FALSE);
+
+LTLSPEC
+G((r_mac1.s_hasSent)->(F(r_mac2.s_hasReceived)))

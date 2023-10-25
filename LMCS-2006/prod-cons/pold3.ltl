@@ -1,0 +1,1 @@
+G((bufsize=1)->(F(sim.val<=buffer[1])))

@@ -1,0 +1,1 @@
+!((node[0].state=T0_start)&(X((node[0].state=T0_start)U((node[0].state=T1_child)&(X((node[0].state=T1_child)U((node[0].state=T2_parent)&(X((node[0].state=T2_parent)U(((node[0].state=T1_child)|((node[0].state=T2_parent)|((node[0].state=T3_root_1)|((node[0].state=T3_root_2)|(node[0].state=T3_root_3)))))U(G(node[0].state=S0_start))))))))))))

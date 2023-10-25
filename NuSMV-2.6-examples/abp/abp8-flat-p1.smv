@@ -1,0 +1,860 @@
+-- Flattened Boolean FSM model  generated from abp8.smv
+-- Dumped cwd->layers are: model model_bool determ determ_bool __TempLayer_0 
+
+MODULE main
+-- Input variables from layer 'model'
+-- DEFINE
+-- _process_selector_ :=  (_process_selector_.2 ?  (_process_selector_.1 ? receiver : s2r)  :  (_process_selector_.1 ? r2s :  (_process_selector_.0 ? sender : main) ) ) ;
+
+-- Input variables from layer 'model_bool'
+IVAR
+_process_selector_.2 : boolean;
+_process_selector_.1 : boolean;
+_process_selector_.0 : boolean;
+
+-- Input variables from layer 'determ'
+-- Input variables from layer 'determ_bool'
+-- Input variables from layer '__TempLayer_0'
+-- State variables from layer 'model'
+-- DEFINE
+-- sender.state :=  (sender.state.1 ? send :  (sender.state.0 ? wait_for_ack : get) ) ;
+VAR
+sender.abp : boolean;
+-- DEFINE
+-- sender.data :=  (sender.data.7 ?  (sender.data.6 ?  (sender.data.5 ?  (sender.data.4 ?  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 255 : 127)  :  (sender.data.0 ? 191 : 63) )  :  (sender.data.1 ?  (sender.data.0 ? 223 : 95)  :  (sender.data.0 ? 159 : 31) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 239 : 111)  :  (sender.data.0 ? 175 : 47) )  :  (sender.data.1 ?  (sender.data.0 ? 207 : 79)  :  (sender.data.0 ? 143 : 15) ) ) )  :  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 247 : 119)  :  (sender.data.0 ? 183 : 55) )  :  (sender.data.1 ?  (sender.data.0 ? 215 : 87)  :  (sender.data.0 ? 151 : 23) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 231 : 103)  :  (sender.data.0 ? 167 : 39) )  :  (sender.data.1 ?  (sender.data.0 ? 199 : 71)  :  (sender.data.0 ? 135 : 7) ) ) ) )  :  (sender.data.4 ?  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 251 : 123)  :  (sender.data.0 ? 187 : 59) )  :  (sender.data.1 ?  (sender.data.0 ? 219 : 91)  :  (sender.data.0 ? 155 : 27) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 235 : 107)  :  (sender.data.0 ? 171 : 43) )  :  (sender.data.1 ?  (sender.data.0 ? 203 : 75)  :  (sender.data.0 ? 139 : 11) ) ) )  :  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 243 : 115)  :  (sender.data.0 ? 179 : 51) )  :  (sender.data.1 ?  (sender.data.0 ? 211 : 83)  :  (sender.data.0 ? 147 : 19) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 227 : 99)  :  (sender.data.0 ? 163 : 35) )  :  (sender.data.1 ?  (sender.data.0 ? 195 : 67)  :  (sender.data.0 ? 131 : 3) ) ) ) ) )  :  (sender.data.5 ?  (sender.data.4 ?  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 253 : 125)  :  (sender.data.0 ? 189 : 61) )  :  (sender.data.1 ?  (sender.data.0 ? 221 : 93)  :  (sender.data.0 ? 157 : 29) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 237 : 109)  :  (sender.data.0 ? 173 : 45) )  :  (sender.data.1 ?  (sender.data.0 ? 205 : 77)  :  (sender.data.0 ? 141 : 13) ) ) )  :  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 245 : 117)  :  (sender.data.0 ? 181 : 53) )  :  (sender.data.1 ?  (sender.data.0 ? 213 : 85)  :  (sender.data.0 ? 149 : 21) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 229 : 101)  :  (sender.data.0 ? 165 : 37) )  :  (sender.data.1 ?  (sender.data.0 ? 197 : 69)  :  (sender.data.0 ? 133 : 5) ) ) ) )  :  (sender.data.4 ?  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 249 : 121)  :  (sender.data.0 ? 185 : 57) )  :  (sender.data.1 ?  (sender.data.0 ? 217 : 89)  :  (sender.data.0 ? 153 : 25) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 233 : 105)  :  (sender.data.0 ? 169 : 41) )  :  (sender.data.1 ?  (sender.data.0 ? 201 : 73)  :  (sender.data.0 ? 137 : 9) ) ) )  :  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 241 : 113)  :  (sender.data.0 ? 177 : 49) )  :  (sender.data.1 ?  (sender.data.0 ? 209 : 81)  :  (sender.data.0 ? 145 : 17) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 225 : 97)  :  (sender.data.0 ? 161 : 33) )  :  (sender.data.1 ?  (sender.data.0 ? 193 : 65)  :  (sender.data.0 ? 129 : 1) ) ) ) ) ) )  :  (sender.data.6 ?  (sender.data.5 ?  (sender.data.4 ?  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 254 : 126)  :  (sender.data.0 ? 190 : 62) )  :  (sender.data.1 ?  (sender.data.0 ? 222 : 94)  :  (sender.data.0 ? 158 : 30) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 238 : 110)  :  (sender.data.0 ? 174 : 46) )  :  (sender.data.1 ?  (sender.data.0 ? 206 : 78)  :  (sender.data.0 ? 142 : 14) ) ) )  :  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 246 : 118)  :  (sender.data.0 ? 182 : 54) )  :  (sender.data.1 ?  (sender.data.0 ? 214 : 86)  :  (sender.data.0 ? 150 : 22) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 230 : 102)  :  (sender.data.0 ? 166 : 38) )  :  (sender.data.1 ?  (sender.data.0 ? 198 : 70)  :  (sender.data.0 ? 134 : 6) ) ) ) )  :  (sender.data.4 ?  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 250 : 122)  :  (sender.data.0 ? 186 : 58) )  :  (sender.data.1 ?  (sender.data.0 ? 218 : 90)  :  (sender.data.0 ? 154 : 26) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 234 : 106)  :  (sender.data.0 ? 170 : 42) )  :  (sender.data.1 ?  (sender.data.0 ? 202 : 74)  :  (sender.data.0 ? 138 : 10) ) ) )  :  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 242 : 114)  :  (sender.data.0 ? 178 : 50) )  :  (sender.data.1 ?  (sender.data.0 ? 210 : 82)  :  (sender.data.0 ? 146 : 18) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 226 : 98)  :  (sender.data.0 ? 162 : 34) )  :  (sender.data.1 ?  (sender.data.0 ? 194 : 66)  :  (sender.data.0 ? 130 : 2) ) ) ) ) )  :  (sender.data.5 ?  (sender.data.4 ?  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 252 : 124)  :  (sender.data.0 ? 188 : 60) )  :  (sender.data.1 ?  (sender.data.0 ? 220 : 92)  :  (sender.data.0 ? 156 : 28) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 236 : 108)  :  (sender.data.0 ? 172 : 44) )  :  (sender.data.1 ?  (sender.data.0 ? 204 : 76)  :  (sender.data.0 ? 140 : 12) ) ) )  :  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 244 : 116)  :  (sender.data.0 ? 180 : 52) )  :  (sender.data.1 ?  (sender.data.0 ? 212 : 84)  :  (sender.data.0 ? 148 : 20) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 228 : 100)  :  (sender.data.0 ? 164 : 36) )  :  (sender.data.1 ?  (sender.data.0 ? 196 : 68)  :  (sender.data.0 ? 132 : 4) ) ) ) )  :  (sender.data.4 ?  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 248 : 120)  :  (sender.data.0 ? 184 : 56) )  :  (sender.data.1 ?  (sender.data.0 ? 216 : 88)  :  (sender.data.0 ? 152 : 24) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 232 : 104)  :  (sender.data.0 ? 168 : 40) )  :  (sender.data.1 ?  (sender.data.0 ? 200 : 72)  :  (sender.data.0 ? 136 : 8) ) ) )  :  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 240 : 112)  :  (sender.data.0 ? 176 : 48) )  :  (sender.data.1 ?  (sender.data.0 ? 208 : 80)  :  (sender.data.0 ? 144 : 16) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 224 : 96)  :  (sender.data.0 ? 160 : 32) )  :  (sender.data.1 ?  (sender.data.0 ? 192 : 64)  :  (sender.data.0 ? 128 : 0) ) ) ) ) ) ) ) ;
+-- s2r_in.tag :=  (s2r_in.tag.1 ?  (s2r_in.tag.0 ? error : data0)  :  (s2r_in.tag.0 ? data1 : mt) ) ;
+-- s2r_in.data :=  (s2r_in.data.7 ?  (s2r_in.data.6 ?  (s2r_in.data.5 ?  (s2r_in.data.4 ?  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 255 : 127)  :  (s2r_in.data.0 ? 191 : 63) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 223 : 95)  :  (s2r_in.data.0 ? 159 : 31) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 239 : 111)  :  (s2r_in.data.0 ? 175 : 47) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 207 : 79)  :  (s2r_in.data.0 ? 143 : 15) ) ) )  :  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 247 : 119)  :  (s2r_in.data.0 ? 183 : 55) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 215 : 87)  :  (s2r_in.data.0 ? 151 : 23) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 231 : 103)  :  (s2r_in.data.0 ? 167 : 39) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 199 : 71)  :  (s2r_in.data.0 ? 135 : 7) ) ) ) )  :  (s2r_in.data.4 ?  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 251 : 123)  :  (s2r_in.data.0 ? 187 : 59) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 219 : 91)  :  (s2r_in.data.0 ? 155 : 27) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 235 : 107)  :  (s2r_in.data.0 ? 171 : 43) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 203 : 75)  :  (s2r_in.data.0 ? 139 : 11) ) ) )  :  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 243 : 115)  :  (s2r_in.data.0 ? 179 : 51) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 211 : 83)  :  (s2r_in.data.0 ? 147 : 19) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 227 : 99)  :  (s2r_in.data.0 ? 163 : 35) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 195 : 67)  :  (s2r_in.data.0 ? 131 : 3) ) ) ) ) )  :  (s2r_in.data.5 ?  (s2r_in.data.4 ?  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 253 : 125)  :  (s2r_in.data.0 ? 189 : 61) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 221 : 93)  :  (s2r_in.data.0 ? 157 : 29) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 237 : 109)  :  (s2r_in.data.0 ? 173 : 45) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 205 : 77)  :  (s2r_in.data.0 ? 141 : 13) ) ) )  :  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 245 : 117)  :  (s2r_in.data.0 ? 181 : 53) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 213 : 85)  :  (s2r_in.data.0 ? 149 : 21) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 229 : 101)  :  (s2r_in.data.0 ? 165 : 37) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 197 : 69)  :  (s2r_in.data.0 ? 133 : 5) ) ) ) )  :  (s2r_in.data.4 ?  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 249 : 121)  :  (s2r_in.data.0 ? 185 : 57) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 217 : 89)  :  (s2r_in.data.0 ? 153 : 25) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 233 : 105)  :  (s2r_in.data.0 ? 169 : 41) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 201 : 73)  :  (s2r_in.data.0 ? 137 : 9) ) ) )  :  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 241 : 113)  :  (s2r_in.data.0 ? 177 : 49) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 209 : 81)  :  (s2r_in.data.0 ? 145 : 17) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 225 : 97)  :  (s2r_in.data.0 ? 161 : 33) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 193 : 65)  :  (s2r_in.data.0 ? 129 : 1) ) ) ) ) ) )  :  (s2r_in.data.6 ?  (s2r_in.data.5 ?  (s2r_in.data.4 ?  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 254 : 126)  :  (s2r_in.data.0 ? 190 : 62) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 222 : 94)  :  (s2r_in.data.0 ? 158 : 30) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 238 : 110)  :  (s2r_in.data.0 ? 174 : 46) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 206 : 78)  :  (s2r_in.data.0 ? 142 : 14) ) ) )  :  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 246 : 118)  :  (s2r_in.data.0 ? 182 : 54) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 214 : 86)  :  (s2r_in.data.0 ? 150 : 22) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 230 : 102)  :  (s2r_in.data.0 ? 166 : 38) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 198 : 70)  :  (s2r_in.data.0 ? 134 : 6) ) ) ) )  :  (s2r_in.data.4 ?  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 250 : 122)  :  (s2r_in.data.0 ? 186 : 58) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 218 : 90)  :  (s2r_in.data.0 ? 154 : 26) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 234 : 106)  :  (s2r_in.data.0 ? 170 : 42) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 202 : 74)  :  (s2r_in.data.0 ? 138 : 10) ) ) )  :  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 242 : 114)  :  (s2r_in.data.0 ? 178 : 50) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 210 : 82)  :  (s2r_in.data.0 ? 146 : 18) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 226 : 98)  :  (s2r_in.data.0 ? 162 : 34) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 194 : 66)  :  (s2r_in.data.0 ? 130 : 2) ) ) ) ) )  :  (s2r_in.data.5 ?  (s2r_in.data.4 ?  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 252 : 124)  :  (s2r_in.data.0 ? 188 : 60) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 220 : 92)  :  (s2r_in.data.0 ? 156 : 28) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 236 : 108)  :  (s2r_in.data.0 ? 172 : 44) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 204 : 76)  :  (s2r_in.data.0 ? 140 : 12) ) ) )  :  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 244 : 116)  :  (s2r_in.data.0 ? 180 : 52) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 212 : 84)  :  (s2r_in.data.0 ? 148 : 20) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 228 : 100)  :  (s2r_in.data.0 ? 164 : 36) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 196 : 68)  :  (s2r_in.data.0 ? 132 : 4) ) ) ) )  :  (s2r_in.data.4 ?  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 248 : 120)  :  (s2r_in.data.0 ? 184 : 56) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 216 : 88)  :  (s2r_in.data.0 ? 152 : 24) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 232 : 104)  :  (s2r_in.data.0 ? 168 : 40) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 200 : 72)  :  (s2r_in.data.0 ? 136 : 8) ) ) )  :  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 240 : 112)  :  (s2r_in.data.0 ? 176 : 48) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 208 : 80)  :  (s2r_in.data.0 ? 144 : 16) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 224 : 96)  :  (s2r_in.data.0 ? 160 : 32) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 192 : 64)  :  (s2r_in.data.0 ? 128 : 0) ) ) ) ) ) ) ) ;
+-- s2r_out.tag :=  (s2r_out.tag.1 ?  (s2r_out.tag.0 ? error : data0)  :  (s2r_out.tag.0 ? data1 : mt) ) ;
+-- s2r_out.data :=  (s2r_out.data.7 ?  (s2r_out.data.6 ?  (s2r_out.data.5 ?  (s2r_out.data.4 ?  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 255 : 127)  :  (s2r_out.data.0 ? 191 : 63) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 223 : 95)  :  (s2r_out.data.0 ? 159 : 31) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 239 : 111)  :  (s2r_out.data.0 ? 175 : 47) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 207 : 79)  :  (s2r_out.data.0 ? 143 : 15) ) ) )  :  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 247 : 119)  :  (s2r_out.data.0 ? 183 : 55) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 215 : 87)  :  (s2r_out.data.0 ? 151 : 23) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 231 : 103)  :  (s2r_out.data.0 ? 167 : 39) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 199 : 71)  :  (s2r_out.data.0 ? 135 : 7) ) ) ) )  :  (s2r_out.data.4 ?  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 251 : 123)  :  (s2r_out.data.0 ? 187 : 59) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 219 : 91)  :  (s2r_out.data.0 ? 155 : 27) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 235 : 107)  :  (s2r_out.data.0 ? 171 : 43) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 203 : 75)  :  (s2r_out.data.0 ? 139 : 11) ) ) )  :  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 243 : 115)  :  (s2r_out.data.0 ? 179 : 51) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 211 : 83)  :  (s2r_out.data.0 ? 147 : 19) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 227 : 99)  :  (s2r_out.data.0 ? 163 : 35) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 195 : 67)  :  (s2r_out.data.0 ? 131 : 3) ) ) ) ) )  :  (s2r_out.data.5 ?  (s2r_out.data.4 ?  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 253 : 125)  :  (s2r_out.data.0 ? 189 : 61) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 221 : 93)  :  (s2r_out.data.0 ? 157 : 29) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 237 : 109)  :  (s2r_out.data.0 ? 173 : 45) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 205 : 77)  :  (s2r_out.data.0 ? 141 : 13) ) ) )  :  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 245 : 117)  :  (s2r_out.data.0 ? 181 : 53) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 213 : 85)  :  (s2r_out.data.0 ? 149 : 21) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 229 : 101)  :  (s2r_out.data.0 ? 165 : 37) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 197 : 69)  :  (s2r_out.data.0 ? 133 : 5) ) ) ) )  :  (s2r_out.data.4 ?  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 249 : 121)  :  (s2r_out.data.0 ? 185 : 57) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 217 : 89)  :  (s2r_out.data.0 ? 153 : 25) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 233 : 105)  :  (s2r_out.data.0 ? 169 : 41) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 201 : 73)  :  (s2r_out.data.0 ? 137 : 9) ) ) )  :  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 241 : 113)  :  (s2r_out.data.0 ? 177 : 49) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 209 : 81)  :  (s2r_out.data.0 ? 145 : 17) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 225 : 97)  :  (s2r_out.data.0 ? 161 : 33) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 193 : 65)  :  (s2r_out.data.0 ? 129 : 1) ) ) ) ) ) )  :  (s2r_out.data.6 ?  (s2r_out.data.5 ?  (s2r_out.data.4 ?  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 254 : 126)  :  (s2r_out.data.0 ? 190 : 62) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 222 : 94)  :  (s2r_out.data.0 ? 158 : 30) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 238 : 110)  :  (s2r_out.data.0 ? 174 : 46) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 206 : 78)  :  (s2r_out.data.0 ? 142 : 14) ) ) )  :  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 246 : 118)  :  (s2r_out.data.0 ? 182 : 54) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 214 : 86)  :  (s2r_out.data.0 ? 150 : 22) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 230 : 102)  :  (s2r_out.data.0 ? 166 : 38) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 198 : 70)  :  (s2r_out.data.0 ? 134 : 6) ) ) ) )  :  (s2r_out.data.4 ?  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 250 : 122)  :  (s2r_out.data.0 ? 186 : 58) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 218 : 90)  :  (s2r_out.data.0 ? 154 : 26) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 234 : 106)  :  (s2r_out.data.0 ? 170 : 42) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 202 : 74)  :  (s2r_out.data.0 ? 138 : 10) ) ) )  :  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 242 : 114)  :  (s2r_out.data.0 ? 178 : 50) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 210 : 82)  :  (s2r_out.data.0 ? 146 : 18) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 226 : 98)  :  (s2r_out.data.0 ? 162 : 34) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 194 : 66)  :  (s2r_out.data.0 ? 130 : 2) ) ) ) ) )  :  (s2r_out.data.5 ?  (s2r_out.data.4 ?  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 252 : 124)  :  (s2r_out.data.0 ? 188 : 60) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 220 : 92)  :  (s2r_out.data.0 ? 156 : 28) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 236 : 108)  :  (s2r_out.data.0 ? 172 : 44) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 204 : 76)  :  (s2r_out.data.0 ? 140 : 12) ) ) )  :  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 244 : 116)  :  (s2r_out.data.0 ? 180 : 52) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 212 : 84)  :  (s2r_out.data.0 ? 148 : 20) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 228 : 100)  :  (s2r_out.data.0 ? 164 : 36) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 196 : 68)  :  (s2r_out.data.0 ? 132 : 4) ) ) ) )  :  (s2r_out.data.4 ?  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 248 : 120)  :  (s2r_out.data.0 ? 184 : 56) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 216 : 88)  :  (s2r_out.data.0 ? 152 : 24) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 232 : 104)  :  (s2r_out.data.0 ? 168 : 40) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 200 : 72)  :  (s2r_out.data.0 ? 136 : 8) ) ) )  :  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 240 : 112)  :  (s2r_out.data.0 ? 176 : 48) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 208 : 80)  :  (s2r_out.data.0 ? 144 : 16) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 224 : 96)  :  (s2r_out.data.0 ? 160 : 32) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 192 : 64)  :  (s2r_out.data.0 ? 128 : 0) ) ) ) ) ) ) ) ;
+-- receiver.state :=  (receiver.state.1 ? deliver :  (receiver.state.0 ? send_ack : receive) ) ;
+VAR
+receiver.abp : boolean;
+-- DEFINE
+-- receiver.data :=  (receiver.data.7 ?  (receiver.data.6 ?  (receiver.data.5 ?  (receiver.data.4 ?  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 255 : 127)  :  (receiver.data.0 ? 191 : 63) )  :  (receiver.data.1 ?  (receiver.data.0 ? 223 : 95)  :  (receiver.data.0 ? 159 : 31) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 239 : 111)  :  (receiver.data.0 ? 175 : 47) )  :  (receiver.data.1 ?  (receiver.data.0 ? 207 : 79)  :  (receiver.data.0 ? 143 : 15) ) ) )  :  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 247 : 119)  :  (receiver.data.0 ? 183 : 55) )  :  (receiver.data.1 ?  (receiver.data.0 ? 215 : 87)  :  (receiver.data.0 ? 151 : 23) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 231 : 103)  :  (receiver.data.0 ? 167 : 39) )  :  (receiver.data.1 ?  (receiver.data.0 ? 199 : 71)  :  (receiver.data.0 ? 135 : 7) ) ) ) )  :  (receiver.data.4 ?  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 251 : 123)  :  (receiver.data.0 ? 187 : 59) )  :  (receiver.data.1 ?  (receiver.data.0 ? 219 : 91)  :  (receiver.data.0 ? 155 : 27) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 235 : 107)  :  (receiver.data.0 ? 171 : 43) )  :  (receiver.data.1 ?  (receiver.data.0 ? 203 : 75)  :  (receiver.data.0 ? 139 : 11) ) ) )  :  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 243 : 115)  :  (receiver.data.0 ? 179 : 51) )  :  (receiver.data.1 ?  (receiver.data.0 ? 211 : 83)  :  (receiver.data.0 ? 147 : 19) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 227 : 99)  :  (receiver.data.0 ? 163 : 35) )  :  (receiver.data.1 ?  (receiver.data.0 ? 195 : 67)  :  (receiver.data.0 ? 131 : 3) ) ) ) ) )  :  (receiver.data.5 ?  (receiver.data.4 ?  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 253 : 125)  :  (receiver.data.0 ? 189 : 61) )  :  (receiver.data.1 ?  (receiver.data.0 ? 221 : 93)  :  (receiver.data.0 ? 157 : 29) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 237 : 109)  :  (receiver.data.0 ? 173 : 45) )  :  (receiver.data.1 ?  (receiver.data.0 ? 205 : 77)  :  (receiver.data.0 ? 141 : 13) ) ) )  :  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 245 : 117)  :  (receiver.data.0 ? 181 : 53) )  :  (receiver.data.1 ?  (receiver.data.0 ? 213 : 85)  :  (receiver.data.0 ? 149 : 21) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 229 : 101)  :  (receiver.data.0 ? 165 : 37) )  :  (receiver.data.1 ?  (receiver.data.0 ? 197 : 69)  :  (receiver.data.0 ? 133 : 5) ) ) ) )  :  (receiver.data.4 ?  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 249 : 121)  :  (receiver.data.0 ? 185 : 57) )  :  (receiver.data.1 ?  (receiver.data.0 ? 217 : 89)  :  (receiver.data.0 ? 153 : 25) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 233 : 105)  :  (receiver.data.0 ? 169 : 41) )  :  (receiver.data.1 ?  (receiver.data.0 ? 201 : 73)  :  (receiver.data.0 ? 137 : 9) ) ) )  :  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 241 : 113)  :  (receiver.data.0 ? 177 : 49) )  :  (receiver.data.1 ?  (receiver.data.0 ? 209 : 81)  :  (receiver.data.0 ? 145 : 17) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 225 : 97)  :  (receiver.data.0 ? 161 : 33) )  :  (receiver.data.1 ?  (receiver.data.0 ? 193 : 65)  :  (receiver.data.0 ? 129 : 1) ) ) ) ) ) )  :  (receiver.data.6 ?  (receiver.data.5 ?  (receiver.data.4 ?  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 254 : 126)  :  (receiver.data.0 ? 190 : 62) )  :  (receiver.data.1 ?  (receiver.data.0 ? 222 : 94)  :  (receiver.data.0 ? 158 : 30) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 238 : 110)  :  (receiver.data.0 ? 174 : 46) )  :  (receiver.data.1 ?  (receiver.data.0 ? 206 : 78)  :  (receiver.data.0 ? 142 : 14) ) ) )  :  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 246 : 118)  :  (receiver.data.0 ? 182 : 54) )  :  (receiver.data.1 ?  (receiver.data.0 ? 214 : 86)  :  (receiver.data.0 ? 150 : 22) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 230 : 102)  :  (receiver.data.0 ? 166 : 38) )  :  (receiver.data.1 ?  (receiver.data.0 ? 198 : 70)  :  (receiver.data.0 ? 134 : 6) ) ) ) )  :  (receiver.data.4 ?  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 250 : 122)  :  (receiver.data.0 ? 186 : 58) )  :  (receiver.data.1 ?  (receiver.data.0 ? 218 : 90)  :  (receiver.data.0 ? 154 : 26) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 234 : 106)  :  (receiver.data.0 ? 170 : 42) )  :  (receiver.data.1 ?  (receiver.data.0 ? 202 : 74)  :  (receiver.data.0 ? 138 : 10) ) ) )  :  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 242 : 114)  :  (receiver.data.0 ? 178 : 50) )  :  (receiver.data.1 ?  (receiver.data.0 ? 210 : 82)  :  (receiver.data.0 ? 146 : 18) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 226 : 98)  :  (receiver.data.0 ? 162 : 34) )  :  (receiver.data.1 ?  (receiver.data.0 ? 194 : 66)  :  (receiver.data.0 ? 130 : 2) ) ) ) ) )  :  (receiver.data.5 ?  (receiver.data.4 ?  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 252 : 124)  :  (receiver.data.0 ? 188 : 60) )  :  (receiver.data.1 ?  (receiver.data.0 ? 220 : 92)  :  (receiver.data.0 ? 156 : 28) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 236 : 108)  :  (receiver.data.0 ? 172 : 44) )  :  (receiver.data.1 ?  (receiver.data.0 ? 204 : 76)  :  (receiver.data.0 ? 140 : 12) ) ) )  :  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 244 : 116)  :  (receiver.data.0 ? 180 : 52) )  :  (receiver.data.1 ?  (receiver.data.0 ? 212 : 84)  :  (receiver.data.0 ? 148 : 20) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 228 : 100)  :  (receiver.data.0 ? 164 : 36) )  :  (receiver.data.1 ?  (receiver.data.0 ? 196 : 68)  :  (receiver.data.0 ? 132 : 4) ) ) ) )  :  (receiver.data.4 ?  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 248 : 120)  :  (receiver.data.0 ? 184 : 56) )  :  (receiver.data.1 ?  (receiver.data.0 ? 216 : 88)  :  (receiver.data.0 ? 152 : 24) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 232 : 104)  :  (receiver.data.0 ? 168 : 40) )  :  (receiver.data.1 ?  (receiver.data.0 ? 200 : 72)  :  (receiver.data.0 ? 136 : 8) ) ) )  :  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 240 : 112)  :  (receiver.data.0 ? 176 : 48) )  :  (receiver.data.1 ?  (receiver.data.0 ? 208 : 80)  :  (receiver.data.0 ? 144 : 16) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 224 : 96)  :  (receiver.data.0 ? 160 : 32) )  :  (receiver.data.1 ?  (receiver.data.0 ? 192 : 64)  :  (receiver.data.0 ? 128 : 0) ) ) ) ) ) ) ) ;
+-- r2s_in.tag :=  (r2s_in.tag.1 ?  (r2s_in.tag.0 ? error : ack0)  :  (r2s_in.tag.0 ? ack1 : mt) ) ;
+-- r2s_out.tag :=  (r2s_out.tag.1 ?  (r2s_out.tag.0 ? error : ack0)  :  (r2s_out.tag.0 ? ack1 : mt) ) ;
+
+-- State variables from layer 'model_bool'
+VAR
+sender.state.1 : boolean;
+sender.state.0 : boolean;
+sender.data.7 : boolean;
+sender.data.6 : boolean;
+sender.data.5 : boolean;
+sender.data.4 : boolean;
+sender.data.3 : boolean;
+sender.data.2 : boolean;
+sender.data.1 : boolean;
+sender.data.0 : boolean;
+s2r_in.tag.1 : boolean;
+s2r_in.tag.0 : boolean;
+s2r_in.data.7 : boolean;
+s2r_in.data.6 : boolean;
+s2r_in.data.5 : boolean;
+s2r_in.data.4 : boolean;
+s2r_in.data.3 : boolean;
+s2r_in.data.2 : boolean;
+s2r_in.data.1 : boolean;
+s2r_in.data.0 : boolean;
+s2r_out.tag.1 : boolean;
+s2r_out.tag.0 : boolean;
+s2r_out.data.7 : boolean;
+s2r_out.data.6 : boolean;
+s2r_out.data.5 : boolean;
+s2r_out.data.4 : boolean;
+s2r_out.data.3 : boolean;
+s2r_out.data.2 : boolean;
+s2r_out.data.1 : boolean;
+s2r_out.data.0 : boolean;
+receiver.state.1 : boolean;
+receiver.state.0 : boolean;
+receiver.data.7 : boolean;
+receiver.data.6 : boolean;
+receiver.data.5 : boolean;
+receiver.data.4 : boolean;
+receiver.data.3 : boolean;
+receiver.data.2 : boolean;
+receiver.data.1 : boolean;
+receiver.data.0 : boolean;
+r2s_in.tag.1 : boolean;
+r2s_in.tag.0 : boolean;
+r2s_out.tag.1 : boolean;
+r2s_out.tag.0 : boolean;
+
+-- State variables from layer 'determ'
+-- State variables from layer 'determ_bool'
+-- State variables from layer '__TempLayer_0'
+-- Frozen variables from layer 'model'
+-- Frozen variables from layer 'model_bool'
+-- Frozen variables from layer 'determ'
+-- Frozen variables from layer 'determ_bool'
+-- Frozen variables from layer '__TempLayer_0'
+-- CONSTANTS
+--  get, send, wait_for_ack, mt, data0, data1, error, receive, deliver, send_ack, ack0, ack1, main, s2r, r2s, receiver, sender ;
+
+INIT
+ __expr0
+
+INIT
+ !sender.state.0
+
+INIT
+ __expr1
+
+INIT
+ !s2r_in.tag.1
+
+INIT
+ !s2r_in.tag.0
+
+INIT
+ !s2r_out.tag.1
+
+INIT
+ !s2r_out.tag.0
+
+INIT
+ __expr2
+
+INIT
+ !receiver.state.0
+
+INIT
+ __expr3
+
+INIT
+ !r2s_in.tag.1
+
+INIT
+ !r2s_in.tag.0
+
+INIT
+ !r2s_out.tag.1
+
+INIT
+ !r2s_out.tag.0
+
+
+INVAR
+ (__expr0 | !sender.state.0)
+
+INVAR
+ (__expr2 | !receiver.state.0)
+
+
+TRANS
+ case
+_process_selector_.2 : !_process_selector_.0;
+TRUE : (__expr4 | !_process_selector_.0);
+esac
+
+TRANS
+ __expr18
+
+TRANS
+ __expr19
+
+TRANS
+ __expr28
+
+TRANS
+ __expr36
+
+TRANS
+ __expr60
+
+TRANS
+ __expr69
+
+TRANS
+ __expr18
+
+TRANS
+ __expr19
+
+TRANS
+ __expr28
+
+TRANS
+ __expr76
+
+TRANS
+ __expr100
+
+TRANS
+ __expr36
+
+TRANS
+ __expr60
+
+TRANS
+ __expr110
+
+TRANS
+ __expr134
+
+TRANS
+ __expr76
+
+TRANS
+ __expr100
+
+TRANS
+ __expr135
+
+TRANS
+ __expr140
+
+TRANS
+ __expr110
+
+TRANS
+ __expr135
+
+TRANS
+ __expr134
+
+TRANS
+ __expr140
+
+TRANS
+ __expr69
+
+
+FAIRNESS
+ __expr5
+
+
+FAIRNESS
+ __expr74
+
+
+FAIRNESS
+ __expr61
+
+
+FAIRNESS
+ (__expr13 | __expr14)
+
+
+FAIRNESS
+ __expr29
+
+
+FAIRNESS
+ (__expr101 | __expr102)
+
+
+
+-- LTLSPEC
+--  G (__expr141 |  X (__expr141 U __expr15))
+
+LTLSPEC
+ G (__expr141 |  X ((__expr6 U __expr141) U __expr15))
+
+-- LTLSPEC
+-- G ( F __expr6)
+
+-- LTLSPEC
+--  G (__expr142 |  Y ( H __expr142))
+
+-- LTLSPEC
+-- !( G (__expr142 |  Y ( H __expr142)))
+
+-- Symbols introduced by the dumper:
+DEFINE __expr55 := case
+sender.data.2 : (next(s2r_in.data.2) & __expr54);
+TRUE : (__expr41 & __expr54);
+esac ;
+
+DEFINE __expr28 := case
+__expr5 : (__expr15 | __expr27);
+TRUE : __expr27;
+esac ;
+
+DEFINE __expr133 := case
+receiver.data.7 : (next(receiver.data.7) & __expr132);
+TRUE : (__expr125 & __expr132);
+esac ;
+
+DEFINE __expr106 := !next(receiver.state.0) ;
+
+DEFINE __expr85 := !next(s2r_out.data.4) ;
+
+DEFINE __expr72 := !next(s2r_out.tag.1) ;
+
+DEFINE __expr59 := case
+sender.data.6 : (next(s2r_in.data.6) & __expr58);
+TRUE : (__expr49 & __expr58);
+esac ;
+
+DEFINE __expr20 := case
+sender.data.0 : next(sender.data.0);
+TRUE : !next(sender.data.0);
+esac ;
+
+DEFINE __expr124 := case
+s2r_out.data.6 : (next(receiver.data.6) & __expr122);
+TRUE : (__expr123 & __expr122);
+esac ;
+
+DEFINE __expr77 := !next(s2r_out.data.0) ;
+
+DEFINE __expr38 := case
+s2r_in.data.0 : next(s2r_in.data.0);
+TRUE : __expr37;
+esac ;
+
+DEFINE __expr95 := case
+s2r_out.data.3 : (next(s2r_out.data.3) & __expr94);
+TRUE : (__expr83 & __expr94);
+esac ;
+
+DEFINE __expr18 := case
+__expr5 : case
+__expr6 : next(sender.state.1);
+__expr8 : __expr10;
+(sender.state.1 & __expr11) : next(sender.state.1);
+__expr15 : (__expr9 & __expr16);
+(__expr12 & (((sender.abp & __expr13) | (__expr1 & __expr14)) | (r2s_out.tag.1 & r2s_out.tag.0))) : next(sender.state.1);
+(__expr12 & __expr17) : __expr10;
+esac;
+sender.state.1 : next(sender.state.1);
+TRUE : (__expr9 & case
+sender.state.0 : next(sender.state.0);
+TRUE : __expr16;
+esac);
+esac ;
+
+DEFINE __expr101 := (s2r_out.tag.1 & !s2r_out.tag.0) ;
+
+DEFINE __expr63 := !__expr62 ;
+
+DEFINE __expr27 := case
+sender.data.7 : (next(sender.data.7) & __expr26);
+TRUE : (!next(sender.data.7) & __expr26);
+esac ;
+
+DEFINE __expr9 := !next(sender.state.1) ;
+
+DEFINE __expr75 := (__expr2 & !receiver.state.0) ;
+
+DEFINE __expr52 := case
+s2r_in.data.7 : (next(s2r_in.data.7) & __expr50);
+TRUE : (__expr51 & __expr50);
+esac ;
+
+DEFINE __expr99 := case
+s2r_out.data.7 : (next(s2r_out.data.7) & __expr98);
+TRUE : (__expr91 & __expr98);
+esac ;
+
+DEFINE __expr123 := !next(receiver.data.6) ;
+
+DEFINE __expr62 := (!r2s_in.tag.1 & !r2s_in.tag.0) ;
+
+DEFINE __expr8 := (sender.state.1 & __expr7) ;
+
+DEFINE __expr109 := (__expr108 & __expr62) ;
+
+DEFINE __expr90 := case
+s2r_in.data.6 : (next(s2r_out.data.6) & __expr88);
+TRUE : (__expr89 & __expr88);
+esac ;
+
+DEFINE __expr51 := !next(s2r_in.data.7) ;
+
+DEFINE __expr114 := case
+s2r_out.data.1 : (next(receiver.data.1) & __expr112);
+TRUE : (__expr113 & __expr112);
+esac ;
+
+DEFINE __expr2 := !receiver.state.1 ;
+
+DEFINE __expr89 := !next(s2r_out.data.6) ;
+
+DEFINE __expr22 := case
+sender.data.2 : (next(sender.data.2) & __expr21);
+TRUE : (!next(sender.data.2) & __expr21);
+esac ;
+
+DEFINE __expr5 := (!_process_selector_.2 & (__expr4 & _process_selector_.0)) ;
+
+DEFINE __expr126 := case
+receiver.data.0 : next(receiver.data.0);
+TRUE : __expr111;
+esac ;
+
+DEFINE __expr104 := !next(receiver.state.1) ;
+
+DEFINE __expr42 := case
+s2r_in.data.2 : (next(s2r_in.data.2) & __expr40);
+TRUE : (__expr41 & __expr40);
+esac ;
+
+DEFINE __expr33 := !next(s2r_in.tag.0) ;
+
+DEFINE __expr3 := !receiver.abp ;
+
+DEFINE __expr113 := !next(receiver.data.1) ;
+
+DEFINE __expr0 := !sender.state.1 ;
+
+DEFINE __expr130 := case
+receiver.data.4 : (next(receiver.data.4) & __expr129);
+TRUE : (__expr119 & __expr129);
+esac ;
+
+DEFINE __expr69 := case
+__expr61 : case
+__expr64 : case
+r2s_in.tag.1 : (next(r2s_out.tag.1) & (!r2s_in.tag.0 | next(r2s_out.tag.0)));
+(next(r2s_out.tag.1) | r2s_in.tag.0) : next(r2s_out.tag.0);
+TRUE : __expr65;
+esac;
+TRUE : __expr68;
+esac;
+__expr5 : case
+__expr12 : (__expr67 & __expr65);
+TRUE : __expr68;
+esac;
+TRUE : __expr68;
+esac ;
+
+DEFINE __expr137 := !next(r2s_in.tag.0) ;
+
+DEFINE __expr80 := case
+s2r_in.data.1 : (next(s2r_out.data.1) & __expr78);
+TRUE : (__expr79 & __expr78);
+esac ;
+
+DEFINE __expr68 := case
+r2s_out.tag.1 : (next(r2s_out.tag.1) & __expr66);
+TRUE : (__expr67 & __expr66);
+esac ;
+
+DEFINE __expr41 := !next(s2r_in.data.2) ;
+
+DEFINE __expr31 := (__expr30 & __expr11) ;
+
+DEFINE __expr56 := case
+sender.data.3 : (next(s2r_in.data.3) & __expr55);
+TRUE : (__expr43 & __expr55);
+esac ;
+
+DEFINE __expr103 := (__expr75 & ((__expr3 & __expr101) | (receiver.abp & __expr102))) ;
+
+DEFINE __expr11 := !__expr7 ;
+
+DEFINE __expr134 := case
+__expr74 : case
+__expr103 : case
+s2r_out.data.7 : (next(receiver.data.7) & __expr124);
+TRUE : (__expr125 & __expr124);
+esac;
+TRUE : __expr133;
+esac;
+TRUE : __expr133;
+esac ;
+
+DEFINE __expr92 := case
+s2r_out.data.0 : next(s2r_out.data.0);
+TRUE : __expr77;
+esac ;
+
+DEFINE __expr61 := (!_process_selector_.2 & _process_selector_.1) ;
+
+DEFINE __expr30 := (!s2r_out.tag.1 & !s2r_out.tag.0) ;
+
+DEFINE __expr79 := !next(s2r_out.data.1) ;
+
+DEFINE __expr67 := !next(r2s_out.tag.1) ;
+
+DEFINE __expr96 := case
+s2r_out.data.4 : (next(s2r_out.data.4) & __expr95);
+TRUE : (__expr85 & __expr95);
+esac ;
+
+DEFINE __expr118 := case
+s2r_out.data.3 : (next(receiver.data.3) & __expr116);
+TRUE : (__expr117 & __expr116);
+esac ;
+
+DEFINE __expr102 := (!s2r_out.tag.1 & s2r_out.tag.0) ;
+
+DEFINE __expr24 := case
+sender.data.4 : (next(sender.data.4) & __expr23);
+TRUE : (!next(sender.data.4) & __expr23);
+esac ;
+
+DEFINE __expr46 := case
+s2r_in.data.4 : (next(s2r_in.data.4) & __expr44);
+TRUE : (__expr45 & __expr44);
+esac ;
+
+DEFINE __expr117 := !next(receiver.data.3) ;
+
+DEFINE __expr64 := (__expr17 & __expr63) ;
+
+DEFINE __expr10 := (__expr9 & next(sender.state.0)) ;
+
+DEFINE __expr84 := case
+s2r_in.data.3 : (next(s2r_out.data.3) & __expr82);
+TRUE : (__expr83 & __expr82);
+esac ;
+
+DEFINE __expr45 := !next(s2r_in.data.4) ;
+
+DEFINE __expr34 := case
+s2r_in.tag.0 : next(s2r_in.tag.0);
+TRUE : __expr33;
+esac ;
+
+DEFINE __expr71 := case
+s2r_out.tag.0 : next(s2r_out.tag.0);
+TRUE : __expr70;
+esac ;
+
+DEFINE __expr37 := !next(s2r_in.data.0) ;
+
+DEFINE __expr4 := !_process_selector_.1 ;
+
+DEFINE __expr138 := case
+r2s_in.tag.0 : next(r2s_in.tag.0);
+TRUE : __expr137;
+esac ;
+
+DEFINE __expr127 := case
+receiver.data.1 : (next(receiver.data.1) & __expr126);
+TRUE : (__expr113 & __expr126);
+esac ;
+
+DEFINE __expr83 := !next(s2r_out.data.3) ;
+
+DEFINE __expr122 := case
+s2r_out.data.5 : (next(receiver.data.5) & __expr120);
+TRUE : (__expr121 & __expr120);
+esac ;
+
+DEFINE __expr53 := case
+sender.data.0 : next(s2r_in.data.0);
+TRUE : __expr37;
+esac ;
+
+DEFINE __expr26 := case
+sender.data.6 : (next(sender.data.6) & __expr25);
+TRUE : (!next(sender.data.6) & __expr25);
+esac ;
+
+DEFINE __expr131 := case
+receiver.data.5 : (next(receiver.data.5) & __expr130);
+TRUE : (__expr121 & __expr130);
+esac ;
+
+DEFINE __expr108 := (__expr2 & receiver.state.0) ;
+
+DEFINE __expr50 := case
+s2r_in.data.6 : (next(s2r_in.data.6) & __expr48);
+TRUE : (__expr49 & __expr48);
+esac ;
+
+DEFINE __expr60 := case
+__expr29 : __expr52;
+__expr5 : case
+__expr8 : case
+sender.data.7 : (next(s2r_in.data.7) & __expr59);
+TRUE : (__expr51 & __expr59);
+esac;
+TRUE : __expr52;
+esac;
+TRUE : __expr52;
+esac ;
+
+DEFINE __expr105 := (__expr104 & next(receiver.state.0)) ;
+
+DEFINE __expr32 := !next(s2r_in.tag.1) ;
+
+DEFINE __expr7 := (!s2r_in.tag.1 & !s2r_in.tag.0) ;
+
+DEFINE __expr57 := case
+sender.data.4 : (next(s2r_in.data.4) & __expr56);
+TRUE : (__expr45 & __expr56);
+esac ;
+
+DEFINE __expr121 := !next(receiver.data.5) ;
+
+DEFINE __expr93 := case
+s2r_out.data.1 : (next(s2r_out.data.1) & __expr92);
+TRUE : (__expr79 & __expr92);
+esac ;
+
+DEFINE __expr88 := case
+s2r_in.data.5 : (next(s2r_out.data.5) & __expr86);
+TRUE : (__expr87 & __expr86);
+esac ;
+
+DEFINE __expr49 := !next(s2r_in.data.6) ;
+
+DEFINE __expr136 := !next(r2s_in.tag.1) ;
+
+DEFINE __expr97 := case
+s2r_out.data.5 : (next(s2r_out.data.5) & __expr96);
+TRUE : (__expr87 & __expr96);
+esac ;
+
+DEFINE __expr112 := case
+s2r_out.data.0 : next(receiver.data.0);
+TRUE : __expr111;
+esac ;
+
+DEFINE __expr1 := !sender.abp ;
+
+DEFINE __expr107 := case
+receiver.state.1 : next(receiver.state.1);
+TRUE : (__expr104 & case
+receiver.state.0 : next(receiver.state.0);
+TRUE : __expr106;
+esac);
+esac ;
+
+DEFINE __expr87 := !next(s2r_out.data.5) ;
+
+DEFINE __expr21 := case
+sender.data.1 : (next(sender.data.1) & __expr20);
+TRUE : (!next(sender.data.1) & __expr20);
+esac ;
+
+DEFINE __expr141 := !__expr6 ;
+
+DEFINE __expr40 := case
+s2r_in.data.1 : (next(s2r_in.data.1) & __expr38);
+TRUE : (__expr39 & __expr38);
+esac ;
+
+DEFINE __expr135 := (next(receiver.abp) <-> case
+__expr74 : case
+receiver.state.1 : __expr3;
+TRUE : receiver.abp;
+esac;
+TRUE : receiver.abp;
+esac) ;
+
+DEFINE __expr70 := !next(s2r_out.tag.0) ;
+
+DEFINE __expr36 := case
+__expr29 : case
+__expr31 : (__expr32 & __expr33);
+TRUE : __expr35;
+esac;
+__expr5 : case
+__expr8 : case
+sender.abp : (__expr32 & next(s2r_in.tag.0));
+__expr1 : (next(s2r_in.tag.1) & __expr33);
+esac;
+TRUE : __expr35;
+esac;
+TRUE : __expr35;
+esac ;
+
+DEFINE __expr35 := case
+s2r_in.tag.1 : (next(s2r_in.tag.1) & __expr34);
+TRUE : (__expr32 & __expr34);
+esac ;
+
+DEFINE __expr100 := case
+__expr29 : case
+__expr31 : case
+s2r_in.data.7 : (next(s2r_out.data.7) & __expr90);
+TRUE : (__expr91 & __expr90);
+esac;
+TRUE : __expr99;
+esac;
+TRUE : __expr99;
+esac ;
+
+DEFINE __expr140 := case
+__expr61 : case
+__expr64 : (__expr136 & __expr137);
+TRUE : __expr139;
+esac;
+__expr74 : case
+__expr109 : case
+receiver.abp : (next(r2s_in.tag.1) & __expr137);
+__expr3 : (__expr136 & next(r2s_in.tag.0));
+esac;
+TRUE : __expr139;
+esac;
+TRUE : __expr139;
+esac ;
+
+DEFINE __expr125 := !next(receiver.data.7) ;
+
+DEFINE __expr78 := case
+s2r_in.data.0 : next(s2r_out.data.0);
+TRUE : __expr77;
+esac ;
+
+DEFINE __expr66 := case
+r2s_out.tag.0 : next(r2s_out.tag.0);
+TRUE : __expr65;
+esac ;
+
+DEFINE __expr39 := !next(s2r_in.data.1) ;
+
+DEFINE __expr110 := case
+__expr74 : case
+__expr103 : next(receiver.state.1);
+(__expr75 & (((receiver.abp & __expr101) | (__expr3 & __expr102)) | (s2r_out.tag.1 & s2r_out.tag.0))) : __expr105;
+(__expr75 & __expr30) : __expr107;
+receiver.state.1 : __expr105;
+__expr109 : (__expr104 & __expr106);
+(__expr108 & __expr63) : __expr107;
+esac;
+TRUE : __expr107;
+esac ;
+
+DEFINE __expr139 := case
+r2s_in.tag.1 : (next(r2s_in.tag.1) & __expr138);
+TRUE : (__expr136 & __expr138);
+esac ;
+
+DEFINE __expr128 := case
+receiver.data.2 : (next(receiver.data.2) & __expr127);
+TRUE : (__expr115 & __expr127);
+esac ;
+
+DEFINE __expr19 := (next(sender.abp) <-> case
+__expr5 : case
+__expr15 : __expr1;
+TRUE : sender.abp;
+esac;
+TRUE : sender.abp;
+esac) ;
+
+DEFINE __expr13 := (r2s_out.tag.1 & !r2s_out.tag.0) ;
+
+DEFINE __expr54 := case
+sender.data.1 : (next(s2r_in.data.1) & __expr53);
+TRUE : (__expr39 & __expr53);
+esac ;
+
+DEFINE __expr116 := case
+s2r_out.data.2 : (next(receiver.data.2) & __expr114);
+TRUE : (__expr115 & __expr114);
+esac ;
+
+DEFINE __expr132 := case
+receiver.data.6 : (next(receiver.data.6) & __expr131);
+TRUE : (__expr123 & __expr131);
+esac ;
+
+DEFINE __expr91 := !next(s2r_out.data.7) ;
+
+DEFINE __expr23 := case
+sender.data.3 : (next(sender.data.3) & __expr22);
+TRUE : (!next(sender.data.3) & __expr22);
+esac ;
+
+DEFINE __expr44 := case
+s2r_in.data.3 : (next(s2r_in.data.3) & __expr42);
+TRUE : (__expr43 & __expr42);
+esac ;
+
+DEFINE __expr58 := case
+sender.data.5 : (next(s2r_in.data.5) & __expr57);
+TRUE : (__expr47 & __expr57);
+esac ;
+
+DEFINE __expr29 := (_process_selector_.2 & __expr4) ;
+
+DEFINE __expr94 := case
+s2r_out.data.2 : (next(s2r_out.data.2) & __expr93);
+TRUE : (__expr81 & __expr93);
+esac ;
+
+DEFINE __expr115 := !next(receiver.data.2) ;
+
+DEFINE __expr82 := case
+s2r_in.data.2 : (next(s2r_out.data.2) & __expr80);
+TRUE : (__expr81 & __expr80);
+esac ;
+
+DEFINE __expr43 := !next(s2r_in.data.3) ;
+
+DEFINE __expr98 := case
+s2r_out.data.6 : (next(s2r_out.data.6) & __expr97);
+TRUE : (__expr89 & __expr97);
+esac ;
+
+DEFINE __expr12 := (__expr0 & sender.state.0) ;
+
+DEFINE __expr6 := (__expr0 & !sender.state.0) ;
+
+DEFINE __expr142 := !__expr12 ;
+
+DEFINE __expr74 := (_process_selector_.2 & _process_selector_.1) ;
+
+DEFINE __expr81 := !next(s2r_out.data.2) ;
+
+DEFINE __expr16 := !next(sender.state.0) ;
+
+DEFINE __expr17 := (!r2s_out.tag.1 & !r2s_out.tag.0) ;
+
+DEFINE __expr120 := case
+s2r_out.data.4 : (next(receiver.data.4) & __expr118);
+TRUE : (__expr119 & __expr118);
+esac ;
+
+DEFINE __expr65 := !next(r2s_out.tag.0) ;
+
+DEFINE __expr76 := case
+__expr29 : case
+__expr31 : case
+s2r_in.tag.1 : (next(s2r_out.tag.1) & (!s2r_in.tag.0 | next(s2r_out.tag.0)));
+(next(s2r_out.tag.1) | s2r_in.tag.0) : next(s2r_out.tag.0);
+TRUE : __expr70;
+esac;
+TRUE : __expr73;
+esac;
+__expr74 : case
+__expr75 : (__expr72 & __expr70);
+TRUE : __expr73;
+esac;
+TRUE : __expr73;
+esac ;
+
+DEFINE __expr25 := case
+sender.data.5 : (next(sender.data.5) & __expr24);
+TRUE : (!next(sender.data.5) & __expr24);
+esac ;
+
+DEFINE __expr48 := case
+s2r_in.data.5 : (next(s2r_in.data.5) & __expr46);
+TRUE : (__expr47 & __expr46);
+esac ;
+
+DEFINE __expr15 := (__expr12 & ((__expr1 & __expr13) | (sender.abp & __expr14))) ;
+
+DEFINE __expr119 := !next(receiver.data.4) ;
+
+DEFINE __expr111 := !next(receiver.data.0) ;
+
+DEFINE __expr129 := case
+receiver.data.3 : (next(receiver.data.3) & __expr128);
+TRUE : (__expr117 & __expr128);
+esac ;
+
+DEFINE __expr86 := case
+s2r_in.data.4 : (next(s2r_out.data.4) & __expr84);
+TRUE : (__expr85 & __expr84);
+esac ;
+
+DEFINE __expr47 := !next(s2r_in.data.5) ;
+
+DEFINE __expr73 := case
+s2r_out.tag.1 : (next(s2r_out.tag.1) & __expr71);
+TRUE : (__expr72 & __expr71);
+esac ;
+
+DEFINE __expr14 := (!r2s_out.tag.1 & r2s_out.tag.0) ;
+

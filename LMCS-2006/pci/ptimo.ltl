@@ -1,0 +1,1 @@
+(G(all_FP))->(G(((grant=4)&(Y((grant!=4)&(O((req2)&(O((req1)&(O(req0)))))))))->(O((grant=2)&(O((grant=1)&(!(O(grant=0)))))))))

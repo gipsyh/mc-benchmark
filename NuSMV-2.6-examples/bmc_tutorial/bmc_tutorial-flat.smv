@@ -1,0 +1,96 @@
+-- Flattened Boolean FSM model  generated from bmc_tutorial.smv
+-- Dumped cwd->layers are: model model_bool determ determ_bool __TempLayer_0 
+
+MODULE main
+-- Input variables from layer 'model'
+-- Input variables from layer 'model_bool'
+-- Input variables from layer 'determ'
+-- Input variables from layer 'determ_bool'
+-- Input variables from layer '__TempLayer_0'
+-- State variables from layer 'model'
+-- DEFINE
+-- y :=  (y.3 ?  (y.2 ?  (y.1 ?  (y.0 ? 15 : 7)  :  (y.0 ? 11 : 3) )  :  (y.1 ?  (y.0 ? 13 : 5)  :  (y.0 ? 9 : 1) ) )  :  (y.2 ?  (y.1 ?  (y.0 ? 14 : 6)  :  (y.0 ? 10 : 2) )  :  (y.1 ?  (y.0 ? 12 : 4)  :  (y.0 ? 8 : 0) ) ) ) ;
+
+-- State variables from layer 'model_bool'
+VAR
+y.3 : boolean;
+y.2 : boolean;
+y.1 : boolean;
+y.0 : boolean;
+
+-- State variables from layer 'determ'
+-- State variables from layer 'determ_bool'
+-- State variables from layer '__TempLayer_0'
+-- Frozen variables from layer 'model'
+-- Frozen variables from layer 'model_bool'
+-- Frozen variables from layer 'determ'
+-- Frozen variables from layer 'determ_bool'
+-- Frozen variables from layer '__TempLayer_0'
+INIT
+ !y.3
+
+INIT
+ !y.2
+
+INIT
+ !y.1
+
+INIT
+ !y.0
+
+
+
+TRANS
+ case
+(y.3 & (y.2 & (y.1 & !y.0))) : (__expr0 & (__expr1 & (__expr2 & __expr3)));
+y.3 : (__expr0 & case
+y.2 : (__expr1 & case
+y.1 : (__expr2 & case
+y.0 : __expr3;
+TRUE : next(y.0);
+esac);
+TRUE : __expr5;
+esac);
+TRUE : __expr7;
+esac);
+TRUE : (next(y.3) & case
+y.2 : __expr7;
+TRUE : (__expr1 & __expr6);
+esac);
+esac
+
+
+
+LTLSPEC
+ F ( X (!y.3 & (!y.2 & (!y.1 & y.0))) |  O case
+y.3 : __expr9;
+TRUE : __expr8;
+esac)
+
+-- Symbols introduced by the dumper:
+DEFINE __expr6 := case
+y.1 : __expr5;
+TRUE : (__expr2 & __expr4);
+esac ;
+
+DEFINE __expr2 := !next(y.1) ;
+
+DEFINE __expr5 := (next(y.1) & __expr4) ;
+
+DEFINE __expr9 := (!y.2 & __expr8) ;
+
+DEFINE __expr0 := !next(y.3) ;
+
+DEFINE __expr7 := (next(y.2) & __expr6) ;
+
+DEFINE __expr8 := (!y.1 & !y.0) ;
+
+DEFINE __expr1 := !next(y.2) ;
+
+DEFINE __expr3 := !next(y.0) ;
+
+DEFINE __expr4 := case
+y.0 : next(y.0);
+TRUE : __expr3;
+esac ;
+

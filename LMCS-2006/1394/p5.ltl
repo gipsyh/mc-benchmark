@@ -1,0 +1,1 @@
+(G(node[0].port[0].role=off))|((node[0].port[0].role=unknown)U(G((node[0].port[0].role=parent)|(node[0].port[0].role=child))))

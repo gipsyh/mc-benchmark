@@ -1,0 +1,1 @@
+G((sender.state=get)->(X(((sender.state=get)U(!(sender.state=get)))U((sender.state=wait_for_ack)&(((!(sender.abp))&(r2s_out.tag=ack0))|((sender.abp)&(r2s_out.tag=ack1)))))))

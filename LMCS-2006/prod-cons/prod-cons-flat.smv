@@ -1,0 +1,698 @@
+-- Flattened Boolean FSM model  generated from prod-cons.smv
+-- Dumped cwd->layers are: model model_bool determ determ_bool __TempLayer_0 
+
+MODULE main
+-- Input variables from layer 'model'
+-- DEFINE
+-- _process_selector_ :=  (_process_selector_.1 ?  (_process_selector_.0 ? sim : srt)  :  (_process_selector_.0 ? sm : main) ) ;
+
+-- Input variables from layer 'model_bool'
+IVAR
+_process_selector_.1 : boolean;
+_process_selector_.0 : boolean;
+
+-- Input variables from layer 'determ'
+-- Input variables from layer 'determ_bool'
+-- Input variables from layer '__TempLayer_0'
+-- State variables from layer 'model'
+-- DEFINE
+-- buffer_1_ :=  (buffer_1_.1 ?  (buffer_1_.0 ? 4 : 2)  :  (buffer_1_.0 ? 3 : 1) ) ;
+-- buffer_2_ :=  (buffer_2_.1 ?  (buffer_2_.0 ? 4 : 2)  :  (buffer_2_.0 ? 3 : 1) ) ;
+-- buffer_3_ :=  (buffer_3_.1 ?  (buffer_3_.0 ? 4 : 2)  :  (buffer_3_.0 ? 3 : 1) ) ;
+-- bufsize :=  (bufsize.1 ?  (bufsize.0 ? 3 : 1)  :  (bufsize.0 ? 2 : 0) ) ;
+-- sim.state :=  (sim.state.0 ? dec : new_val) ;
+-- sim.val :=  (sim.val.2 ?  (sim.val.1 ? 3 : 1)  :  (sim.val.1 ? 2 :  (sim.val.0 ? 4 : 0) ) ) ;
+-- sm.state :=  (sm.state.2 ?  (sm.state.1 ? req :  (sm.state.0 ? bufful : inc) )  :  (sm.state.1 ? poebuf :  (sm.state.0 ? wait : test) ) ) ;
+-- srt.state :=  (srt.state.1 ?  (srt.state.0 ? sort_ready : sort)  :  (srt.state.0 ? subst : wait) ) ;
+-- srt.buffer_aux_1_ :=  (srt.buffer_aux_1_.1 ?  (srt.buffer_aux_1_.0 ? 4 : 2)  :  (srt.buffer_aux_1_.0 ? 3 : 1) ) ;
+-- srt.buffer_aux_2_ :=  (srt.buffer_aux_2_.1 ?  (srt.buffer_aux_2_.0 ? 4 : 2)  :  (srt.buffer_aux_2_.0 ? 3 : 1) ) ;
+-- srt.buffer_aux_3_ :=  (srt.buffer_aux_3_.1 ?  (srt.buffer_aux_3_.0 ? 4 : 2)  :  (srt.buffer_aux_3_.0 ? 3 : 1) ) ;
+VAR
+srt.ord : boolean;
+sort_OK : boolean;
+sort_req : boolean;
+
+-- State variables from layer 'model_bool'
+VAR
+buffer_1_.1 : boolean;
+buffer_1_.0 : boolean;
+buffer_2_.1 : boolean;
+buffer_2_.0 : boolean;
+buffer_3_.1 : boolean;
+buffer_3_.0 : boolean;
+bufsize.1 : boolean;
+bufsize.0 : boolean;
+sim.state.0 : boolean;
+sim.val.2 : boolean;
+sim.val.1 : boolean;
+sim.val.0 : boolean;
+sm.state.2 : boolean;
+sm.state.1 : boolean;
+sm.state.0 : boolean;
+srt.state.1 : boolean;
+srt.state.0 : boolean;
+srt.buffer_aux_1_.1 : boolean;
+srt.buffer_aux_1_.0 : boolean;
+srt.buffer_aux_2_.1 : boolean;
+srt.buffer_aux_2_.0 : boolean;
+srt.buffer_aux_3_.1 : boolean;
+srt.buffer_aux_3_.0 : boolean;
+
+-- State variables from layer 'determ'
+-- State variables from layer 'determ_bool'
+-- State variables from layer '__TempLayer_0'
+-- Frozen variables from layer 'model'
+-- Frozen variables from layer 'model_bool'
+-- Frozen variables from layer 'determ'
+-- Frozen variables from layer 'determ_bool'
+-- Frozen variables from layer '__TempLayer_0'
+-- CONSTANTS
+--  new_val, dec, test, inc, poebuf, req, wait, bufful, sort, subst, sort_ready, main, srt, sm, sim ;
+
+INIT
+ __expr0
+
+INIT
+ __expr1
+
+INIT
+ !sim.state.0
+
+INIT
+ !sim.val.2
+
+INIT
+ __expr2
+
+INIT
+ __expr3
+
+INIT
+ __expr4
+
+INIT
+ __expr5
+
+INIT
+ !sm.state.0
+
+INIT
+ !srt.state.1
+
+INIT
+ !srt.state.0
+
+INIT
+ !srt.ord
+
+INIT
+ !sort_OK
+
+INIT
+ !sort_req
+
+
+INVAR
+ case
+sim.val.2 : __expr3;
+TRUE : (__expr2 | __expr3);
+esac
+
+INVAR
+ (__expr5 | !sm.state.0)
+
+
+TRANS
+ __expr14
+
+TRANS
+ __expr23
+
+TRANS
+ __expr32
+
+TRANS
+ __expr41
+
+TRANS
+ __expr14
+
+TRANS
+ __expr46
+
+TRANS
+ __expr52
+
+TRANS
+ __expr46
+
+TRANS
+ case
+__expr6 : case
+__expr7 : case
+next(buffer_3_.1) : (srt.buffer_aux_3_.1 & __expr54);
+TRUE : (!srt.buffer_aux_3_.1 & __expr54);
+esac;
+TRUE : __expr56;
+esac;
+__expr11 : ((__expr12 & __expr20) | __expr56);
+TRUE : __expr56;
+esac
+
+TRANS
+ __expr65
+
+TRANS
+ __expr76
+
+TRANS
+ __expr81
+
+TRANS
+ __expr65
+
+TRANS
+ case
+__expr15 : case
+__expr16 : next(sim.state.0);
+sim.state.0 : __expr82;
+TRUE : __expr83;
+esac;
+TRUE : __expr83;
+esac
+
+TRANS
+ __expr23
+
+TRANS
+ __expr85
+
+TRANS
+ __expr86
+
+TRANS
+ __expr76
+
+TRANS
+ case
+__expr6 : case
+(__expr87 & sort_req) : __expr89;
+(__expr24 & srt.ord) : (__expr90 & next(srt.state.0));
+__expr7 : (next(srt.state.1) & next(srt.state.0));
+(__expr24 & !srt.ord) : __expr89;
+__expr84 : (__expr90 & __expr88);
+TRUE : __expr92;
+esac;
+TRUE : __expr92;
+esac
+
+TRANS
+ __expr32
+
+TRANS
+ __expr41
+
+TRANS
+ __expr52
+
+TRANS
+ __expr81
+
+TRANS
+ __expr85
+
+TRANS
+ __expr86
+
+
+FAIRNESS
+ __expr11
+
+
+FAIRNESS
+ __expr6
+
+
+
+-- LTLSPEC
+--  G (!__expr20 |  F ((__expr93 & case
+-- sim.val.2 : (__expr2 | buffer_2_.0);
+-- buffer_2_.1 : (sim.val.1 | (buffer_2_.0 | __expr3));
+-- sim.val.1 : buffer_2_.0;
+-- TRUE : __expr3;
+-- esac) & case
+-- sim.val.2 : (__expr2 | buffer_3_.0);
+-- buffer_3_.1 : (sim.val.1 | (buffer_3_.0 | __expr3));
+-- sim.val.1 : buffer_3_.0;
+-- TRUE : __expr3;
+-- esac))
+
+LTLSPEC
+ G (!__expr13 |  F __expr93)
+
+-- LTLSPEC
+--  G (!sort_req |  F sort_OK)
+
+-- Symbols introduced by the dumper:
+DEFINE __expr89 := (next(srt.state.1) & __expr88) ;
+
+DEFINE __expr26 := ((__expr24 & case
+buffer_1_.1 : __expr25;
+buffer_2_.1 : (__expr17 | buffer_2_.0);
+TRUE : __expr25;
+esac) & bufsize.0) ;
+
+DEFINE __expr8 := case
+next(buffer_1_.0) : srt.buffer_aux_1_.0;
+TRUE : !srt.buffer_aux_1_.0;
+esac ;
+
+DEFINE __expr93 := case
+sim.val.2 : (__expr2 | buffer_1_.0);
+buffer_1_.1 : (sim.val.1 | (buffer_1_.0 | __expr3));
+sim.val.1 : buffer_1_.0;
+TRUE : __expr3;
+esac ;
+
+DEFINE __expr71 := !next(sm.state.2) ;
+
+DEFINE __expr51 := case
+srt.buffer_aux_3_.0 : next(srt.buffer_aux_3_.0);
+TRUE : __expr47;
+esac ;
+
+DEFINE __expr10 := case
+buffer_1_.1 : (next(buffer_1_.1) & __expr9);
+TRUE : (!next(buffer_1_.1) & __expr9);
+esac ;
+
+DEFINE __expr74 := case
+sm.state.1 : next(sm.state.1);
+TRUE : (__expr67 & case
+sm.state.0 : next(sm.state.0);
+TRUE : __expr68;
+esac);
+esac ;
+
+DEFINE __expr15 := (_process_selector_.1 & _process_selector_.0) ;
+
+DEFINE __expr83 := case
+sim.state.0 : next(sim.state.0);
+TRUE : __expr82;
+esac ;
+
+DEFINE __expr73 := (__expr5 & sm.state.0) ;
+
+DEFINE __expr59 := (__expr0 | __expr1) ;
+
+DEFINE __expr92 := case
+srt.state.1 : (next(srt.state.1) & __expr91);
+TRUE : (__expr90 & __expr91);
+esac ;
+
+DEFINE __expr47 := !next(srt.buffer_aux_3_.0) ;
+
+DEFINE __expr2 := !sim.val.1 ;
+
+DEFINE __expr70 := (__expr67 & next(sm.state.0)) ;
+
+DEFINE __expr38 := case
+buffer_3_.0 : next(srt.buffer_aux_2_.0);
+TRUE : __expr33;
+esac ;
+
+DEFINE __expr68 := !next(sm.state.0) ;
+
+DEFINE __expr12 := (__expr4 & sm.state.1) ;
+
+DEFINE __expr90 := !next(srt.state.1) ;
+
+DEFINE __expr29 := !next(srt.buffer_aux_1_.1) ;
+
+DEFINE __expr63 := (next(bufsize.1) & __expr62) ;
+
+DEFINE __expr65 := case
+__expr11 : case
+(__expr58 & __expr59) : case
+bufsize.1 : (__expr60 & (__expr1 & next(bufsize.0)));
+TRUE : __expr63;
+esac;
+TRUE : __expr64;
+esac;
+__expr15 : case
+(sim.state.0 & __expr13) : (__expr60 & __expr61);
+(sim.state.0 & __expr18) : (next(bufsize.1) & __expr61);
+(sim.state.0 & __expr20) : (__expr60 & next(bufsize.0));
+TRUE : __expr64;
+esac;
+TRUE : __expr64;
+esac ;
+
+DEFINE __expr19 := !buffer_2_.0 ;
+
+DEFINE __expr11 := (!_process_selector_.1 & _process_selector_.0) ;
+
+DEFINE __expr42 := !srt.buffer_aux_2_.0 ;
+
+DEFINE __expr61 := !next(bufsize.0) ;
+
+DEFINE __expr57 := (__expr5 & !sm.state.0) ;
+
+DEFINE __expr33 := !next(srt.buffer_aux_2_.0) ;
+
+DEFINE __expr20 := (bufsize.1 & bufsize.0) ;
+
+DEFINE __expr7 := (!srt.state.1 & srt.state.0) ;
+
+DEFINE __expr22 := case
+sim.val.2 : (next(sim.val.2) & case
+sim.val.1 : next(sim.val.1);
+TRUE : __expr21;
+esac);
+TRUE : (!next(sim.val.2) & case
+sim.val.1 : next(sim.val.1);
+TRUE : (__expr21 & case
+sim.val.0 : next(sim.val.0);
+TRUE : !next(sim.val.0);
+esac);
+esac);
+esac ;
+
+DEFINE __expr81 := (next(srt.ord) <-> case
+__expr6 : ((((__expr78 & case
+srt.buffer_aux_1_.1 : case
+srt.buffer_aux_3_.1 : __expr79;
+TRUE : (srt.buffer_aux_1_.0 | __expr53);
+esac;
+TRUE : __expr79;
+esac) & case
+srt.buffer_aux_2_.1 : case
+srt.buffer_aux_3_.1 : __expr80;
+TRUE : (srt.buffer_aux_2_.0 | __expr53);
+esac;
+TRUE : __expr80;
+esac) & __expr20) | ((__expr78 & __expr18) | ((__expr24 & __expr1) | srt.ord)));
+TRUE : srt.ord;
+esac) ;
+
+DEFINE __expr69 := (__expr67 & __expr68) ;
+
+DEFINE __expr75 := case
+sm.state.2 : (next(sm.state.2) & __expr74);
+TRUE : (__expr71 & __expr74);
+esac ;
+
+DEFINE __expr79 := (srt.buffer_aux_1_.0 & __expr53) ;
+
+DEFINE __expr72 := (__expr71 & next(sm.state.1)) ;
+
+DEFINE __expr76 := case
+__expr11 : case
+(__expr66 & __expr59) : (next(sm.state.2) & __expr69);
+(__expr66 & __expr20) : (next(sm.state.2) & __expr70);
+__expr58 : __expr72;
+__expr12 : (next(sm.state.2) & next(sm.state.1));
+(sm.state.2 & sm.state.1) : (__expr71 & __expr70);
+((__expr4 & __expr73) & sort_OK) : (__expr71 & __expr69);
+((sm.state.2 & __expr73) & __expr59) : __expr72;
+TRUE : __expr75;
+esac;
+TRUE : __expr75;
+esac ;
+
+DEFINE __expr44 := case
+buffer_2_.0 : next(buffer_2_.0);
+TRUE : !next(buffer_2_.0);
+esac ;
+
+DEFINE __expr17 := !buffer_1_.0 ;
+
+DEFINE __expr49 := !next(srt.buffer_aux_3_.1) ;
+
+DEFINE __expr36 := (__expr19 & buffer_3_.0) ;
+
+DEFINE __expr18 := (__expr0 & bufsize.0) ;
+
+DEFINE __expr1 := !bufsize.0 ;
+
+DEFINE __expr58 := (sm.state.2 & __expr57) ;
+
+DEFINE __expr9 := case
+buffer_1_.0 : next(buffer_1_.0);
+TRUE : !next(buffer_1_.0);
+esac ;
+
+DEFINE __expr54 := case
+next(buffer_3_.0) : srt.buffer_aux_3_.0;
+TRUE : __expr53;
+esac ;
+
+DEFINE __expr25 := (__expr17 & buffer_2_.0) ;
+
+DEFINE __expr82 := !next(sim.state.0) ;
+
+DEFINE __expr21 := !next(sim.val.1) ;
+
+DEFINE __expr56 := case
+buffer_3_.1 : (next(buffer_3_.1) & __expr55);
+TRUE : (!next(buffer_3_.1) & __expr55);
+esac ;
+
+DEFINE __expr35 := !next(srt.buffer_aux_2_.1) ;
+
+DEFINE __expr14 := case
+__expr6 : case
+__expr7 : case
+next(buffer_1_.1) : (srt.buffer_aux_1_.1 & __expr8);
+TRUE : (!srt.buffer_aux_1_.1 & __expr8);
+esac;
+TRUE : __expr10;
+esac;
+__expr11 : ((__expr12 & __expr13) | __expr10);
+TRUE : __expr10;
+esac ;
+
+DEFINE __expr46 := case
+__expr6 : case
+__expr7 : case
+next(buffer_2_.1) : (srt.buffer_aux_2_.1 & __expr43);
+TRUE : (!srt.buffer_aux_2_.1 & __expr43);
+esac;
+TRUE : __expr45;
+esac;
+__expr11 : ((__expr12 & __expr18) | __expr45);
+TRUE : __expr45;
+esac ;
+
+DEFINE __expr86 := (next(sort_req) <-> case
+__expr6 : (!__expr84 & sort_req);
+__expr11 : ((sm.state.2 & sm.state.1) | sort_req);
+TRUE : sort_req;
+esac) ;
+
+DEFINE __expr28 := case
+buffer_2_.0 : next(srt.buffer_aux_1_.0);
+TRUE : __expr27;
+esac ;
+
+DEFINE __expr4 := !sm.state.2 ;
+
+DEFINE __expr87 := (!srt.state.1 & !srt.state.0) ;
+
+DEFINE __expr60 := !next(bufsize.1) ;
+
+DEFINE __expr41 := case
+__expr6 : case
+__expr26 : case
+buffer_1_.1 : (next(srt.buffer_aux_2_.1) & __expr34);
+TRUE : (__expr35 & __expr34);
+esac;
+__expr37 : case
+buffer_3_.1 : (next(srt.buffer_aux_2_.1) & __expr38);
+TRUE : (__expr35 & __expr38);
+esac;
+buffer_2_.1 : (next(srt.buffer_aux_2_.1) & __expr39);
+TRUE : (__expr35 & __expr39);
+esac;
+srt.buffer_aux_2_.1 : (next(srt.buffer_aux_2_.1) & __expr40);
+TRUE : (__expr35 & __expr40);
+esac ;
+
+DEFINE __expr88 := !next(srt.state.0) ;
+
+DEFINE __expr5 := !sm.state.1 ;
+
+DEFINE __expr78 := (__expr24 & case
+srt.buffer_aux_1_.1 : case
+srt.buffer_aux_2_.1 : __expr77;
+TRUE : (srt.buffer_aux_1_.0 | __expr42);
+esac;
+TRUE : __expr77;
+esac) ;
+
+DEFINE __expr30 := case
+buffer_1_.0 : next(srt.buffer_aux_1_.0);
+TRUE : __expr27;
+esac ;
+
+DEFINE __expr0 := !bufsize.1 ;
+
+DEFINE __expr64 := case
+bufsize.1 : __expr63;
+TRUE : (__expr60 & __expr62);
+esac ;
+
+DEFINE __expr48 := case
+buffer_2_.0 : next(srt.buffer_aux_3_.0);
+TRUE : __expr47;
+esac ;
+
+DEFINE __expr40 := case
+srt.buffer_aux_2_.0 : next(srt.buffer_aux_2_.0);
+TRUE : __expr33;
+esac ;
+
+DEFINE __expr6 := (_process_selector_.1 & !_process_selector_.0) ;
+
+DEFINE __expr32 := case
+__expr6 : case
+__expr26 : case
+buffer_2_.1 : (next(srt.buffer_aux_1_.1) & __expr28);
+TRUE : (__expr29 & __expr28);
+esac;
+buffer_1_.1 : (next(srt.buffer_aux_1_.1) & __expr30);
+TRUE : (__expr29 & __expr30);
+esac;
+srt.buffer_aux_1_.1 : (next(srt.buffer_aux_1_.1) & __expr31);
+TRUE : (__expr29 & __expr31);
+esac ;
+
+DEFINE __expr16 := (!sim.state.0 & sort_OK) ;
+
+DEFINE __expr84 := (srt.state.1 & srt.state.0) ;
+
+DEFINE __expr3 := !sim.val.0 ;
+
+DEFINE __expr77 := (srt.buffer_aux_1_.0 & __expr42) ;
+
+DEFINE __expr23 := case
+__expr15 : case
+(__expr16 & __expr13) : case
+next(sim.val.2) : (!buffer_1_.1 & case
+next(sim.val.1) : buffer_1_.0;
+TRUE : __expr17;
+esac);
+TRUE : (buffer_1_.1 & case
+next(sim.val.1) : __expr17;
+TRUE : (buffer_1_.0 & next(sim.val.0));
+esac);
+esac;
+(__expr16 & __expr18) : case
+next(sim.val.2) : (!buffer_2_.1 & case
+next(sim.val.1) : buffer_2_.0;
+TRUE : __expr19;
+esac);
+TRUE : (buffer_2_.1 & case
+next(sim.val.1) : __expr19;
+TRUE : (buffer_2_.0 & next(sim.val.0));
+esac);
+esac;
+(__expr16 & __expr20) : case
+next(sim.val.2) : (!buffer_3_.1 & case
+next(sim.val.1) : buffer_3_.0;
+TRUE : !buffer_3_.0;
+esac);
+TRUE : (buffer_3_.1 & case
+next(sim.val.1) : !buffer_3_.0;
+TRUE : (buffer_3_.0 & next(sim.val.0));
+esac);
+esac;
+TRUE : __expr22;
+esac;
+TRUE : __expr22;
+esac ;
+
+DEFINE __expr13 := (bufsize.1 & __expr1) ;
+
+DEFINE __expr91 := case
+srt.state.0 : next(srt.state.0);
+TRUE : __expr88;
+esac ;
+
+DEFINE __expr80 := (srt.buffer_aux_2_.0 & __expr53) ;
+
+DEFINE __expr53 := !srt.buffer_aux_3_.0 ;
+
+DEFINE __expr24 := (srt.state.1 & !srt.state.0) ;
+
+DEFINE __expr31 := case
+srt.buffer_aux_1_.0 : next(srt.buffer_aux_1_.0);
+TRUE : __expr27;
+esac ;
+
+DEFINE __expr85 := (next(sort_OK) <-> case
+__expr6 : (__expr84 | sort_OK);
+__expr11 : (!__expr12 & sort_OK);
+TRUE : sort_OK;
+esac) ;
+
+DEFINE __expr50 := case
+buffer_3_.0 : next(srt.buffer_aux_3_.0);
+TRUE : __expr47;
+esac ;
+
+DEFINE __expr37 := ((__expr24 & case
+buffer_2_.1 : __expr36;
+buffer_3_.1 : (__expr19 | buffer_3_.0);
+TRUE : __expr36;
+esac) & __expr20) ;
+
+DEFINE __expr43 := case
+next(buffer_2_.0) : srt.buffer_aux_2_.0;
+TRUE : __expr42;
+esac ;
+
+DEFINE __expr66 := (__expr4 & __expr57) ;
+
+DEFINE __expr62 := case
+bufsize.0 : next(bufsize.0);
+TRUE : __expr61;
+esac ;
+
+DEFINE __expr34 := case
+buffer_1_.0 : next(srt.buffer_aux_2_.0);
+TRUE : __expr33;
+esac ;
+
+DEFINE __expr52 := case
+__expr6 : case
+__expr37 : case
+buffer_2_.1 : (next(srt.buffer_aux_3_.1) & __expr48);
+TRUE : (__expr49 & __expr48);
+esac;
+buffer_3_.1 : (next(srt.buffer_aux_3_.1) & __expr50);
+TRUE : (__expr49 & __expr50);
+esac;
+srt.buffer_aux_3_.1 : (next(srt.buffer_aux_3_.1) & __expr51);
+TRUE : (__expr49 & __expr51);
+esac ;
+
+DEFINE __expr45 := case
+buffer_2_.1 : (next(buffer_2_.1) & __expr44);
+TRUE : (!next(buffer_2_.1) & __expr44);
+esac ;
+
+DEFINE __expr55 := case
+buffer_3_.0 : next(buffer_3_.0);
+TRUE : !next(buffer_3_.0);
+esac ;
+
+DEFINE __expr27 := !next(srt.buffer_aux_1_.0) ;
+
+DEFINE __expr39 := case
+buffer_2_.0 : next(srt.buffer_aux_2_.0);
+TRUE : __expr33;
+esac ;
+
+DEFINE __expr67 := !next(sm.state.1) ;
+

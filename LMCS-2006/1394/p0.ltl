@@ -1,0 +1,1 @@
+(F(G(node[1].root)))->(!((node[1].state!=T3_root_2)S(node[0].state=T3_root_2)))

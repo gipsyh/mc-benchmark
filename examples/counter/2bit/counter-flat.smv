@@ -1,0 +1,58 @@
+-- Flattened Boolean FSM model  generated from counter.smv
+-- Dumped cwd->layers are: model model_bool determ determ_bool __TempLayer_0 
+
+MODULE main
+-- Input variables from layer 'model'
+-- Input variables from layer 'model_bool'
+-- Input variables from layer 'determ'
+-- Input variables from layer 'determ_bool'
+-- Input variables from layer '__TempLayer_0'
+-- State variables from layer 'model'
+VAR
+bit1.value : boolean;
+bit2.value : boolean;
+
+-- State variables from layer 'model_bool'
+-- State variables from layer 'determ'
+-- State variables from layer 'determ_bool'
+-- State variables from layer '__TempLayer_0'
+-- Frozen variables from layer 'model'
+-- Frozen variables from layer 'model_bool'
+-- Frozen variables from layer 'determ'
+-- Frozen variables from layer 'determ_bool'
+-- Frozen variables from layer '__TempLayer_0'
+INIT
+ __expr0
+
+INIT
+ __expr1
+
+
+
+TRANS
+ __expr2
+
+TRANS
+ __expr3
+
+TRANS
+ __expr3
+
+TRANS
+ __expr2
+
+
+
+
+LTLSPEC
+ G !(bit1.value & bit2.value)
+
+-- Symbols introduced by the dumper:
+DEFINE __expr2 := (next(bit1.value) <-> __expr0) ;
+
+DEFINE __expr3 := (next(bit2.value) <-> ((bit2.value | bit1.value) & (__expr1 | __expr0))) ;
+
+DEFINE __expr1 := !bit2.value ;
+
+DEFINE __expr0 := !bit1.value ;
+

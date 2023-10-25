@@ -1,0 +1,240 @@
+aig 273 33 98 1 142 0 0 1
+192
+266
+246
+270
+274
+424
+48
+222
+204
+428
+432
+18
+436
+440
+64
+444
+54
+28
+4
+190
+448
+452
+58
+150
+40
+456
+460
+162
+464
+146
+136
+468
+10
+202
+250
+46
+472
+122
+476
+258
+480
+72
+212
+484
+164
+16
+66
+82
+232
+488
+52
+30
+2
+492
+496
+22
+60
+38
+24
+500
+8
+68
+134
+504
+44
+143
+14
+248
+106
+508
+515
+12
+224
+518
+50
+32
+522
+114
+156
+20
+62
+36
+126
+526
+56
+530
+534
+26
+6
+128
+199
+152
+538
+542
+42
+260
+84
+546
+412
+1
+412
+;Ü/ã6•JyYDÅEÇn†4H™&HÇ|<t$\é@f∫6∂2HxÆ:v^`¨
+XZr|‡\tdhf6⁄@¶ÜåºBé¨¬ƒ<ÆñlÀ{‹ÙÉÀÉ—ä‘í°2≈√œ”Ç≥ù:Àª„’|Â«πÒ^ï—&«èB•◊xß›lÁ„f•…@øﬂhìø
+Öª<Ø≠â∑$ˇ≥<√ı6©bË∞≠éë´ó°H…°≠£¨±õn—ùZıôtÉi0 req<20>0
+i1 req<22>0
+i2 req<24>0
+i3 req<26>0
+i4 req<28>0
+i5 req<10>0
+i6 req<31>0
+i7 req<12>0
+i8 req<14>0
+i9 req<16>0
+i10 req<18>0
+i11 req<0>0
+i12 req<2>0
+i13 req<4>0
+i14 req<6>0
+i15 req<8>0
+i16 nd0
+i17 req<21>0
+i18 req<23>0
+i19 req<25>0
+i20 req<27>0
+i21 req<29>0
+i22 req<30>0
+i23 req<11>0
+i24 req<13>0
+i25 req<15>0
+i26 req<17>0
+i27 req<19>0
+i28 req<1>0
+i29 req<3>0
+i30 req<5>0
+i31 req<7>0
+i32 req<9>0
+l0 c5.token0
+l1 c8.waiting0
+l2 c24.token0
+l3 c22.waiting0
+l4 c0.waiting0
+l5 prop.ast<0>0
+l6 lreq<11>0
+l7 c28.token0
+l8 c9.token0
+l9 c21.waiting0
+l10 c7.waiting0
+l11 lreq<14>0
+l12 c27.waiting0
+l13 c19.waiting0
+l14 lreq<7>0
+l15 c13.waiting0
+l16 lreq<17>0
+l17 lreq<4>0
+l18 lreq<22>0
+l19 c7.token0
+l20 c14.waiting0
+l21 c30.waiting0
+l22 lreq<1>0
+l23 c26.token0
+l24 lreq<25>0
+l25 c18.waiting0
+l26 c28.waiting0
+l27 c30.token0
+l28 c6.waiting0
+l29 c13.token0
+l30 c22.token0
+l31 c20.waiting0
+l32 lreq<28>0
+l33 c3.token0
+l34 c21.token0
+l35 lreq<30>0
+l36 c1.waiting0
+l37 c31.token0
+l38 c23.waiting0
+l39 c12.token0
+l40 c9.waiting0
+l41 c25.token0
+l42 c19.token0
+l43 c11.waiting0
+l44 c16.token0
+l45 lreq<12>0
+l46 lreq<9>0
+l47 c29.token0
+l48 c15.token0
+l49 c16.waiting0
+l50 lreq<15>0
+l51 lreq<6>0
+l52 lreq<20>0
+l53 c26.waiting0
+l54 c4.waiting0
+l55 lreq<18>0
+l56 lreq<3>0
+l57 lreq<23>0
+l58 lreq<0>0
+l59 c25.waiting0
+l60 lreq<26>0
+l61 c6.token0
+l62 c4.token0
+l63 c3.waiting0
+l64 lreq<29>0
+l65 c0.ntoken0
+l66 lreq<31>0
+l67 c2.token0
+l68 c8.token0
+l69 c10.waiting0
+l70 prop.ast<1>0
+l71 lreq<10>0
+l72 c18.token0
+l73 c24.waiting0
+l74 lreq<13>0
+l75 lreq<8>0
+l76 c2.waiting0
+l77 c27.token0
+l78 c17.token0
+l79 lreq<16>0
+l80 lreq<5>0
+l81 lreq<21>0
+l82 c14.token0
+l83 c29.waiting0
+l84 lreq<19>0
+l85 c17.waiting0
+l86 c5.waiting0
+l87 lreq<2>0
+l88 lreq<24>0
+l89 c23.token0
+l90 c1.token0
+l91 c20.token0
+l92 c31.waiting0
+l93 c15.waiting0
+l94 lreq<27>0
+l95 c11.token0
+l96 c10.token0
+l97 c12.waiting0
+o0 fair0
+c
+bliftoaig
+20071012
+syncarb32.blif

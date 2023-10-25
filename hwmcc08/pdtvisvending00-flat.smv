@@ -1,0 +1,877 @@
+-- Flattened Boolean FSM model  generated from pdtvisvending00.smv
+-- Dumped cwd->layers are: model model_bool determ determ_bool __TempLayer_0 
+
+MODULE main
+-- Input variables from layer 'model'
+-- Input variables from layer 'model_bool'
+-- Input variables from layer 'determ'
+-- Input variables from layer 'determ_bool'
+-- Input variables from layer '__TempLayer_0'
+-- State variables from layer 'model'
+VAR
+i2 : boolean;
+i4 : boolean;
+l6 : boolean;
+l8 : boolean;
+l10 : boolean;
+l12 : boolean;
+l14 : boolean;
+l16 : boolean;
+l18 : boolean;
+l20 : boolean;
+l22 : boolean;
+l24 : boolean;
+l26 : boolean;
+l28 : boolean;
+l30 : boolean;
+l32 : boolean;
+l34 : boolean;
+l36 : boolean;
+l38 : boolean;
+l40 : boolean;
+l42 : boolean;
+l44 : boolean;
+l46 : boolean;
+l48 : boolean;
+l50 : boolean;
+l52 : boolean;
+l54 : boolean;
+l56 : boolean;
+l58 : boolean;
+l60 : boolean;
+l62 : boolean;
+l64 : boolean;
+l66 : boolean;
+l68 : boolean;
+l70 : boolean;
+l72 : boolean;
+
+-- State variables from layer 'model_bool'
+-- State variables from layer 'determ'
+-- State variables from layer 'determ_bool'
+-- State variables from layer '__TempLayer_0'
+-- Frozen variables from layer 'model'
+-- Frozen variables from layer 'model_bool'
+-- Frozen variables from layer 'determ'
+-- Frozen variables from layer 'determ_bool'
+-- Frozen variables from layer '__TempLayer_0'
+INIT
+ __expr0
+
+INIT
+ __expr1
+
+INIT
+ __expr2
+
+INIT
+ !l12
+
+INIT
+ __expr3
+
+INIT
+ __expr4
+
+INIT
+ __expr5
+
+INIT
+ !l20
+
+INIT
+ !l22
+
+INIT
+ __expr6
+
+INIT
+ !l26
+
+INIT
+ __expr7
+
+INIT
+ __expr8
+
+INIT
+ __expr9
+
+INIT
+ __expr10
+
+INIT
+ __expr11
+
+INIT
+ __expr12
+
+INIT
+ __expr13
+
+INIT
+ __expr14
+
+INIT
+ __expr15
+
+INIT
+ !l46
+
+INIT
+ __expr16
+
+INIT
+ __expr17
+
+INIT
+ __expr18
+
+INIT
+ __expr19
+
+INIT
+ __expr20
+
+INIT
+ __expr21
+
+INIT
+ __expr22
+
+INIT
+ !l62
+
+INIT
+ !l64
+
+INIT
+ !l66
+
+INIT
+ __expr23
+
+INIT
+ __expr24
+
+INIT
+ !l72
+
+
+
+TRANS
+ __expr85
+
+TRANS
+ __expr100
+
+TRANS
+ __expr128
+
+TRANS
+ __expr147
+
+TRANS
+ __expr148
+
+TRANS
+ __expr158
+
+TRANS
+ __expr160
+
+TRANS
+ __expr191
+
+TRANS
+ __expr197
+
+TRANS
+ __expr200
+
+TRANS
+ __expr203
+
+TRANS
+ __expr207
+
+TRANS
+ __expr208
+
+TRANS
+ __expr222
+
+TRANS
+ __expr223
+
+TRANS
+ __expr224
+
+TRANS
+ __expr225
+
+TRANS
+ __expr226
+
+TRANS
+ __expr228
+
+TRANS
+ __expr230
+
+TRANS
+ __expr234
+
+TRANS
+ __expr240
+
+TRANS
+ __expr241
+
+TRANS
+ __expr242
+
+TRANS
+ __expr244
+
+TRANS
+ __expr247
+
+TRANS
+ __expr248
+
+TRANS
+ __expr85
+
+TRANS
+ __expr100
+
+TRANS
+ __expr249
+
+TRANS
+ __expr250
+
+TRANS
+ __expr253
+
+TRANS
+ __expr128
+
+TRANS
+ (next(l12) <-> __expr143)
+
+TRANS
+ __expr254
+
+TRANS
+ __expr147
+
+TRANS
+ __expr148
+
+TRANS
+ __expr255
+
+TRANS
+ __expr158
+
+TRANS
+ __expr249
+
+TRANS
+ __expr247
+
+TRANS
+ __expr160
+
+TRANS
+ (next(l26) <-> __expr57)
+
+TRANS
+ __expr191
+
+TRANS
+ __expr197
+
+TRANS
+ __expr200
+
+TRANS
+ __expr203
+
+TRANS
+ __expr207
+
+TRANS
+ __expr208
+
+TRANS
+ __expr222
+
+TRANS
+ __expr223
+
+TRANS
+ __expr224
+
+TRANS
+ __expr250
+
+TRANS
+ __expr225
+
+TRANS
+ __expr226
+
+TRANS
+ __expr228
+
+TRANS
+ __expr255
+
+TRANS
+ __expr253
+
+TRANS
+ __expr230
+
+TRANS
+ __expr234
+
+TRANS
+ __expr240
+
+TRANS
+ __expr241
+
+TRANS
+ __expr254
+
+TRANS
+ __expr242
+
+TRANS
+ __expr244
+
+TRANS
+ __expr248
+
+
+
+LTLSPEC
+ G (!(__expr78 & l22) & (!(__expr131 & l12) & (!(__expr116 & l46) & (!(__expr246 & l72) & (!(__expr143 & l66) & !(__expr107 & l20))))))
+
+-- Symbols introduced by the dumper:
+DEFINE __expr129 := (l60 & l24) ;
+
+DEFINE __expr66 := !(__expr63 & __expr65) ;
+
+DEFINE __expr46 := (__expr38 & l58) ;
+
+DEFINE __expr5 := !l18 ;
+
+DEFINE __expr203 := (next(l34) <-> !(!(!(!(!(!(__expr82 & l34) & !(!(!(!(!(__expr116 & l34) & !(!(!(__expr114 & __expr10) & !(__expr122 & l34)) & __expr117)) & __expr70) & !(__expr71 & l34)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l34) & !(!(!(!(!(__expr202 & __expr108) & !(__expr107 & l34)) & __expr102) & !(!(!(__expr125 & l34) & !(__expr202 & __expr101)) & __expr103)) & __expr111)) & __expr112) & !(__expr126 & l34)) & __expr84)) & __expr127) & !(__expr119 & l34))) ;
+
+DEFINE __expr82 := !__expr56 ;
+
+DEFINE __expr19 := !l54 ;
+
+DEFINE __expr62 := (!(__expr59 & !__expr60) & __expr61) ;
+
+DEFINE __expr240 := (next(l62) <-> !(!(__expr236 & l62) & !(!(!(!(!((!(!(__expr145 & l62) & !__expr135) & __expr92) & __expr126) & !((__expr136 & __expr111) & __expr112)) & __expr84) & !(!(!((!(!(!(!((__expr237 & l62) & __expr83) & __expr238) & __expr74) & !(__expr73 & __expr131)) & __expr71) & __expr56) & !(!(__expr83 & __expr74) & __expr82)) & __expr57)) & __expr239))) ;
+
+DEFINE __expr152 := (__expr17 & l18) ;
+
+DEFINE __expr77 := (__expr76 & l48) ;
+
+DEFINE __expr86 := (l56 & l54) ;
+
+DEFINE __expr50 := !(__expr36 & __expr49) ;
+
+DEFINE __expr181 := !__expr180 ;
+
+DEFINE __expr4 := !l16 ;
+
+DEFINE __expr230 := (next(l58) <-> !(!(__expr229 & l58) & !(!(!(!(!(__expr82 & l58) & !(!(!(__expr70 & l58) & !(!(!(__expr73 & l58) & !(!(!(!(!(__expr78 & l58) & !(__expr79 & __expr21)) & __expr75) & !(__expr83 & l58)) & __expr74)) & __expr71)) & __expr56)) & __expr57) & !(!(!(__expr112 & l58) & !((__expr92 & l58) & __expr126)) & __expr84)) & !__expr229))) ;
+
+DEFINE __expr18 := !l52 ;
+
+DEFINE __expr234 := (next(l60) <-> !(!(__expr139 & l60) & !(!(!(!(!(__expr82 & l60) & !(!(!(__expr70 & l60) & !(!(!(!(!(__expr131 & l60) & !(!(!__expr231 & !__expr232) & __expr132)) & __expr73) & !(__expr74 & l60)) & __expr71)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l60) & !(!(!(__expr102 & l60) & !(__expr233 & __expr103)) & __expr111)) & __expr112) & !(!(!(__expr86 & l60) & !(!(!(__expr233 & __expr134) & !(__expr145 & l60)) & __expr92)) & __expr126)) & __expr84)) & __expr146))) ;
+
+DEFINE __expr204 := !__expr129 ;
+
+DEFINE __expr244 := (next(l70) <-> !(!(__expr192 & l70) & !(!(!(!(!(__expr82 & l70) & !(!(!(__expr70 & l70) & !(!(!(!(!(__expr131 & l70) & !(__expr132 & __expr24)) & __expr73) & !(__expr74 & l70)) & __expr71)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l70) & !(!(!(__expr102 & l70) & !(__expr243 & __expr103)) & __expr111)) & __expr112) & !((!(!(__expr243 & __expr134) & !(__expr145 & l70)) & __expr92) & __expr126)) & __expr84)) & __expr196))) ;
+
+DEFINE __expr125 := !__expr101 ;
+
+DEFINE __expr163 := (!(__expr161 & !__expr162) & !(!__expr161 & __expr162)) ;
+
+DEFINE __expr222 := (next(l40) <-> !(!(!__expr219 & __expr221) & !(__expr219 & !__expr221))) ;
+
+DEFINE __expr124 := !(__expr122 & __expr123) ;
+
+DEFINE __expr71 := !__expr70 ;
+
+DEFINE __expr252 := !__expr251 ;
+
+DEFINE __expr96 := !__expr95 ;
+
+DEFINE __expr25 := (l58 & __expr17) ;
+
+DEFINE __expr3 := !l14 ;
+
+DEFINE __expr233 := !(!(!(__expr204 & __expr205) & __expr125) & !(__expr101 & l60)) ;
+
+DEFINE __expr17 := !l50 ;
+
+DEFINE __expr113 := ((!(!__expr104 & __expr109) & __expr111) & __expr112) ;
+
+DEFINE __expr226 := (next(l50) <-> !(!(__expr150 & l50) & !(!(!(!(!(__expr82 & l50) & !(!(!(!(!(__expr116 & l50) & !(__expr117 & __expr17)) & __expr70) & !(__expr71 & l50)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l50) & !(!(!(__expr102 & l50) & !(!(!(__expr125 & l50) & !(__expr101 & __expr17)) & __expr103)) & __expr111)) & __expr112) & !((__expr92 & l50) & __expr126)) & __expr84)) & __expr157))) ;
+
+DEFINE __expr172 := (!(!(!(__expr167 & __expr168) & __expr170) & __expr14) & !(!(!(__expr167 & __expr169) & !__expr171) & l42)) ;
+
+DEFINE __expr133 := !(((__expr73 & __expr132) & __expr71) & __expr58) ;
+
+DEFINE __expr108 := !__expr107 ;
+
+DEFINE __expr68 := (__expr66 & !(__expr62 & __expr65)) ;
+
+DEFINE __expr220 := (__expr215 & l68) ;
+
+DEFINE __expr201 := !__expr106 ;
+
+DEFINE __expr195 := !(!(!(!(l70 & l30) & __expr125) & __expr125) & !(__expr101 & l30)) ;
+
+DEFINE __expr104 := (__expr101 & __expr103) ;
+
+DEFINE __expr64 := (__expr61 & !(!__expr59 & __expr60)) ;
+
+DEFINE __expr255 := (next(l54) <-> !(!(__expr251 & l54) & !(!(!(!(!((!(!(__expr145 & l54) & !((__expr125 & l54) & __expr134)) & __expr92) & __expr126) & !(!(!(!(!(__expr103 & l54) & __expr103) & __expr111) & __expr111) & __expr112)) & __expr84) & !((__expr56 & l54) & __expr57)) & __expr252))) ;
+
+DEFINE __expr246 := ((__expr245 & __expr16) & __expr4) ;
+
+DEFINE __expr178 := !(__expr176 & __expr92) ;
+
+DEFINE __expr139 := (__expr133 & !(!(!(__expr135 & (__expr126 & __expr92)) & __expr138) & __expr84)) ;
+
+DEFINE __expr92 := !__expr86 ;
+
+DEFINE __expr16 := !l48 ;
+
+DEFINE __expr189 := (__expr182 & __expr181) ;
+
+DEFINE __expr175 := (!(__expr165 & __expr173) & !(!(__expr174 & __expr163) & __expr172)) ;
+
+DEFINE __expr250 := (next(l46) <-> __expr107) ;
+
+DEFINE __expr212 := !__expr211 ;
+
+DEFINE __expr251 := (!(!(!(!(!(__expr102 & __expr111) & __expr111) & __expr112) & !(!(!((__expr134 & __expr101) & __expr92) & __expr92) & __expr126)) & __expr84) & !(__expr82 & __expr57)) ;
+
+DEFINE __expr237 := !__expr235 ;
+
+DEFINE __expr2 := !l10 ;
+
+DEFINE __expr210 := !__expr209 ;
+
+DEFINE __expr116 := (__expr115 & l52) ;
+
+DEFINE __expr153 := (__expr17 & __expr5) ;
+
+DEFINE __expr59 := (__expr58 & i4) ;
+
+DEFINE __expr110 := (((__expr28 & __expr34) & __expr49) & __expr54) ;
+
+DEFINE __expr98 := (!__expr94 & __expr97) ;
+
+DEFINE __expr171 := (__expr166 & __expr168) ;
+
+DEFINE __expr131 := (__expr130 & l14) ;
+
+DEFINE __expr85 := (next(l6) <-> !(!(__expr81 & l6) & !(!(!(!(!(__expr82 & l6) & !(!(!(__expr70 & l6) & !(!(!(__expr73 & l6) & !(!(!(!(!(__expr78 & l6) & !(__expr79 & __expr0)) & __expr75) & !(__expr83 & l6)) & __expr74)) & __expr71)) & __expr56)) & __expr57) & !(__expr84 & l6)) & __expr80))) ;
+
+DEFINE __expr249 := (next(l20) <-> __expr116) ;
+
+DEFINE __expr38 := (__expr29 & __expr33) ;
+
+DEFINE __expr243 := !(!(__expr125 & __expr24) & !(__expr101 & l70)) ;
+
+DEFINE __expr170 := !(__expr166 & __expr169) ;
+
+DEFINE __expr45 := (!(!(!(__expr42 & l30) & __expr43) & __expr12) & !(!(!(__expr42 & __expr8) & !__expr44) & l38)) ;
+
+DEFINE __expr1 := !l8 ;
+
+DEFINE __expr205 := !__expr140 ;
+
+DEFINE __expr197 := (next(l30) <-> !(!(__expr192 & l30) & !(!(!(!(!(__expr82 & l30) & !(!(!(__expr70 & l30) & !(!(!(!(!(__expr131 & l30) & !(!(!__expr193 & !__expr194) & __expr132)) & __expr73) & !(__expr74 & l30)) & __expr71)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l30) & !(!(!(__expr102 & l30) & !(__expr195 & __expr103)) & __expr111)) & __expr112) & !((!(!(__expr195 & __expr134) & !(__expr145 & l30)) & __expr92) & __expr126)) & __expr84)) & __expr196))) ;
+
+DEFINE __expr138 := !(__expr136 & __expr137) ;
+
+DEFINE __expr91 := (!(__expr88 & (!__expr89 & __expr90)) & __expr88) ;
+
+DEFINE __expr80 := ((((__expr71 & __expr58) & __expr74) & __expr75) & __expr79) ;
+
+DEFINE __expr36 := (__expr27 & __expr34) ;
+
+DEFINE __expr15 := !l44 ;
+
+DEFINE __expr57 := (__expr20 & __expr19) ;
+
+DEFINE __expr134 := (__expr20 & l54) ;
+
+DEFINE __expr74 := !__expr73 ;
+
+DEFINE __expr31 := (__expr24 & l18) ;
+
+DEFINE __expr54 := (!(!__expr52 & __expr53) & !(__expr52 & !__expr53)) ;
+
+DEFINE __expr67 := (!(__expr63 & __expr64) & __expr66) ;
+
+DEFINE __expr27 := (!__expr25 & !__expr26) ;
+
+DEFINE __expr63 := !__expr62 ;
+
+DEFINE __expr191 := (next(l28) <-> !(!(!(!(__expr175 & __expr181) & __expr183) & __expr188) & !(!(!(__expr175 & __expr180) & !__expr189) & __expr190))) ;
+
+DEFINE __expr14 := !l42 ;
+
+DEFINE __expr192 := (!(!(!(!(!(__expr135 & __expr92) & __expr92) & __expr126) & __expr138) & __expr84) & __expr133) ;
+
+DEFINE __expr65 := !__expr64 ;
+
+DEFINE __expr223 := (next(l42) <-> !(!(!(!(__expr164 & __expr99) & __expr174) & __expr172) & !(!(!(__expr163 & __expr99) & !__expr165) & __expr173))) ;
+
+DEFINE __expr144 := !(!(!(!(__expr142 & l14) & !__expr143) & __expr125) & !(__expr101 & l14)) ;
+
+DEFINE __expr232 := (l60 & __expr6) ;
+
+DEFINE __expr218 := !(__expr210 & __expr211) ;
+
+DEFINE __expr146 := !__expr139 ;
+
+DEFINE __expr44 := (__expr41 & l30) ;
+
+DEFINE __expr141 := (__expr140 & __expr11) ;
+
+DEFINE __expr76 := (l32 & l6) ;
+
+DEFINE __expr34 := (!(__expr29 & __expr32) & !(!__expr29 & __expr33)) ;
+
+DEFINE __expr13 := !l40 ;
+
+DEFINE __expr164 := !__expr163 ;
+
+DEFINE __expr121 := (__expr15 & l10) ;
+
+DEFINE __expr100 := (next(l8) <-> !(__expr99 & !(__expr94 & !__expr97))) ;
+
+DEFINE __expr56 := (!((((!(__expr28 & __expr35) & __expr37) & __expr28) & (!(__expr37 & __expr48) & __expr50)) & (!(__expr51 & !__expr54) & !__expr55)) & __expr55) ;
+
+DEFINE __expr43 := !(__expr41 & __expr8) ;
+
+DEFINE __expr158 := (next(l18) <-> !(!(__expr150 & l18) & !(!(!(!(!(__expr82 & l18) & !(!(!(!(!(__expr116 & l18) & !(!(!__expr151 & !__expr152) & __expr117)) & __expr70) & !(__expr71 & l18)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l18) & !(!(!(__expr102 & l18) & !(!(!(__expr125 & l18) & !(!(__expr154 & __expr156) & __expr101)) & __expr103)) & __expr111)) & __expr112) & !((__expr92 & l18) & __expr126)) & __expr84)) & __expr157))) ;
+
+DEFINE __expr49 := !__expr48 ;
+
+DEFINE __expr127 := !__expr119 ;
+
+DEFINE __expr150 := (!(!(!__expr149 & !(__expr137 & __expr104)) & __expr84) & __expr118) ;
+
+DEFINE __expr84 := !__expr57 ;
+
+DEFINE __expr248 := (next(l72) <-> __expr78) ;
+
+DEFINE __expr199 := (l32 & __expr0) ;
+
+DEFINE __expr239 := !__expr236 ;
+
+DEFINE __expr151 := (l50 & __expr5) ;
+
+DEFINE __expr89 := (!l64 & l62) ;
+
+DEFINE __expr33 := !__expr32 ;
+
+DEFINE __expr12 := !l38 ;
+
+DEFINE __expr254 := (next(l66) <-> __expr131) ;
+
+DEFINE __expr214 := (!(__expr187 & __expr7) & !(!(__expr186 & __expr83) & l28)) ;
+
+DEFINE __expr225 := (next(l48) <-> !(!(!(!(!(!(__expr82 & l48) & !(!(!(__expr70 & l48) & !(!(!(__expr73 & l48) & !(!(!(!(!(__expr78 & l48) & !(!(!(__expr76 & __expr16) & !(!__expr76 & l48)) & __expr79)) & __expr75) & !(__expr83 & l48)) & __expr74)) & __expr71)) & __expr56)) & __expr57) & !(__expr84 & l48)) & __expr80) & !(__expr81 & l48))) ;
+
+DEFINE __expr188 := (!(!(!(__expr184 & __expr75) & __expr186) & __expr7) & !(!(!(__expr184 & __expr83) & !__expr187) & l28)) ;
+
+DEFINE __expr173 := !__expr172 ;
+
+DEFINE __expr123 := !__expr105 ;
+
+DEFINE __expr69 := !__expr68 ;
+
+DEFINE __expr53 := (!(__expr44 & __expr12) & !(!(__expr43 & __expr8) & l38)) ;
+
+DEFINE __expr247 := (next(l22) <-> __expr246) ;
+
+DEFINE __expr194 := (__expr24 & l30) ;
+
+DEFINE __expr118 := !((__expr70 & __expr117) & __expr58) ;
+
+DEFINE __expr166 := (__expr96 & l8) ;
+
+DEFINE __expr155 := (l50 & l18) ;
+
+DEFINE __expr60 := (__expr58 & i2) ;
+
+DEFINE __expr11 := !l36 ;
+
+DEFINE __expr48 := (!(!(!(__expr39 & l58) & __expr40) & __expr45) & !(!(!(__expr39 & __expr21) & !__expr46) & __expr47)) ;
+
+DEFINE __expr29 := (l58 & l50) ;
+
+DEFINE __expr213 := (__expr210 & __expr212) ;
+
+DEFINE __expr102 := (((__expr27 & __expr35) & __expr49) & __expr54) ;
+
+DEFINE __expr228 := (next(l52) <-> !(!(__expr119 & l52) & !(!(!(!(!(__expr82 & l52) & !(!(!(!(!(__expr116 & l52) & !(!(!(__expr115 & __expr18) & !(!__expr115 & l52)) & __expr117)) & __expr70) & !(__expr71 & l52)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l52) & !(!(!(!(!(__expr227 & __expr108) & !(__expr107 & l52)) & __expr102) & !(!(!(__expr125 & l52) & !(__expr227 & __expr101)) & __expr103)) & __expr111)) & __expr112) & !(__expr126 & l52)) & __expr84)) & __expr127))) ;
+
+DEFINE __expr117 := !__expr116 ;
+
+DEFINE __expr154 := !__expr153 ;
+
+DEFINE __expr111 := !__expr110 ;
+
+DEFINE __expr87 := (l64 & l62) ;
+
+DEFINE __expr10 := !l34 ;
+
+DEFINE __expr183 := !(__expr182 & __expr180) ;
+
+DEFINE __expr99 := !__expr98 ;
+
+DEFINE __expr41 := (l70 & l18) ;
+
+DEFINE __expr24 := !l70 ;
+
+DEFINE __expr187 := (__expr185 & __expr75) ;
+
+DEFINE __expr132 := !__expr131 ;
+
+DEFINE __expr47 := !__expr45 ;
+
+DEFINE __expr39 := !__expr38 ;
+
+DEFINE __expr227 := !(!(__expr201 & l52) & __expr108) ;
+
+DEFINE __expr186 := !(__expr185 & __expr83) ;
+
+DEFINE __expr143 := (__expr141 & __expr3) ;
+
+DEFINE __expr114 := (l44 & l10) ;
+
+DEFINE __expr81 := !__expr80 ;
+
+DEFINE __expr37 := !__expr36 ;
+
+DEFINE __expr216 := (!(__expr215 & __expr23) & !(__expr214 & l68)) ;
+
+DEFINE __expr148 := (next(l16) <-> !(!(__expr81 & l16) & !(!(!(!(!(__expr82 & l16) & !(!(!(__expr70 & l16) & !(!(!(__expr73 & l16) & !(!(!(!(!(__expr78 & l16) & !(!(!(__expr77 & __expr4) & !(!__expr77 & l16)) & __expr79)) & __expr75) & !(__expr83 & l16)) & __expr74)) & __expr71)) & __expr56)) & __expr57) & !(__expr84 & l16)) & __expr80))) ;
+
+DEFINE __expr58 := (__expr56 & __expr57) ;
+
+DEFINE __expr200 := (next(l32) <-> !(!(__expr81 & l32) & !(!(!(!(!(__expr82 & l32) & !(!(!(__expr70 & l32) & !(!(!(__expr73 & l32) & !(!(!(!(!(__expr78 & l32) & !(!(!__expr198 & !__expr199) & __expr79)) & __expr75) & !(__expr83 & l32)) & __expr74)) & __expr71)) & __expr56)) & __expr57) & !(__expr84 & l32)) & __expr80))) ;
+
+DEFINE __expr174 := !(__expr163 & __expr98) ;
+
+DEFINE __expr9 := !l32 ;
+
+DEFINE __expr23 := !l68 ;
+
+DEFINE __expr221 := (!(__expr220 & __expr13) & !(!__expr220 & l40)) ;
+
+DEFINE __expr130 := (__expr129 & l36) ;
+
+DEFINE __expr28 := !__expr27 ;
+
+DEFINE __expr236 := (!(!(!(!(!(__expr134 & __expr92) & __expr92) & __expr126) & __expr126) & __expr84) & !(!(!(!(!(!(!(!(!(__expr235 & __expr83) & __expr83) & __expr74) & __expr74) & __expr71) & __expr71) & __expr56) & __expr56) & __expr57)) ;
+
+DEFINE __expr185 := !__expr184 ;
+
+DEFINE __expr169 := !__expr168 ;
+
+DEFINE __expr149 := (__expr126 & __expr86) ;
+
+DEFINE __expr0 := !l6 ;
+
+DEFINE __expr176 := (__expr161 & __expr162) ;
+
+DEFINE __expr137 := (__expr111 & __expr112) ;
+
+DEFINE __expr78 := (__expr77 & l16) ;
+
+DEFINE __expr72 := !__expr67 ;
+
+DEFINE __expr8 := !l30 ;
+
+DEFINE __expr253 := (next(l56) <-> !(!(__expr251 & l56) & !(!(!(!(!((!(!(__expr145 & l56) & !((__expr125 & l56) & __expr134)) & __expr92) & __expr126) & !(!(!(!(!(__expr103 & l56) & __expr109) & __expr111) & __expr111) & __expr112)) & __expr84) & !(!(!(__expr56 & l56) & __expr56) & __expr57)) & __expr252))) ;
+
+DEFINE __expr229 := (!(((__expr75 & __expr79) & __expr74) & ((__expr71 & __expr56) & __expr57)) & !(__expr149 & __expr84)) ;
+
+DEFINE __expr161 := (__expr86 & __expr93) ;
+
+DEFINE __expr26 := (__expr21 & l50) ;
+
+DEFINE __expr206 := !(!(!(!(__expr205 & l36) & __expr142) & __expr125) & !(__expr101 & l36)) ;
+
+DEFINE __expr101 := (__expr24 & __expr8) ;
+
+DEFINE __expr61 := !(__expr59 & __expr60) ;
+
+DEFINE __expr196 := !__expr192 ;
+
+DEFINE __expr142 := !__expr141 ;
+
+DEFINE __expr136 := (__expr125 & __expr103) ;
+
+DEFINE __expr90 := (l64 & !l62) ;
+
+DEFINE __expr35 := !__expr34 ;
+
+DEFINE __expr165 := (__expr164 & __expr98) ;
+
+DEFINE __expr30 := (l70 & __expr5) ;
+
+DEFINE __expr7 := !l28 ;
+
+DEFINE __expr180 := (!(!(!(__expr177 & __expr86) & __expr178) & __expr88) & !(!(!(__expr177 & __expr92) & !__expr179) & __expr87)) ;
+
+DEFINE __expr238 := !(__expr75 & __expr78) ;
+
+DEFINE __expr160 := (next(l24) <-> !(!(__expr139 & l24) & !(!(!(!(!(__expr82 & l24) & !(!(!(__expr70 & l24) & !(!(!(!(!(__expr131 & l24) & !(__expr132 & __expr6)) & __expr73) & !(__expr74 & l24)) & __expr71)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l24) & !(!(!(__expr102 & l24) & !(__expr159 & __expr103)) & __expr111)) & __expr112) & !(!(!(__expr86 & l24) & !(!(!(__expr159 & __expr134) & !(__expr145 & l24)) & __expr92)) & __expr126)) & __expr84)) & __expr146))) ;
+
+DEFINE __expr94 := (!(__expr86 & __expr91) & !(__expr92 & __expr93)) ;
+
+DEFINE __expr184 := (!(__expr171 & __expr14) & !(!(__expr170 & __expr169) & l42)) ;
+
+DEFINE __expr168 := (__expr83 & __expr73) ;
+
+DEFINE __expr235 := (__expr67 & __expr68) ;
+
+DEFINE __expr190 := !__expr188 ;
+
+DEFINE __expr140 := (__expr22 & __expr6) ;
+
+DEFINE __expr215 := !__expr214 ;
+
+DEFINE __expr145 := !__expr134 ;
+
+DEFINE __expr208 := (next(l38) <-> !(!(!(!(!(!(__expr82 & l38) & !(!(!(!(!(__expr116 & l38) & !(!(!(__expr155 & __expr12) & !(__expr156 & l38)) & __expr117)) & __expr70) & !(__expr71 & l38)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l38) & !(!(!(__expr102 & l38) & !(!(!(__expr125 & l38) & !(!(!(__expr153 & __expr12) & !(__expr154 & l38)) & __expr101)) & __expr103)) & __expr111)) & __expr112) & !((__expr92 & l38) & __expr126)) & __expr84)) & __expr157) & !(__expr150 & l38))) ;
+
+DEFINE __expr109 := !(__expr102 & __expr108) ;
+
+DEFINE __expr70 := (__expr67 & __expr69) ;
+
+DEFINE __expr95 := (!((__expr74 & __expr70) & __expr83) & __expr83) ;
+
+DEFINE __expr40 := !(__expr38 & __expr21) ;
+
+DEFINE __expr202 := !(!(__expr123 & l34) & __expr201) ;
+
+DEFINE __expr159 := !(!(__expr125 & __expr6) & !(__expr101 & l24)) ;
+
+DEFINE __expr119 := (!(__expr113 & __expr84) & __expr118) ;
+
+DEFINE __expr93 := !__expr91 ;
+
+DEFINE __expr52 := (!(__expr46 & __expr45) & !(!(__expr40 & __expr21) & __expr47)) ;
+
+DEFINE __expr231 := (__expr22 & l24) ;
+
+DEFINE __expr167 := !__expr166 ;
+
+DEFINE __expr156 := !__expr155 ;
+
+DEFINE __expr224 := (next(l44) <-> !(!(__expr119 & l44) & !(!(!(!(!(__expr82 & l44) & !(!(!(!(!(__expr116 & l44) & !(__expr117 & __expr15)) & __expr70) & !(__expr71 & l44)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l44) & !(!(!(!(!(__expr108 & __expr15) & !(__expr107 & l44)) & __expr102) & !(!(!(__expr125 & l44) & !(__expr101 & __expr15)) & __expr103)) & __expr111)) & __expr112) & !(__expr126 & l44)) & __expr84)) & __expr127))) ;
+
+DEFINE __expr112 := (l56 & __expr19) ;
+
+DEFINE __expr120 := (l44 & __expr2) ;
+
+DEFINE __expr55 := (!__expr51 & __expr54) ;
+
+DEFINE __expr157 := !__expr150 ;
+
+DEFINE __expr122 := !__expr114 ;
+
+DEFINE __expr107 := (__expr106 & __expr18) ;
+
+DEFINE __expr6 := !l24 ;
+
+DEFINE __expr179 := (__expr176 & __expr86) ;
+
+DEFINE __expr22 := !l60 ;
+
+DEFINE __expr103 := !__expr102 ;
+
+DEFINE __expr198 := (__expr9 & l6) ;
+
+DEFINE __expr83 := !__expr75 ;
+
+DEFINE __expr88 := !__expr87 ;
+
+DEFINE __expr75 := (__expr72 & __expr69) ;
+
+DEFINE __expr51 := (__expr50 & __expr49) ;
+
+DEFINE __expr42 := !__expr41 ;
+
+DEFINE __expr242 := (next(l68) <-> !(!(!(!(__expr209 & __expr212) & __expr218) & __expr216) & !(!(!(__expr209 & __expr211) & !__expr213) & __expr217))) ;
+
+DEFINE __expr106 := (__expr105 & __expr10) ;
+
+DEFINE __expr211 := (!(__expr179 & __expr88) & !(!(__expr178 & __expr92) & __expr87)) ;
+
+DEFINE __expr21 := !l58 ;
+
+DEFINE __expr207 := (next(l36) <-> !(!(!(!(!(!(__expr82 & l36) & !(!(!(__expr70 & l36) & !(!(!(!(!(__expr131 & l36) & !(!(!(__expr129 & __expr11) & !(__expr204 & l36)) & __expr132)) & __expr73) & !(__expr74 & l36)) & __expr71)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l36) & !(!(!(__expr102 & l36) & !(__expr206 & __expr103)) & __expr111)) & __expr112) & !(!(!(__expr86 & l36) & !(!(!(__expr206 & __expr134) & !(__expr145 & l36)) & __expr92)) & __expr126)) & __expr84)) & __expr146) & !(__expr139 & l36))) ;
+
+DEFINE __expr193 := (l70 & __expr8) ;
+
+DEFINE __expr245 := (__expr9 & __expr0) ;
+
+DEFINE __expr209 := (!(__expr189 & __expr190) & !(!(__expr183 & __expr180) & __expr188)) ;
+
+DEFINE __expr115 := (__expr114 & l34) ;
+
+DEFINE __expr217 := !__expr216 ;
+
+DEFINE __expr135 := (__expr134 & __expr125) ;
+
+DEFINE __expr32 := (!__expr30 & !__expr31) ;
+
+DEFINE __expr182 := !__expr175 ;
+
+DEFINE __expr162 := (__expr88 & __expr89) ;
+
+DEFINE __expr97 := (!(__expr96 & __expr1) & !(__expr95 & l8)) ;
+
+DEFINE __expr241 := (next(l64) <-> !(!(__expr236 & l64) & !(!(!(!(!(((__expr145 & l64) & __expr92) & __expr126) & !__expr113) & __expr84) & !(!(!(!(!((!(!((__expr237 & l64) & __expr83) & __expr238) & __expr74) & __expr71) & !(__expr70 & __expr116)) & __expr56) & !(!(__expr83 & __expr71) & __expr82)) & __expr57)) & __expr239))) ;
+
+DEFINE __expr105 := (__expr15 & __expr2) ;
+
+DEFINE __expr126 := !__expr112 ;
+
+DEFINE __expr20 := !l56 ;
+
+DEFINE __expr219 := (!(__expr213 & __expr217) & !(!(__expr218 & __expr211) & __expr216)) ;
+
+DEFINE __expr147 := (next(l14) <-> !(!(__expr139 & l14) & !(!(!(!(!(__expr82 & l14) & !(!(!(__expr70 & l14) & !(!(!(!(!(__expr131 & l14) & !(!(!(__expr130 & __expr3) & !(!__expr130 & l14)) & __expr132)) & __expr73) & !(__expr74 & l14)) & __expr71)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l14) & !(!(!(__expr102 & l14) & !(__expr144 & __expr103)) & __expr111)) & __expr112) & !(!(!(__expr86 & l14) & !(!(!(__expr144 & __expr134) & !(__expr145 & l14)) & __expr92)) & __expr126)) & __expr84)) & __expr146))) ;
+
+DEFINE __expr177 := !__expr176 ;
+
+DEFINE __expr79 := !__expr78 ;
+
+DEFINE __expr73 := (__expr72 & __expr68) ;
+
+DEFINE __expr128 := (next(l10) <-> !(!(__expr119 & l10) & !(!(!(!(!(__expr82 & l10) & !(!(!(!(!(__expr116 & l10) & !(!(!__expr120 & !__expr121) & __expr117)) & __expr70) & !(__expr71 & l10)) & __expr56)) & __expr57) & !(!(!(!(!(__expr110 & l10) & !(!(!(!(!(__expr124 & __expr108) & !(__expr107 & l10)) & __expr102) & !(!(!(__expr125 & l10) & !(__expr124 & __expr101)) & __expr103)) & __expr111)) & __expr112) & !(__expr126 & l10)) & __expr84)) & __expr127))) ;
+

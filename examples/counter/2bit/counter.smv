@@ -1,0 +1,16 @@
+MODULE main
+VAR
+	bit1 : counter_cell(TRUE);
+	bit2 : counter_cell(bit1.carry_out);
+LTLSPEC
+	G !(bit1.value & bit2.value)
+
+MODULE counter_cell(carry_in)
+VAR
+  value : boolean;
+ASSIGN
+  init(value) := FALSE;
+  next(value) := (value | carry_in) & (!value | !carry_in);
+DEFINE
+  carry_out := value & carry_in;
+
