@@ -73,19 +73,19 @@ DEFINE
 
 MODULE main
 VAR
-  e-5 : process cell(e-1,e-4,FALSE);
-  e-4 : process cell(e-5,e-3,FALSE);
-  e-3 : process cell(e-4,e-2,TRUE);
-  e-2 : process cell(e-3,e-1,FALSE);
-  e-1 : process cell(e-2,e-5,FALSE);
+  e_5 : process cell(e_1,e_4,FALSE);
+  e_4 : process cell(e_5,e_3,FALSE);
+  e_3 : process cell(e_4,e_2,TRUE);
+  e_2 : process cell(e_3,e_1,FALSE);
+  e_1 : process cell(e_2,e_5,FALSE);
 
 -- ptimo.ltl
-LTLSPEC G((e-2.u.ack)->((e-2.u.ack)T((!(e-2.u.ack))T(!(e-1.req)))))
+LTLSPEC G((e_2.u.ack)->((e_2.u.ack)T((!(e_2.u.ack))T(!(e_1.req)))))
 -- p1neg.ltl
-LTLSPEC !(G(((e-3.ack)&(X(!(e-3.ack))))->(X((G(!(e-3.ack)))|(((!(e-3.ack))U(e-2.ack))U(e-1.ack))))))
+LTLSPEC !(G(((e_3.ack)&(X(!(e_3.ack))))->(X((G(!(e_3.ack)))|(((!(e_3.ack))U(e_2.ack))U(e_1.ack))))))
 -- p1.ltl
-LTLSPEC G(((e-3.ack)&(X(!(e-3.ack))))->(X((G(!(e-3.ack)))|(((!(e-3.ack))U(e-2.ack))U(e-1.ack)))))
+LTLSPEC G(((e_3.ack)&(X(!(e_3.ack))))->(X((G(!(e_3.ack)))|(((!(e_3.ack))U(e_2.ack))U(e_1.ack)))))
 -- ptimonegnv.ltl
-LTLSPEC !((G((e-2.u.ack)->((e-2.u.ack)T((!(e-2.u.ack))T(!(e-1.req))))))&(G(F(e-2.u.ack))))
+LTLSPEC !((G((e_2.u.ack)->((e_2.u.ack)T((!(e_2.u.ack))T(!(e_1.req))))))&(G(F(e_2.u.ack))))
 -- ptimoneg.ltl
-LTLSPEC !(G((e-2.u.ack)->((e-2.u.ack)T((!(e-2.u.ack))T(!(e-1.req))))))
+LTLSPEC !(G((e_2.u.ack)->((e_2.u.ack)T((!(e_2.u.ack))T(!(e_1.req))))))
