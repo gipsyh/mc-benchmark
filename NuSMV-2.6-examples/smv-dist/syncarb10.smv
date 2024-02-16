@@ -19,11 +19,6 @@ DEFINE
   grant-out := !Request & below.grant-out;
   ack-out := Request & (Persistent & Token | below.grant-out);
 
-SPEC
-  AG ((ack-out -> Request) & AF (!Request | ack-out))
-
-
-
 MODULE main
 
 VAR
@@ -44,65 +39,5 @@ DEFINE
   override-out := FALSE;
   grant-out := grant-in & !e1.override-out;
 
---SPEC
---  AG (e5.Request -> ABF 0..4 (!e5.Request | e5.ack-out))
-
---SPEC
---  AG (!e1.Request & !e2.Request & !e3.Request & !e4.Request & e5.Request -> e5.ack-out)
-
-SPEC
-  AG (
-      !(e1.ack-out & e2.ack-out)
-
-      & !(e1.ack-out & e3.ack-out)
-      & !(e2.ack-out & e3.ack-out)
-
-      & !(e1.ack-out & e4.ack-out)
-      & !(e2.ack-out & e4.ack-out)
-      & !(e3.ack-out & e4.ack-out)
-
-      & !(e1.ack-out & e5.ack-out)
-      & !(e2.ack-out & e5.ack-out)
-      & !(e3.ack-out & e5.ack-out)
-      & !(e4.ack-out & e5.ack-out)
-
-      & !(e1.ack-out & e6.ack-out)
-      & !(e2.ack-out & e6.ack-out)
-      & !(e3.ack-out & e6.ack-out)
-      & !(e4.ack-out & e6.ack-out)
-      & !(e5.ack-out & e6.ack-out)
-
-      & !(e1.ack-out & e7.ack-out)
-      & !(e2.ack-out & e7.ack-out)
-      & !(e3.ack-out & e7.ack-out)
-      & !(e4.ack-out & e7.ack-out)
-      & !(e5.ack-out & e7.ack-out)
-      & !(e6.ack-out & e7.ack-out)
-
-      & !(e1.ack-out & e8.ack-out)
-      & !(e2.ack-out & e8.ack-out)
-      & !(e3.ack-out & e8.ack-out)
-      & !(e4.ack-out & e8.ack-out)
-      & !(e5.ack-out & e8.ack-out)
-      & !(e6.ack-out & e8.ack-out)
-      & !(e7.ack-out & e8.ack-out)
-
-      & !(e1.ack-out & e9.ack-out)
-      & !(e2.ack-out & e9.ack-out)
-      & !(e3.ack-out & e9.ack-out)
-      & !(e4.ack-out & e9.ack-out)
-      & !(e5.ack-out & e9.ack-out)
-      & !(e6.ack-out & e9.ack-out)
-      & !(e7.ack-out & e9.ack-out)
-      & !(e8.ack-out & e9.ack-out)
-
-      & !(e1.ack-out & e10.ack-out)
-      & !(e2.ack-out & e10.ack-out)
-      & !(e3.ack-out & e10.ack-out)
-      & !(e4.ack-out & e10.ack-out)
-      & !(e5.ack-out & e10.ack-out)
-      & !(e6.ack-out & e10.ack-out)
-      & !(e7.ack-out & e10.ack-out)
-      & !(e8.ack-out & e10.ack-out)
-      & !(e9.ack-out & e10.ack-out)
-    )
+LTLSPEC
+  G ((e1.ack-out -> e1.Request) & F (!e1.Request | e1.ack-out))

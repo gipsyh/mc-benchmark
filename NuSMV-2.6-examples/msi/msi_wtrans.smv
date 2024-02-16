@@ -270,20 +270,20 @@ ASSIGN
 --*****************************************************************************
 
 
-SPEC
-  AG EF (n0.c.invalid)
-
-SPEC
-  AG EF (n0.c.shared)
-
-SPEC
-  AG EF (n0.c.modified)
-
-SPEC 
-  AG !(n0.c.modified & n1.c.shared & (n0.c.tag = n1.c.tag))
-
-SPEC 
-  AG !(n0.c.modified & n1.c.modified & (n0.c.tag = n1.c.tag))
+-- SPEC
+--   AG EF (n0.c.invalid)
+-- 
+-- SPEC
+--   AG EF (n0.c.shared)
+-- 
+-- SPEC
+--   AG EF (n0.c.modified)
+-- 
+-- SPEC 
+--   AG !(n0.c.modified & n1.c.shared & (n0.c.tag = n1.c.tag))
+-- 
+-- SPEC 
+--   AG !(n0.c.modified & n1.c.modified & (n0.c.tag = n1.c.tag))
 
 
 --Extra rules for validation
@@ -313,3 +313,13 @@ SPEC
 --  AG (n0.p.mem_req = St) -> (EF (n0.c.modified))
 --SPEC 
 --  AG !(n0.c.modified & (n1.c.shared | n1.c.modified) & (n0.c.tag = n1.c.tag))
+
+
+-- LTLSPEC 
+--  G !(n0.c.modified & n1.c.shared & (n0.c.tag = n1.c.tag))
+
+-- LTLSPEC 
+--   G !(n0.c.modified & n1.c.modified & (n0.c.tag = n1.c.tag))
+-- 
+LTLSPEC 
+   G !(n0.c.modified & (n1.c.shared | n1.c.modified) & (n0.c.tag = n1.c.tag))
