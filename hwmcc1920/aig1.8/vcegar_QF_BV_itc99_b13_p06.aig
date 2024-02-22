@@ -1,0 +1,60 @@
+aig 216 58 22 1 136
+209
+221
+233
+245
+257
+269
+281
+293
+303
+311
+315
+332
+143
+358
+368
+376
+402 1
+418
+421
+156
+428
+431
+432
+"&*.26::/39<ADHKO25##6">A!120JM?.>$VYM*L0be[&Z<nqi"hHz}wvT†‰m^“h?˜›«¥£(¥&xT©{¯²»½H¦Ã¾ÁN#§ÄÉ
+ÇÉÎKÏÕàEááãD¶1çBºoê¾
+ó÷üúı@6€…
+……ŠM‹Ÿi0 clock
+i1 data_in[7]
+i2 data_in[6]
+i3 data_in[5]
+i4 data_in[4]
+i5 data_in[3]
+i6 data_in[2]
+i7 data_in[1]
+i8 data_in[0]
+i9 dsr
+i10 eoc
+l0 tx_conta[9]
+l1 tx_conta[8]
+l2 tx_conta[7]
+l3 tx_conta[6]
+l4 tx_conta[5]
+l5 tx_conta[4]
+l6 tx_conta[3]
+l7 tx_conta[2]
+l8 tx_conta[1]
+l9 tx_conta[0]
+l10 tre
+l11 tx_end
+l12 S1
+l13 error
+l14 load
+l15 S2
+l16 next_bit
+l17 send_en
+l18 send
+l19 send_data
+l20 itfc_state
+l21 shot
