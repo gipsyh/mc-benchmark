@@ -1,0 +1,27 @@
+aig 76 53 7 0 16 1
+123
+110
+130
+115
+138
+141
+150
+152
+"	# i0 clock
+i1 data_in[7]
+i2 data_in[6]
+i3 data_in[5]
+i4 data_in[4]
+i5 data_in[3]
+i6 data_in[2]
+i7 data_in[1]
+i8 data_in[0]
+i9 dsr
+i10 eoc
+l0 shot
+l1 send_data
+l2 itfc_state
+l3 S1
+l4 S2
+l5 send
+l6 load

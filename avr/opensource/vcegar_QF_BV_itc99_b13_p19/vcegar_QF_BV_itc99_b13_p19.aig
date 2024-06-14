@@ -1,0 +1,62 @@
+aig 202 56 22 0 124 1
+192
+223
+235
+247
+259
+271
+283
+295
+307
+317
+325
+346
+349
+351
+376 1
+386
+147
+394
+402
+335
+154
+156
+404
+#&+.259)@-36<@DHLPTX\\&PSX2\_T>hk-P,Jtw;L:V€ƒIHHbŒWDVn˜›	e@dz¤§q"„®±)¶¹¾¼¿4³&»»
+È
+ÍÇ
+Ç
+ÑÙ8´!İ6¸[à¼
+éíéåêEëïòGóñøKùøi0 clock
+i1 data_in[7]
+i2 data_in[6]
+i3 data_in[5]
+i4 data_in[4]
+i5 data_in[3]
+i6 data_in[2]
+i7 data_in[1]
+i8 data_in[0]
+i9 dsr
+i10 eoc
+l0 tx_end
+l1 tx_conta[9]
+l2 tx_conta[8]
+l3 tx_conta[7]
+l4 tx_conta[6]
+l5 tx_conta[5]
+l6 tx_conta[4]
+l7 tx_conta[3]
+l8 tx_conta[2]
+l9 tx_conta[1]
+l10 tx_conta[0]
+l11 send_en
+l12 send
+l13 shot
+l14 next_bit
+l15 load
+l16 S1
+l17 itfc_state
+l18 S2
+l19 tre
+l20 send_data
+l21 add_mpx2

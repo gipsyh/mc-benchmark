@@ -1,0 +1,6 @@
+__l2s_renamed___process_selector_
+processor.issue_next
+vga_ctrl.issue_next
+isa_bridge.issue_next
+scsi_ctrl.issue_next
+abort_random

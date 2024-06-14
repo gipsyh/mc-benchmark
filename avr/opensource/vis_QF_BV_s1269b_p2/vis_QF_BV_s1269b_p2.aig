@@ -1,0 +1,29 @@
+aig 77 52 4 0 21 1
+131
+136
+143
+153
+154
+mpk"!#&#i0 INS[2]
+i1 INS[1]
+i2 INS[0]
+i3 LDAcc
+i4 LDDR
+i5 LDMQ
+i6 STAcc
+i7 STDR
+i8 STMQ
+i9 TESTMODE
+i10 clock
+i11 inBUS[7]
+i12 inBUS[6]
+i13 inBUS[5]
+i14 inBUS[4]
+i15 inBUS[3]
+i16 inBUS[2]
+i17 inBUS[1]
+i18 inBUS[0]
+l0 I683
+l1 I681
+l2 I680
+l3 I679

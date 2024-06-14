@@ -1,0 +1,1260 @@
+aig 3127 75 544 0 2508 1 23
+1890 152
+272 154
+1150 156
+60 158
+1012 160
+1903 162
+1909 164
+1915 166
+1921 168
+1927 170
+1933 172
+1939 174
+1945 176
+1951 178
+1957 180
+1963 182
+1969 184
+1975 186
+1981 188
+1987 190
+1993 192
+1999 194
+2005 196
+2011 198
+2017 200
+2023 202
+2029 204
+2049 206
+2067 208
+2085 210
+2103 212
+2121 214
+2139 216
+2157 218
+2175 220
+2193 222
+2211 224
+2229 226
+2247 228
+2265 230
+2283 232
+2301 234
+2319 236
+2337 238
+2355 240
+2373 242
+2391 244
+2409 246
+2427 248
+2445 250
+2463 252
+2481 254
+2499 256
+2517 258
+2535 260
+2553 262
+2571 264
+2589 266
+2607 268
+2625 270
+2826
+2879 274
+2889 276
+2899 278
+2909 280
+2919 282
+2929 284
+2939 286
+2949 288
+2959 290
+2969 292
+2979 294
+2989 296
+2999 298
+3009 300
+3019 302
+3029 304
+3039 306
+3049 308
+3059 310
+3069 312
+3079 314
+3085 316
+3115 1
+3124
+3131 1
+1144 324
+62 326
+64 328
+66 330
+68 332
+70 334
+72 336
+74 338
+76 340
+78 342
+80 344
+82 346
+84 348
+86 350
+88 352
+90 354
+92 356
+94 358
+96 360
+98 362
+100 364
+102 366
+104 368
+106 370
+108 372
+110 374
+112 376
+114 378
+116 380
+118 382
+120 384
+122 386
+124 388
+1393 390
+128 392
+992 394
+994 396
+996 398
+998 400
+1000 402
+1002 404
+1004 406
+1006 408
+3132
+3133
+3140
+3152
+3156
+3157
+3164
+3165
+130 426
+132 428
+134 430
+136 432
+3171
+944 436
+946 438
+948 440
+950 442
+952 444
+954 446
+956 448
+958 450
+960 452
+962 454
+964 456
+966 458
+968 460
+970 462
+972 464
+974 466
+976 468
+978 470
+980 472
+982 474
+984 476
+986 478
+988 480
+990 482
+992 484
+994 486
+996 488
+998 490
+1000 492
+1002 494
+1004 496
+1006 498
+3178
+3179
+3182
+3186
+3183
+3194
+3218
+3241
+3219
+3249
+3255
+3269
+3377
+3390
+3417
+3421
+3195
+3378 534
+3756
+3767 538
+3773 540
+3779 542
+3785 544
+3791 546
+3797 548
+3803 550
+3809 552
+3815 554
+3821 556
+3827 558
+3833 560
+3839 562
+3845 564
+3851 566
+3857 568
+3863 570
+3869 572
+3875 574
+3881 576
+3887 578
+3893 580
+3899 582
+3905 584
+3911 586
+3917 588
+3923 590
+3929 592
+3935 594
+3941 596
+3947 598
+3953 600
+3954
+4213
+3757
+4247 1
+4254
+3955
+4260
+3240
+4296
+4310
+4312
+4315
+4322
+4326
+4334
+4342
+4350
+4358
+4366
+4374
+4382
+4392
+3153
+3141
+4394
+4414
+4418
+4426
+4434
+4440
+4442
+4475
+3416
+4507
+534 670
+4571
+4577
+3420
+4596
+3758 680
+4600
+4608
+4616
+4622
+4625
+4626
+4653
+1896 696
+4655
+4660
+4255
+14 704
+4662
+4665
+4683 1
+4685
+4701
+4703
+4661
+4706
+4663
+4314
+4714
+4718
+4726
+4734
+4742
+4750
+4758
+4766
+4774
+4782
+4788
+4793
+4796
+4799
+4803
+1122 756
+4810
+758 760
+4842
+4848
+4715
+4850
+4395
+4323
+4854
+4860
+4884
+4900
+4914
+4928
+4942
+4974
+4624
+4415
+4798
+4584 796
+4986
+4992
+4443
+4995
+4994
+4999
+4684
+4843
+4700
+5000
+5003
+5005
+5002
+4975
+5004
+4652
+5037
+4654
+5053
+4664
+4851
+5056
+3170
+5064
+5072
+5080
+5088
+5107
+5125
+5143
+5169
+5187
+5205
+5223
+5247
+5259
+5271
+5283
+5299
+5311
+5323
+5335
+5351
+5363
+5375
+5387
+5403
+5415
+5427
+5434
+5447
+5455
+5462
+5471
+5483
+5486
+5490
+5494
+5503
+5505
+5514
+5504
+5519
+5527
+5518
+134 928
+4792
+5535
+5537
+3248
+5539
+5540
+5536
+5553 944
+5565 946
+5577 948
+5589 950
+5601 952
+5613 954
+5625 956
+5637 958
+5649 960
+5661 962
+5673 964
+5685 966
+5697 968
+5709 970
+5721 972
+5734 974
+5748 976
+5762 978
+5776 980
+5791 982
+5809 984
+5822 986
+5839 988
+5857 990
+5869 992
+5881 994
+5893 996
+5905 998
+5917 1000
+5929 1002
+5941 1004
+5953 1006
+5538
+5959
+1
+5526
+5534
+608 1018
+5960
+5969
+5958
+126 1026
+5968
+5971
+4212
+5970
+3376
+3268
+16 1040
+18 1042
+20 1044
+22 1046
+24 1048
+26 1050
+28 1052
+30 1054
+32 1056
+34 1058
+36 1060
+38 1062
+40 1064
+42 1066
+44 1068
+46 1070
+48 1072
+50 1074
+52 1076
+54 1078
+56 1080
+58 1082
+3254
+4474
+5036
+4506
+4570
+4576
+5052
+4702
+5973
+5974
+5978
+5972
+5981
+5982
+5986
+5980
+4855
+5992
+5057
+5998
+5515
+4797
+5541
+4261
+4707
+4627
+5961
+2 1138
+6008
+6014
+6018
+6023
+6033
+6049 1
+6022
+6032
+5975
+5979
+5983
+6052
+6060
+6068
+6076
+6084
+6092
+6100
+6108
+6116
+6124
+6132
+6140
+6148
+6156
+6164
+6172
+6180
+6188
+6196
+6204
+6212
+6220
+5987
+6223
+6235
+6222
+6234
+6237
+6239
+6236
+6238
+6241
+6255
+6240
+6254
+4313
+4998
+4802
+710 1238
+1240
+1270
+1313
+1345
+1355
+1357
+1361
+1369
+1375
+1377
+1397
+1413
+1
+1425
+1431
+1695
+1871
+1873
+1875
+1877
+1879
+1883
+1885
+1887
+‘G×}Ú{Û}Þ{á}ä{ç}ê{‹&Ø¨Ù¨Ü¨Ý¨à¨á¨ä¨å¨ÕËØÉÙËÜÉßËâÉåËèÉEE¤š¥šEÊ	WÞ³àÚÓ
+ÐàÝ	â	|ìÖíÖôÕõ×ñ	|´
+ÕØ††Æ
+³
+’‚ˆƒˆžî!FÌžÞ
+œ
+Ù‰Ü‡Ý‰à‡ã‰æ‡é‰ì‡ï‰ò‡õ‰ø‡û‰þ‡	‰„	‡‡	‰Š	‡	‰	‡“	‰–	‡™	‰œ	‡Ÿ	‰¢	‡¥	‰¨	‡«	‰®	‡±	‰´	‡·	‰º	‡½	‰À	‡Ã	‰Æ	‡É	‰Ì	‡Ï	‰Ò	‡Õ	‰Ø	‡Û	‰Þ	‡á	‰ä	‡ç	‰ê	‡í	‰ð	‡ó	‰ö	‡ù	‰ü	‡ÿ	‰‚
+‡…
+‰ˆ
+‡‹
+‰Ž
+‡‘
+‰”
+‡ÿ’ÿ“–ÿ™œÿŸ¢ÿ¥¨ÿ«®ÿ±´ÿ·ºÿ½ÀÿÃÆÿÉÌÿÏÒÿÕØÿÛÞÿáäÿçêÿíðÿóöÿùüÿÿ‚ÿ…ˆÿ‹Žÿ±´¶,ã´
+á¹ä´çœéæàÿ	ƒ
+ããïØÇÖ	ÅÔÃÒÁÐ¿ Î!½&Ì'»,Ê-¹2È3·8Æ9µ>Ä?³DÂE±JÀK¯P¾Q­V¼W«\º]©b¸c§h¶i¥n´o£t²u¡z°{Ÿ€®ö¨„š£þ
+Ë	Í	ãŠ¦˜¡Ý	ß	áœ¤&–'Ÿ¢ï	ñ	ß®¢8”9´
+ƒ
+ÝÀ J’K›Æ“
+•
+ÛÒž\]™Ø¥
+§
+ÙäœnŽo—ê·
+¹
+×öš€Œ•üÉ
+Ë
+Õˆ˜’Š““ŽÛ
+Ý
+Óš–¤ˆ¥‘ í
+ï
+Ñ¬”¶†·²ÿ
+Ï¾’È„ÉÄ‘“ÍÐÚ‚Û‹Ö£¥ËâŽì€í‰èµ·ÉôŒþþÿ‡úÇÉÇ†Šü‘…ŒÙÛÅ˜ˆ¢ú£ƒžëíÃª†´øµ°ýÿÁ¼„ÆöÇÿÂ‘¿Î‚ØôÙýÔ¡£½à€êòëûæ³µ»òþüðýùøÅÇ¹„	üŽî÷Š	×Ù·–	ú ì¡õœ	éëµ¨	ø²ê³ó®	ûý³º	öÄèÅñÀ	±Ì	ôÖæ×ïÒ	Ÿ¡¯Þ	òèäéíä	±³­ð	ðúâûëö	ÃÅ«‚
+îŒêéˆ
+Õ×©”
+ìžèŸçš
+çé§¦
+ê°æ±å¬
+ùû¥¸
+î	ÂäÃã¾
+‹£µ³³´Î¹ƒ¼½ƒÀÃƒÆÉƒÌÏƒÒÕƒØÛƒÞáƒäçƒêíƒðóƒöùƒüÿƒ‚…ƒˆ‹ƒŽ‘ƒ”—ƒšƒ £ƒ¦©ƒ¬¯ƒ²µƒ¸çëý†‰ƒ½¬ÎÔØÜàäèìðôøü€„ˆŒ”˜œ ¤¤Ù0àÌ ãêÊœíôÈ'˜&÷þÆ3”2ˆÄ?>‹’ÂKŒJ•œÀWˆVŸ¦¾c„b©°¼o€n³ºº{üz½Ä¸‡ø†ÇÎ¶“ô’ÑØ´ŸðžÛâ²«ìªåì°·è¶ïö®ÃäÂù€¬ÏàÎƒŠªÛÜÚ”¨çØæ—ž¦Åò¡¨¤©¦¦	Ø‘ŸÒª	×ÕÛàà	
+™êë£Ö©ä	²	ü´®®Ý½–ïŸ½­ï„‚…‚ø ­Ìÿ’€“€ˆËXÖá¢ü£üœªú«ú—›Ÿ£§«¯µ“—›Ÿ£§«¨¯Å³}·Í˜½Ž¬©©©ú³Î%¬ÌðÍðÓíÒÀØÃÆË“Î”×—Ú˜ß›âœ#+2ïŸòü2÷ÿú€;Bƒƒ†„F‹‡ŽˆOW_,hÑß²¦Ë	­ôõƒøùƒþÿƒù©ÇÝåÇÀÃÑÕÙÞ³“»¿ÃÇËÏÓ×Ûßãçëïó÷ûÿƒ‡‹ö,íñõ:²çFþüÿü‚üƒü†ü‡üŠü‹üŽüü’ü“ü–ü—üšü›üžüŸü¢ü£ü¦ü§üªü«ü®ü¯ü²ü³ü¶ü·üºü»ü¾ü¿üÂüÃüÆüÇüÊüËüÎüÏüÒüÓüÖü×üÚüÛüÞüßüâüãüæüçüêüëüîüïüòüóüöü÷üúüûü%-5=EMU]emu}…•¥­µ½ÅÍÕÝåíõÿ½®ò—ð	•î“ì‘ê è!&æ'‹,ä-‰2â3‡8à9…>Þ?ƒDÜEJÚKÿPØQýVÖWû\Ô]ùbÒc÷hÐiõnÎoótÌuñzÊ{ï€Èí†Æ‡ëŒÄé’Â“ç˜À™åž¾Ÿã¤¼¥áªº«ß°¸±Ý¶¶·Û¼´½Ù÷ÑÄßÅáÈßÉáÎßÏáÔßÕáÚßÛáàßááæßçáìßíáòßóáøßùáþßÿá„ß…áŠß‹áß‘á–ß—áœßá¢ß£á¨ß©á®ß¯á´ßµáºß»áÀßÁáÆßÇáÌßÍáÒßÓáØßÙáÞßßáäßåáêßëáðßñáöß÷áüßýáËèµÆ–äè¸´éº²§ÚÐ¡ ¨…!ÉÈÇ÷Îš† Üž— ²ÆÕé&© ,ª Ò Ñ Ú¸!â×ÄÅ!Y£hþŠþ‹þ‚î|Õ!ð~ô{Þ!ö€ú}æ!ü‚€î!‚„†ö!ˆ†Œƒþ!Žˆ’…†"”Š˜‡Ž"¸é¦ ‰˜"è¸àáƒäåƒçç•°–±"²˜¶•º"¸š¼—Â"À™’È"»ù‰‘‹”‰•‹š‰›‹ ‰¡‹Ï°©±«´©µ«º©»«À©Á«ç¼Ö½ÖÀÖÁÖÄÖÅÖÈÖÉÖÌÖÍÖÐÖÑÖÔÖÕÖØÖÙÖ%-5¯èÕŸ#¸ùä"÷"µ	Ÿö¼¥ã#Ê²ç#Ì´Ð±ð#Ò¶Ö³ø#ÚµÌþ#ñ¾ò¢ÈùÉûÌùÍûÒùÓû§ÿÓ	ê
+‰ã’#ˆ¨.Ý	µŠi¼øÌ÷û²¸º$©	¨ˆ‚üöðêÍá	‚À… ™’„“„„’àÝ$”â˜ßæ$šäžáî$ æ¤ãö$¦èªåþ$¬ê°ç†%²ì¶éŽ%¸î¼ë–%¾ðÂíž%Æïú¤%•
+öÕ šƒ ÉÍã
+Äêã¾’Ï¹%€‘“„‘…“Š‘‹“‘‘“½Šœ«ß%« 9‹Ú“!Ã¬ÆÉ‚ïôôÅÇýü¥Æ„&ºûŠæµÖ“& µ!ùšÃä¢&.±/÷§„Ó¯&<ó=õµà€¾&„ ™… ›ˆ ™‰ ›Ž ™ ›” ™• ›¿Ð zÒ Ò ¼&-Û zÐ¤²Þ‰#æ“ç¥±úÂ ¡Ã £Æ ¡Ç £Ì ¡Í £Ò ¡Ó £û‰‘•™¼Éž„ Ãî Úø Ñç"ô Üþ Óï"ú Þ„!Õ÷"€!àŠ!×ÿ"†!â!Ù‡#ü&lÜ'Ž#–!ä !Û™#Œ'nì' #¦!æ°!Ý«#œ'pü'²#¶!èÀ!ß½#¬'rŒ(¿'e·'Ë#Î!êØ!á×#Ä't¤(Þ#Þ!ìè!ãé#Ô'v´(ð#î!îø!åû#ä'xÄ(‚$þ!ðˆ"ç$ô'zÔ(MRµ'™$”"òž"é¥$§$Áž"ô¨"ë±$³$¿¨"ö²"í½$¿$½²"ø¼"ïÉ$†)#žÎ$À"úÊ"ñÙ$Û$¹Ê"üÔ"óå$ç$·Ô"þÞ"õñ$ó$µÞ"€è"÷ý$²)+À‚%ì"‚ö"ù%%±ö"„€#û™%›%¯€#†Š#ý¥%§%­Š#ˆ”#ÿ±%Þ)3Ú¶%˜#Š¢#Á%Ã%©¢#Œ¬#ƒÍ%Ï%§¬#Ž¶#…Ù%²#¼#‡á%øë#¼#’Æ#‰ì%Â#”Ì#‹õ%È#–Ò#ü%Î#˜Ø#…&Šý#à#‘Œ&â#“&ä#•”&æ#—˜&Œ$Ê õ$ô$ó$ô$ËõŒæ%¾$†¿$†®%‹"“ÿ"»&¬Î ø%Jêûî#Îö#Ç¯%þ#³ø#Ð€$É»%ˆ$µ‚$ÒŠ$ËÇ%’$·Œ$Ô”$ÍÓ%œ$¹–$Öž$Ïß%¦$» $Ø¨$Ñë%°$½ª$Ú²$Ó÷%º$¿´$Ü¼$Õƒ&Ä$Á¾$ÞÆ$×&Î$ÃÈ$àÐ$Ù›&Ø$ÅÒ$âÚ$Û§&â$ÇÜ$ää$Ý³&ì$Éæ$æî$ß¿&ö$Ëð$èø$áË&€%Íú$ê‚%ã×&Š%Ï„%ìŒ%åã&”%Ñî&%î˜%çñ& %Óü&œ%ð¤%éÿ&¬%ÕŠ'¨%ò°%ë'¸%×˜'´%ô¼%í›'Ä%Ù¥'Â$èÂ%öÊ%ï«'Ò%Û¶'Ð%øØ%ñ»'à%ÝÆ'Ü%úä%óÉ'ì%ßÔ'¦Ú'èì%üô%õÛ'ü%áæ'ú%þ‚&÷ë'Š&ã„&€Œ&ù÷'”&åŽ&‚–&ûƒ(ž&ç˜&„ &ý(¨&é¨)äª&ÿ›(²&ë´)â´&§(¼&íÀ)à¾&ƒ³(Æ&ïÌ)ÞÍ)á¿(Ð&ñ©ž·%ã)‰×ø'ˆù'ˆæ(Ãé)«û	ƒ²)êÑ#•æ†)Ÿ»ç%¯Ö²Íª,§,Ý.Â¸ü%ü%þË¸
+„î™‰—”£*'õÊÌã)ˆ$“&„ÍÍ„‰+æŒ/–&’“/˜&”œ&‘œ/ž&–¢&“¤/¤&˜¨&•¬/ª&š®&—´/°&œ´&™¼/¶&žº&›Ä/¼& À&Ì/Â&¢Æ&ŸÔ/È&¤Ì&¡Ü/Î&¦Ò&£ä/Ô&¨Ø&¥ì/Ú&ªÞ&§ô/à&¬ä&©ü/æ&®ê&«„0ì&°ð&­Œ0ò&²ö&¯”0ø&´ü&±œ0þ&¶‚'³¤0„'¸ˆ'µ¬0Š'ºŽ'·´0Þ!ê”'¹¼0ßö³*„ÿ%Ó%™0±+íñá×ÐÇâ%ã%ª0ç(ð(i0 i_cfg_stb
+i1 i_clk
+i2 i_qspi_dat[3]
+i3 i_qspi_dat[2]
+i4 i_qspi_dat[1]
+i5 i_qspi_dat[0]
+i6 i_reset
+i7 i_wb_addr[21]
+i8 i_wb_addr[20]
+i9 i_wb_addr[19]
+i10 i_wb_addr[18]
+i11 i_wb_addr[17]
+i12 i_wb_addr[16]
+i13 i_wb_addr[15]
+i14 i_wb_addr[14]
+i15 i_wb_addr[13]
+i16 i_wb_addr[12]
+i17 i_wb_addr[11]
+i18 i_wb_addr[10]
+i19 i_wb_addr[9]
+i20 i_wb_addr[8]
+i21 i_wb_addr[7]
+i22 i_wb_addr[6]
+i23 i_wb_addr[5]
+i24 i_wb_addr[4]
+i25 i_wb_addr[3]
+i26 i_wb_addr[2]
+i27 i_wb_addr[1]
+i28 i_wb_addr[0]
+i29 i_wb_cyc
+i30 i_wb_data[31]
+i31 i_wb_data[30]
+i32 i_wb_data[29]
+i33 i_wb_data[28]
+i34 i_wb_data[27]
+i35 i_wb_data[26]
+i36 i_wb_data[25]
+i37 i_wb_data[24]
+i38 i_wb_data[23]
+i39 i_wb_data[22]
+i40 i_wb_data[21]
+i41 i_wb_data[20]
+i42 i_wb_data[19]
+i43 i_wb_data[18]
+i44 i_wb_data[17]
+i45 i_wb_data[16]
+i46 i_wb_data[15]
+i47 i_wb_data[14]
+i48 i_wb_data[13]
+i49 i_wb_data[12]
+i50 i_wb_data[11]
+i51 i_wb_data[10]
+i52 i_wb_data[9]
+i53 i_wb_data[8]
+i54 i_wb_data[7]
+i55 i_wb_data[6]
+i56 i_wb_data[5]
+i57 i_wb_data[4]
+i58 i_wb_data[3]
+i59 i_wb_data[2]
+i60 i_wb_data[1]
+i61 i_wb_data[0]
+i62 i_wb_stb
+i63 i_wb_we
+i64 n65
+i65 n66
+i66 n67
+i67 n68
+i68 n69
+i69 n70
+i70 n71
+i71 n72
+i72 n73
+i73 n74
+i74 n75
+l0 $verific$n845$195
+l1 $verific$n961$240
+l2 $verific$n974$248
+l3 $techmap\f_wbm.$verific$n105$3772
+l4 $verific$n2206$648
+l5 fv_addr[21]
+l6 fv_addr[20]
+l7 fv_addr[19]
+l8 fv_addr[18]
+l9 fv_addr[17]
+l10 fv_addr[16]
+l11 fv_addr[15]
+l12 fv_addr[14]
+l13 fv_addr[13]
+l14 fv_addr[12]
+l15 fv_addr[11]
+l16 fv_addr[10]
+l17 fv_addr[9]
+l18 fv_addr[8]
+l19 fv_addr[7]
+l20 fv_addr[6]
+l21 fv_addr[5]
+l22 fv_addr[4]
+l23 fv_addr[3]
+l24 fv_addr[2]
+l25 fv_addr[1]
+l26 fv_addr[0]
+l27 f_past_data[32]
+l28 f_past_data[31]
+l29 f_past_data[30]
+l30 f_past_data[29]
+l31 f_past_data[28]
+l32 f_past_data[27]
+l33 f_past_data[26]
+l34 f_past_data[25]
+l35 f_past_data[24]
+l36 f_past_data[23]
+l37 f_past_data[22]
+l38 f_past_data[21]
+l39 f_past_data[20]
+l40 f_past_data[19]
+l41 f_past_data[18]
+l42 f_past_data[17]
+l43 f_past_data[16]
+l44 f_past_data[15]
+l45 f_past_data[14]
+l46 f_past_data[13]
+l47 f_past_data[12]
+l48 f_past_data[11]
+l49 f_past_data[10]
+l50 f_past_data[9]
+l51 f_past_data[8]
+l52 f_past_data[7]
+l53 f_past_data[6]
+l54 f_past_data[5]
+l55 f_past_data[4]
+l56 f_past_data[3]
+l57 f_past_data[2]
+l58 f_past_data[1]
+l59 f_past_data[0]
+l60 OPT_PIPE_BLOCK.r_pipe_req
+l61 OPT_PIPE_BLOCK.next_addr[21]
+l62 OPT_PIPE_BLOCK.next_addr[20]
+l63 OPT_PIPE_BLOCK.next_addr[19]
+l64 OPT_PIPE_BLOCK.next_addr[18]
+l65 OPT_PIPE_BLOCK.next_addr[17]
+l66 OPT_PIPE_BLOCK.next_addr[16]
+l67 OPT_PIPE_BLOCK.next_addr[15]
+l68 OPT_PIPE_BLOCK.next_addr[14]
+l69 OPT_PIPE_BLOCK.next_addr[13]
+l70 OPT_PIPE_BLOCK.next_addr[12]
+l71 OPT_PIPE_BLOCK.next_addr[11]
+l72 OPT_PIPE_BLOCK.next_addr[10]
+l73 OPT_PIPE_BLOCK.next_addr[9]
+l74 OPT_PIPE_BLOCK.next_addr[8]
+l75 OPT_PIPE_BLOCK.next_addr[7]
+l76 OPT_PIPE_BLOCK.next_addr[6]
+l77 OPT_PIPE_BLOCK.next_addr[5]
+l78 OPT_PIPE_BLOCK.next_addr[4]
+l79 OPT_PIPE_BLOCK.next_addr[3]
+l80 OPT_PIPE_BLOCK.next_addr[2]
+l81 OPT_PIPE_BLOCK.next_addr[1]
+l82 OPT_PIPE_BLOCK.next_addr[0]
+l83 CKSTB_GEN.clk_counter[2]
+l84 CKSTB_GEN.clk_counter[1]
+l85 CKSTB_GEN.clk_counter[0]
+l86 $verific$n1950$557
+l87 $techmap\f_wbm.$verific$n200$3838[31]
+l88 $techmap\f_wbm.$verific$n200$3838[30]
+l89 $techmap\f_wbm.$verific$n200$3838[29]
+l90 $techmap\f_wbm.$verific$n200$3838[28]
+l91 $techmap\f_wbm.$verific$n200$3838[27]
+l92 $techmap\f_wbm.$verific$n200$3838[26]
+l93 $techmap\f_wbm.$verific$n200$3838[25]
+l94 $techmap\f_wbm.$verific$n200$3838[24]
+l95 $techmap\f_wbm.$verific$n200$3838[23]
+l96 $techmap\f_wbm.$verific$n200$3838[22]
+l97 $techmap\f_wbm.$verific$n200$3838[21]
+l98 $techmap\f_wbm.$verific$n200$3838[20]
+l99 $techmap\f_wbm.$verific$n200$3838[19]
+l100 $techmap\f_wbm.$verific$n200$3838[18]
+l101 $techmap\f_wbm.$verific$n200$3838[17]
+l102 $techmap\f_wbm.$verific$n200$3838[16]
+l103 $techmap\f_wbm.$verific$n200$3838[15]
+l104 $techmap\f_wbm.$verific$n200$3838[14]
+l105 $techmap\f_wbm.$verific$n200$3838[13]
+l106 $techmap\f_wbm.$verific$n200$3838[12]
+l107 $techmap\f_wbm.$verific$n200$3838[11]
+l108 $techmap\f_wbm.$verific$n200$3838[10]
+l109 $techmap\f_wbm.$verific$n200$3838[9]
+l110 $techmap\f_wbm.$verific$n200$3838[8]
+l111 $techmap\f_wbm.$verific$n200$3838[7]
+l112 $techmap\f_wbm.$verific$n200$3838[6]
+l113 $techmap\f_wbm.$verific$n200$3838[5]
+l114 $techmap\f_wbm.$verific$n200$3838[4]
+l115 $techmap\f_wbm.$verific$n200$3838[3]
+l116 $techmap\f_wbm.$verific$n200$3838[2]
+l117 $techmap\f_wbm.$verific$n200$3838[1]
+l118 $techmap\f_wbm.$verific$n200$3838[0]
+l119 $techmap\f_wbm.$verific$n121$3779
+l120 $techmap\f_wbm.$verific$n131$3786
+l121 $verific$sva_stable_1343$qflexpress.v:2105$1820[7]
+l122 $verific$sva_stable_1343$qflexpress.v:2105$1820[6]
+l123 $verific$sva_stable_1343$qflexpress.v:2105$1820[5]
+l124 $verific$sva_stable_1343$qflexpress.v:2105$1820[4]
+l125 $verific$sva_stable_1343$qflexpress.v:2105$1820[3]
+l126 $verific$sva_stable_1343$qflexpress.v:2105$1820[2]
+l127 $verific$sva_stable_1343$qflexpress.v:2105$1820[1]
+l128 $verific$sva_stable_1343$qflexpress.v:2105$1820[0]
+l129 $techmap\f_wbm.$auto$verificsva.cc:1763:import$4035
+l130 $techmap\f_wbm.$auto$verificsva.cc:1762:import$4034
+l131 $auto$verificsva.cc:1763:import$2568
+l132 $auto$verificsva.cc:1763:import$1994
+l133 $auto$verificsva.cc:1763:import$2546
+l134 $auto$verificsva.cc:1762:import$2545
+l135 $auto$verificsva.cc:1763:import$2535
+l136 $auto$verificsva.cc:1762:import$2534
+l137 $verific$sva_stable_363$qflexpress.v:1318$1176[3]
+l138 $verific$sva_stable_363$qflexpress.v:1318$1176[2]
+l139 $verific$sva_stable_363$qflexpress.v:1318$1176[1]
+l140 $verific$sva_stable_363$qflexpress.v:1318$1176[0]
+l141 $auto$verificsva.cc:1762:import$2523
+l142 $verific$sva_stable_1365$qflexpress.v:2110$1839[31]
+l143 $verific$sva_stable_1365$qflexpress.v:2110$1839[30]
+l144 $verific$sva_stable_1365$qflexpress.v:2110$1839[29]
+l145 $verific$sva_stable_1365$qflexpress.v:2110$1839[28]
+l146 $verific$sva_stable_1365$qflexpress.v:2110$1839[27]
+l147 $verific$sva_stable_1365$qflexpress.v:2110$1839[26]
+l148 $verific$sva_stable_1365$qflexpress.v:2110$1839[25]
+l149 $verific$sva_stable_1365$qflexpress.v:2110$1839[24]
+l150 $verific$sva_stable_1365$qflexpress.v:2110$1839[23]
+l151 $verific$sva_stable_1365$qflexpress.v:2110$1839[22]
+l152 $verific$sva_stable_1365$qflexpress.v:2110$1839[21]
+l153 $verific$sva_stable_1365$qflexpress.v:2110$1839[20]
+l154 $verific$sva_stable_1365$qflexpress.v:2110$1839[19]
+l155 $verific$sva_stable_1365$qflexpress.v:2110$1839[18]
+l156 $verific$sva_stable_1365$qflexpress.v:2110$1839[17]
+l157 $verific$sva_stable_1365$qflexpress.v:2110$1839[16]
+l158 $verific$sva_stable_1365$qflexpress.v:2110$1839[15]
+l159 $verific$sva_stable_1365$qflexpress.v:2110$1839[14]
+l160 $verific$sva_stable_1365$qflexpress.v:2110$1839[13]
+l161 $verific$sva_stable_1365$qflexpress.v:2110$1839[12]
+l162 $verific$sva_stable_1365$qflexpress.v:2110$1839[11]
+l163 $verific$sva_stable_1365$qflexpress.v:2110$1839[10]
+l164 $verific$sva_stable_1365$qflexpress.v:2110$1839[9]
+l165 $verific$sva_stable_1365$qflexpress.v:2110$1839[8]
+l166 $verific$sva_stable_1365$qflexpress.v:2110$1839[7]
+l167 $verific$sva_stable_1365$qflexpress.v:2110$1839[6]
+l168 $verific$sva_stable_1365$qflexpress.v:2110$1839[5]
+l169 $verific$sva_stable_1365$qflexpress.v:2110$1839[4]
+l170 $verific$sva_stable_1365$qflexpress.v:2110$1839[3]
+l171 $verific$sva_stable_1365$qflexpress.v:2110$1839[2]
+l172 $verific$sva_stable_1365$qflexpress.v:2110$1839[1]
+l173 $verific$sva_stable_1365$qflexpress.v:2110$1839[0]
+l174 $auto$verificsva.cc:1763:import$2513
+l175 $auto$verificsva.cc:1762:import$2512
+l176 $auto$verificsva.cc:1763:import$2502
+l177 ckstb
+l178 $auto$verificsva.cc:1762:import$2501
+l179 $auto$verificsva.cc:1763:import$2469
+l180 $auto$verificsva.cc:1763:import$2447
+l181 $auto$verificsva.cc:1762:import$2694
+l182 $auto$verificsva.cc:1762:import$2446
+l183 $auto$verificsva.cc:1762:import$2683
+l184 $auto$verificsva.cc:1762:import$2672
+l185 $auto$verificsva.cc:1762:import$2661
+l186 $auto$verificsva.cc:1762:import$2650
+l187 cfg_cs
+l188 $auto$verificsva.cc:1762:import$2369
+l189 $auto$verificsva.cc:1762:import$2219
+l190 $auto$verificsva.cc:1762:import$2468
+l191 $verific$n2211$650
+l192 $auto$verificsva.cc:1763:import$2026
+l193 fv_data[31]
+l194 fv_data[30]
+l195 fv_data[29]
+l196 fv_data[28]
+l197 fv_data[27]
+l198 fv_data[26]
+l199 fv_data[25]
+l200 fv_data[24]
+l201 fv_data[23]
+l202 fv_data[22]
+l203 fv_data[21]
+l204 fv_data[20]
+l205 fv_data[19]
+l206 fv_data[18]
+l207 fv_data[17]
+l208 fv_data[16]
+l209 fv_data[15]
+l210 fv_data[14]
+l211 fv_data[13]
+l212 fv_data[12]
+l213 fv_data[11]
+l214 fv_data[10]
+l215 fv_data[9]
+l216 fv_data[8]
+l217 fv_data[7]
+l218 fv_data[6]
+l219 fv_data[5]
+l220 fv_data[4]
+l221 fv_data[3]
+l222 fv_data[2]
+l223 fv_data[1]
+l224 fv_data[0]
+l225 $auto$verificsva.cc:1763:import$2293
+l226 $auto$verificsva.cc:1762:import$2900
+l227 $auto$verificsva.cc:1762:import$2025
+l228 o_wb_stall
+l229 $auto$verificsva.cc:1763:import$2912
+l230 $auto$verificsva.cc:1762:import$2292
+l231 $auto$verificsva.cc:1763:import$3147
+l232 $auto$verificsva.cc:1763:import$2695
+l233 o_qspi_mod[1]
+l234 o_qspi_mod[0]
+l235 $auto$verificsva.cc:1763:import$2458
+l236 $auto$verificsva.cc:1762:import$2705
+l237 $auto$verificsva.cc:1763:import$2491
+l238 f_piperead[8]
+l239 f_piperead[7]
+l240 f_piperead[6]
+l241 f_piperead[5]
+l242 f_piperead[4]
+l243 f_piperead[3]
+l244 f_piperead[2]
+l245 f_piperead[1]
+l246 f_piperead[0]
+l247 $auto$verificsva.cc:1762:import$1993
+l248 $auto$verificsva.cc:1762:import$2567
+l249 $auto$verificsva.cc:1763:import$2857
+l250 $auto$verificsva.cc:1763:import$2923
+l251 f_cfghsread[3]
+l252 f_cfghsread[2]
+l253 f_cfghsread[1]
+l254 f_cfghsread[0]
+l255 $auto$verificsva.cc:1763:import$2326
+l256 $auto$verificsva.cc:1762:import$2933
+l257 $auto$verificsva.cc:1763:import$2370
+l258 $auto$verificsva.cc:1762:import$2977
+l259 $verific$n2213$651
+l260 $auto$verificsva.cc:1762:import$2036
+l261 $techmap\f_wbm.$auto$verificsva.cc:1762:import$4012
+l262 $auto$verificsva.cc:1763:import$2220
+l263 dly_ack
+l264 $verific$n2293$671
+l265 f_cfghswrite[3]
+l266 f_cfghswrite[2]
+l267 f_cfghswrite[1]
+l268 f_cfghswrite[0]
+l269 $auto$verificsva.cc:1762:import$2314
+l270 $auto$verificsva.cc:1763:import$3169
+l271 $auto$verificsva.cc:1762:import$2358
+l272 $verific$n954$236
+l273 $auto$verificsva.cc:1762:import$2208
+l274 $auto$verificsva.cc:1763:import$2304
+l275 $auto$verificsva.cc:1762:import$2911
+l276 $techmap\f_wbm.$verific$n72$3755
+l277 $auto$verificsva.cc:1763:import$2154
+l278 $auto$verificsva.cc:1762:import$2230
+l279 o_qspi_sck
+l280 $auto$verificsva.cc:1762:import$2336
+l281 $auto$verificsva.cc:1762:import$2186
+l282 $auto$verificsva.cc:1762:import$2999
+l283 $auto$verificsva.cc:1762:import$2303
+l284 $auto$verificsva.cc:1763:import$3158
+l285 $auto$verificsva.cc:1762:import$2153
+l286 $auto$verificsva.cc:1763:import$2706
+l287 $auto$verificsva.cc:1763:import$2557
+l288 f_cfglswrite[9]
+l289 f_cfglswrite[8]
+l290 f_cfglswrite[7]
+l291 f_cfglswrite[6]
+l292 f_cfglswrite[5]
+l293 f_cfglswrite[4]
+l294 f_cfglswrite[3]
+l295 f_cfglswrite[2]
+l296 f_cfglswrite[1]
+l297 f_cfglswrite[0]
+l298 $auto$verificsva.cc:1762:import$2270
+l299 $auto$verificsva.cc:1763:import$3125
+l300 $auto$verificsva.cc:1762:import$2164
+l301 $auto$verificsva.cc:1762:import$2479
+l302 $verific$n84$35
+l303 cfg_mode
+l304 $verific$n2196$643
+l305 $auto$verificsva.cc:1763:import$2945
+l306 actual_sck
+l307 $auto$verificsva.cc:1762:import$2556
+l308 $auto$verificsva.cc:1763:import$2249
+l309 $auto$verificsva.cc:1762:import$2856
+l310 $auto$verificsva.cc:1762:import$2490
+l311 $auto$verificsva.cc:1763:import$2143
+l312 cfg_dir
+l313 clk_ctr[4]
+l314 clk_ctr[3]
+l315 clk_ctr[2]
+l316 clk_ctr[1]
+l317 clk_ctr[0]
+l318 $auto$verificsva.cc:1763:import$2956
+l319 $auto$verificsva.cc:1763:import$2315
+l320 $auto$verificsva.cc:1762:import$2922
+l321 $auto$verificsva.cc:1763:import$2165
+l322 $verific$n840$192
+l323 f_wbm.f_nacks[1]
+l324 f_wbm.f_nacks[0]
+l325 $auto$verificsva.cc:1762:import$2325
+l326 $auto$verificsva.cc:1762:import$2175
+l327 $auto$verificsva.cc:1763:import$2176
+l328 $auto$verificsva.cc:1762:import$3343
+l329 $auto$verificsva.cc:1763:import$2337
+l330 $auto$verificsva.cc:1762:import$2944
+l331 $auto$verificsva.cc:1763:import$2187
+l332 ckpos
+l333 $auto$verificsva.cc:1762:import$2347
+l334 $auto$verificsva.cc:1762:import$2197
+l335 $auto$verificsva.cc:1763:import$2348
+l336 $auto$verificsva.cc:1762:import$2955
+l337 $auto$verificsva.cc:1763:import$2198
+l338 $auto$verificsva.cc:1763:import$2359
+l339 $auto$verificsva.cc:1762:import$2966
+l340 $auto$verificsva.cc:1763:import$2209
+l341 $auto$verificsva.cc:1762:import$2988
+l342 $auto$verificsva.cc:1763:import$2231
+l343 $auto$verificsva.cc:1762:import$2248
+l344 $auto$verificsva.cc:1763:import$3103
+l345 $auto$verificsva.cc:1763:import$2524
+l346 data_pipe[35]
+l347 data_pipe[34]
+l348 data_pipe[33]
+l349 data_pipe[32]
+l350 data_pipe[31]
+l351 data_pipe[30]
+l352 data_pipe[29]
+l353 data_pipe[28]
+l354 data_pipe[27]
+l355 data_pipe[26]
+l356 data_pipe[25]
+l357 data_pipe[24]
+l358 data_pipe[23]
+l359 data_pipe[22]
+l360 data_pipe[21]
+l361 data_pipe[20]
+l362 data_pipe[19]
+l363 data_pipe[18]
+l364 data_pipe[17]
+l365 data_pipe[16]
+l366 data_pipe[15]
+l367 data_pipe[14]
+l368 data_pipe[13]
+l369 data_pipe[12]
+l370 data_pipe[11]
+l371 data_pipe[10]
+l372 data_pipe[9]
+l373 data_pipe[8]
+l374 data_pipe[7]
+l375 data_pipe[6]
+l376 data_pipe[5]
+l377 data_pipe[4]
+l378 data_pipe[3]
+l379 data_pipe[2]
+l380 data_pipe[1]
+l381 data_pipe[0]
+l382 $auto$verificsva.cc:1762:import$2259
+l383 $auto$verificsva.cc:1763:import$3114
+l384 $auto$verificsva.cc:1763:import$2260
+l385 $auto$verificsva.cc:1762:import$2867
+l386 $auto$verificsva.cc:1762:import$2578
+l387 $auto$verificsva.cc:1763:import$2868
+l388 $verific$i351$qflexpress.v:1314$1164
+l389 $auto$verificsva.cc:1763:import$2271
+l390 $auto$verificsva.cc:1762:import$2878
+l391 $auto$verificsva.cc:1762:import$2131
+l392 $auto$verificsva.cc:1763:import$2684
+l393 $auto$verificsva.cc:1762:import$2281
+l394 $auto$verificsva.cc:1763:import$3136
+l395 $auto$verificsva.cc:1763:import$2132
+l396 o_wb_data[31]
+l397 o_wb_data[30]
+l398 o_wb_data[29]
+l399 o_wb_data[28]
+l400 o_wb_data[27]
+l401 o_wb_data[26]
+l402 o_wb_data[25]
+l403 o_wb_data[24]
+l404 o_wb_data[23]
+l405 o_wb_data[22]
+l406 o_wb_data[21]
+l407 o_wb_data[20]
+l408 o_wb_data[19]
+l409 o_wb_data[18]
+l410 o_wb_data[17]
+l411 o_wb_data[16]
+l412 o_wb_data[15]
+l413 o_wb_data[14]
+l414 o_wb_data[13]
+l415 o_wb_data[12]
+l416 o_wb_data[11]
+l417 o_wb_data[10]
+l418 o_wb_data[9]
+l419 o_wb_data[8]
+l420 o_wb_data[7]
+l421 o_wb_data[6]
+l422 o_wb_data[5]
+l423 o_wb_data[4]
+l424 o_wb_data[3]
+l425 o_wb_data[2]
+l426 o_wb_data[1]
+l427 o_wb_data[0]
+l428 $auto$verificsva.cc:1763:import$2282
+l429 $auto$verificsva.cc:1762:import$2889
+l430 f_past_valid
+l431 $auto$verificsva.cc:1763:import$2579
+l432 $auto$verificsva.cc:1763:import$2879
+l433 $techmap\f_wbm.$verific$n124$3781
+l434 $auto$verificsva.cc:1763:import$2590
+l435 $auto$verificsva.cc:1762:import$2600
+l436 $auto$verificsva.cc:1763:import$2890
+l437 $verific$n692$129
+l438 $auto$verificsva.cc:1763:import$2601
+l439 $auto$verificsva.cc:1762:import$2611
+l440 $auto$verificsva.cc:1763:import$2901
+l441 $auto$verificsva.cc:1763:import$2612
+l442 $auto$verificsva.cc:1763:import$2651
+l443 $auto$verificsva.cc:1763:import$2662
+l444 $techmap\f_wbm.$verific$n138$3836[21]
+l445 $techmap\f_wbm.$verific$n138$3836[20]
+l446 $techmap\f_wbm.$verific$n138$3836[19]
+l447 $techmap\f_wbm.$verific$n138$3836[18]
+l448 $techmap\f_wbm.$verific$n138$3836[17]
+l449 $techmap\f_wbm.$verific$n138$3836[16]
+l450 $techmap\f_wbm.$verific$n138$3836[15]
+l451 $techmap\f_wbm.$verific$n138$3836[14]
+l452 $techmap\f_wbm.$verific$n138$3836[13]
+l453 $techmap\f_wbm.$verific$n138$3836[12]
+l454 $techmap\f_wbm.$verific$n138$3836[11]
+l455 $techmap\f_wbm.$verific$n138$3836[10]
+l456 $techmap\f_wbm.$verific$n138$3836[9]
+l457 $techmap\f_wbm.$verific$n138$3836[8]
+l458 $techmap\f_wbm.$verific$n138$3836[7]
+l459 $techmap\f_wbm.$verific$n138$3836[6]
+l460 $techmap\f_wbm.$verific$n138$3836[5]
+l461 $techmap\f_wbm.$verific$n138$3836[4]
+l462 $techmap\f_wbm.$verific$n138$3836[3]
+l463 $techmap\f_wbm.$verific$n138$3836[2]
+l464 $techmap\f_wbm.$verific$n138$3836[1]
+l465 $techmap\f_wbm.$verific$n138$3836[0]
+l466 $auto$verificsva.cc:1763:import$2673
+l467 $auto$verificsva.cc:1763:import$2934
+l468 $auto$verificsva.cc:1763:import$2967
+l469 $auto$verificsva.cc:1763:import$2978
+l470 $auto$verificsva.cc:1763:import$2037
+l471 $techmap\f_wbm.$auto$verificsva.cc:1763:import$4013
+l472 $auto$verificsva.cc:1763:import$2989
+l473 $auto$verificsva.cc:1763:import$3000
+l474 $auto$verificsva.cc:1762:import$3031
+l475 $auto$verificsva.cc:1763:import$2392
+l476 $auto$verificsva.cc:1763:import$3240
+l477 $auto$verificsva.cc:1763:import$3032
+l478 $auto$verificsva.cc:1762:import$3042
+l479 $auto$verificsva.cc:1763:import$2403
+l480 $auto$verificsva.cc:1763:import$3251
+l481 $auto$verificsva.cc:1763:import$3043
+l482 $auto$verificsva.cc:1762:import$2142
+l483 cfg_speed
+l484 $auto$verificsva.cc:1762:import$3102
+l485 ckpre
+l486 $auto$verificsva.cc:1762:import$3113
+l487 $auto$verificsva.cc:1762:import$3124
+l488 $auto$verificsva.cc:1762:import$3135
+l489 $auto$verificsva.cc:1762:import$3146
+l490 $auto$verificsva.cc:1762:import$3157
+l491 $auto$verificsva.cc:1762:import$3168
+l492 $auto$verificsva.cc:1762:import$2589
+l493 $verific$n707$135
+l494 f_wbm.f_nreqs[1]
+l495 f_wbm.f_nreqs[0]
+l496 pre_ack
+l497 $auto$verificsva.cc:1762:import$2380
+l498 $auto$verificsva.cc:1762:import$3228
+l499 o_qspi_cs_n
+l500 $auto$verificsva.cc:1763:import$2381
+l501 $auto$verificsva.cc:1763:import$3229
+l502 $auto$verificsva.cc:1762:import$2391
+l503 $auto$verificsva.cc:1762:import$3239
+l504 $auto$verificsva.cc:1762:import$2402
+l505 f_memread[21]
+l506 f_memread[20]
+l507 f_memread[19]
+l508 f_memread[18]
+l509 f_memread[17]
+l510 f_memread[16]
+l511 f_memread[15]
+l512 f_memread[14]
+l513 f_memread[13]
+l514 f_memread[12]
+l515 f_memread[11]
+l516 f_memread[10]
+l517 f_memread[9]
+l518 f_memread[8]
+l519 f_memread[7]
+l520 f_memread[6]
+l521 f_memread[5]
+l522 f_memread[4]
+l523 f_memread[3]
+l524 f_memread[2]
+l525 f_memread[1]
+l526 f_memread[0]
+l527 $auto$verificsva.cc:1762:import$3250
+l528 $auto$verificsva.cc:1762:import$2413
+l529 $auto$verificsva.cc:1762:import$3261
+l530 $auto$verificsva.cc:1763:import$2414
+l531 $auto$verificsva.cc:1763:import$3262
+l532 $auto$verificsva.cc:1762:import$2424
+l533 $auto$verificsva.cc:1762:import$3272
+l534 $auto$verificsva.cc:1763:import$2425
+l535 $auto$verificsva.cc:1763:import$3273
+l536 $auto$verificsva.cc:1762:import$2435
+l537 $auto$verificsva.cc:1762:import$3325
+l538 $auto$verificsva.cc:1763:import$2436
+l539 $auto$verificsva.cc:1763:import$3326
+l540 $auto$verificsva.cc:1762:import$2457
+l541 $auto$verificsva.cc:1763:import$3344
+l542 $auto$verificsva.cc:1763:import$2480
+l543 $verific$n759$160
+b0 n76
+c0 n77
+c1 n78
+c2 n79
+c3 n80
+c4 n81
+c5 n82
+c6 n83
+c7 n84
+c8 n85
+c9 n86
+c10 n87
+c11 n88
+c12 n89
+c13 n90
+c14 n91
+c15 n92
+c16 n93
+c17 n94
+c18 n95
+c19 n96
+c20 n97
+c21 n98
+c22 n99
+c
+../mc-benchmark/hwmcc1920/aig/qspiflash_qflexpress_divfive-p047 
+This file was written by ABC on Fri Jun  7 11:41:30 2024
+For information about AIGER format, refer to http://fmv.jku.at/aiger

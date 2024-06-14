@@ -1,0 +1,7 @@
+aig 4 2 1 0 1 1
+9 1
+7
+i0 clock
+i1 reset
+l0 impl_PC_valid
+b0 impl_PC_valid

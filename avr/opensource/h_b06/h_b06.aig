@@ -1,0 +1,15 @@
+aig 22 8 5 0 9 1
+35
+0
+31
+3
+3
+45
+	i0 CONT_EQL
+i1 EQL
+i2 clock
+l0 state
+l1 USCITE[1]
+l2 USCITE[0]
+l3 ACKOUT
+l4 ENABLE_COUNT

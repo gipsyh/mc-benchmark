@@ -1,0 +1,17 @@
+The 24 Intel benchmarks can not be included directly.  Only
+links to '../intel' are included but the files are missing.
+These benchmarks can be obtained separately from:
+
+  http://fmv.jku.at/hwmcc/hwmcc08intel.php
+
+Here are the names of the used Intel benchmarks:
+
+intel009.aig  intel016.aig  intel024.aig  intel034.aig  intel048.aig
+intel011.aig  intel018.aig  intel027.aig  intel035.aig  intel065.aig
+intel012.aig  intel020.aig  intel029.aig  intel036.aig  intel066.aig
+intel013.aig  intel022.aig  intel032.aig  intel038.aig  intel067.aig
+intel015.aig  intel023.aig  intel033.aig  intel043.aig
+
+
+Armin Biere
+Mon Jul 21 10:57:39 CEST 2014

@@ -1,0 +1,46 @@
+-- Flattened Boolean FSM model  generated from short.smv
+-- Dumped cwd->layers are: model model_bool determ determ_bool __TempLayer_0 
+
+MODULE main
+-- Input variables from layer 'model'
+-- Input variables from layer 'model_bool'
+-- Input variables from layer 'determ'
+-- Input variables from layer 'determ_bool'
+-- Input variables from layer '__TempLayer_0'
+-- State variables from layer 'model'
+VAR
+request : boolean;
+-- DEFINE
+-- state :=  (state.0 ? busy : ready) ;
+
+-- State variables from layer 'model_bool'
+VAR
+state.0 : boolean;
+
+-- State variables from layer 'determ'
+-- State variables from layer 'determ_bool'
+-- State variables from layer '__TempLayer_0'
+-- Frozen variables from layer 'model'
+-- Frozen variables from layer 'model_bool'
+-- Frozen variables from layer 'determ'
+-- Frozen variables from layer 'determ_bool'
+-- Frozen variables from layer '__TempLayer_0'
+-- CONSTANTS
+--  ready, busy ;
+
+INIT
+ !state.0
+
+
+
+TRANS
+ (!(!state.0 & request) | next(state.0))
+
+
+
+LTLSPEC
+ G (!request |  F state.0)
+
+LTLSPEC
+!( G (!request |  F state.0))
+

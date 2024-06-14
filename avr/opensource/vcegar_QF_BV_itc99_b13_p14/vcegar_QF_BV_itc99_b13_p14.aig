@@ -1,0 +1,57 @@
+aig 202 57 21 0 124 1
+205
+217
+229
+241
+253
+265
+277
+289
+299
+307
+311
+313
+140
+338 1
+348
+356
+149
+364
+382
+385
+402
+404
+ $(,0488-17:?BFIM*-)#4"69'100BE%?,>$NQ#M(L0Z]![$Z<fii hHruwvT~m^ˆ‹h=“›£¡ŸBz5£@~e¦‚
+¯³ÃÁÆ9ÇËÎ;ÏÏ
+ÒAÓÑNÓL®r×±ÝàåæèëPQ£ðõ÷i0 clock
+i1 data_in[7]
+i2 data_in[6]
+i3 data_in[5]
+i4 data_in[4]
+i5 data_in[3]
+i6 data_in[2]
+i7 data_in[1]
+i8 data_in[0]
+i9 dsr
+i10 eoc
+l0 tx_conta[9]
+l1 tx_conta[8]
+l2 tx_conta[7]
+l3 tx_conta[6]
+l4 tx_conta[5]
+l5 tx_conta[4]
+l6 tx_conta[3]
+l7 tx_conta[2]
+l8 tx_conta[1]
+l9 tx_conta[0]
+l10 tre
+l11 shot
+l12 send_data
+l13 next_bit
+l14 load
+l15 itfc_state
+l16 S1
+l17 S2
+l18 tx_end
+l19 send
+l20 send_en

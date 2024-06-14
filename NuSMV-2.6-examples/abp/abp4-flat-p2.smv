@@ -1,0 +1,680 @@
+-- Flattened Boolean FSM model  generated from abp4.smv
+-- Dumped cwd->layers are: model model_bool determ determ_bool __TempLayer_0 
+
+MODULE main
+-- Input variables from layer 'model'
+-- DEFINE
+-- _process_selector_ :=  (_process_selector_.2 ?  (_process_selector_.1 ? receiver : s2r)  :  (_process_selector_.1 ? r2s :  (_process_selector_.0 ? sender : main) ) ) ;
+
+-- Input variables from layer 'model_bool'
+IVAR
+_process_selector_.2 : boolean;
+_process_selector_.1 : boolean;
+_process_selector_.0 : boolean;
+
+-- Input variables from layer 'determ'
+-- Input variables from layer 'determ_bool'
+-- Input variables from layer '__TempLayer_0'
+-- State variables from layer 'model'
+-- DEFINE
+-- sender.state :=  (sender.state.1 ? send :  (sender.state.0 ? wait_for_ack : get) ) ;
+VAR
+sender.abp : boolean;
+-- DEFINE
+-- sender.data :=  (sender.data.3 ?  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 15 : 7)  :  (sender.data.0 ? 11 : 3) )  :  (sender.data.1 ?  (sender.data.0 ? 13 : 5)  :  (sender.data.0 ? 9 : 1) ) )  :  (sender.data.2 ?  (sender.data.1 ?  (sender.data.0 ? 14 : 6)  :  (sender.data.0 ? 10 : 2) )  :  (sender.data.1 ?  (sender.data.0 ? 12 : 4)  :  (sender.data.0 ? 8 : 0) ) ) ) ;
+-- s2r_in.tag :=  (s2r_in.tag.1 ?  (s2r_in.tag.0 ? error : data0)  :  (s2r_in.tag.0 ? data1 : mt) ) ;
+-- s2r_in.data :=  (s2r_in.data.3 ?  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 15 : 7)  :  (s2r_in.data.0 ? 11 : 3) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 13 : 5)  :  (s2r_in.data.0 ? 9 : 1) ) )  :  (s2r_in.data.2 ?  (s2r_in.data.1 ?  (s2r_in.data.0 ? 14 : 6)  :  (s2r_in.data.0 ? 10 : 2) )  :  (s2r_in.data.1 ?  (s2r_in.data.0 ? 12 : 4)  :  (s2r_in.data.0 ? 8 : 0) ) ) ) ;
+-- s2r_out.tag :=  (s2r_out.tag.1 ?  (s2r_out.tag.0 ? error : data0)  :  (s2r_out.tag.0 ? data1 : mt) ) ;
+-- s2r_out.data :=  (s2r_out.data.3 ?  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 15 : 7)  :  (s2r_out.data.0 ? 11 : 3) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 13 : 5)  :  (s2r_out.data.0 ? 9 : 1) ) )  :  (s2r_out.data.2 ?  (s2r_out.data.1 ?  (s2r_out.data.0 ? 14 : 6)  :  (s2r_out.data.0 ? 10 : 2) )  :  (s2r_out.data.1 ?  (s2r_out.data.0 ? 12 : 4)  :  (s2r_out.data.0 ? 8 : 0) ) ) ) ;
+-- receiver.state :=  (receiver.state.1 ? deliver :  (receiver.state.0 ? send_ack : receive) ) ;
+VAR
+receiver.abp : boolean;
+-- DEFINE
+-- receiver.data :=  (receiver.data.3 ?  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 15 : 7)  :  (receiver.data.0 ? 11 : 3) )  :  (receiver.data.1 ?  (receiver.data.0 ? 13 : 5)  :  (receiver.data.0 ? 9 : 1) ) )  :  (receiver.data.2 ?  (receiver.data.1 ?  (receiver.data.0 ? 14 : 6)  :  (receiver.data.0 ? 10 : 2) )  :  (receiver.data.1 ?  (receiver.data.0 ? 12 : 4)  :  (receiver.data.0 ? 8 : 0) ) ) ) ;
+-- r2s_in.tag :=  (r2s_in.tag.1 ?  (r2s_in.tag.0 ? error : ack0)  :  (r2s_in.tag.0 ? ack1 : mt) ) ;
+-- r2s_out.tag :=  (r2s_out.tag.1 ?  (r2s_out.tag.0 ? error : ack0)  :  (r2s_out.tag.0 ? ack1 : mt) ) ;
+
+-- State variables from layer 'model_bool'
+VAR
+sender.state.1 : boolean;
+sender.state.0 : boolean;
+sender.data.3 : boolean;
+sender.data.2 : boolean;
+sender.data.1 : boolean;
+sender.data.0 : boolean;
+s2r_in.tag.1 : boolean;
+s2r_in.tag.0 : boolean;
+s2r_in.data.3 : boolean;
+s2r_in.data.2 : boolean;
+s2r_in.data.1 : boolean;
+s2r_in.data.0 : boolean;
+s2r_out.tag.1 : boolean;
+s2r_out.tag.0 : boolean;
+s2r_out.data.3 : boolean;
+s2r_out.data.2 : boolean;
+s2r_out.data.1 : boolean;
+s2r_out.data.0 : boolean;
+receiver.state.1 : boolean;
+receiver.state.0 : boolean;
+receiver.data.3 : boolean;
+receiver.data.2 : boolean;
+receiver.data.1 : boolean;
+receiver.data.0 : boolean;
+r2s_in.tag.1 : boolean;
+r2s_in.tag.0 : boolean;
+r2s_out.tag.1 : boolean;
+r2s_out.tag.0 : boolean;
+
+-- State variables from layer 'determ'
+-- State variables from layer 'determ_bool'
+-- State variables from layer '__TempLayer_0'
+-- Frozen variables from layer 'model'
+-- Frozen variables from layer 'model_bool'
+-- Frozen variables from layer 'determ'
+-- Frozen variables from layer 'determ_bool'
+-- Frozen variables from layer '__TempLayer_0'
+-- CONSTANTS
+--  get, send, wait_for_ack, mt, data0, data1, error, receive, deliver, send_ack, ack0, ack1, main, s2r, r2s, receiver, sender ;
+
+INIT
+ __expr0
+
+INIT
+ !sender.state.0
+
+INIT
+ __expr1
+
+INIT
+ !s2r_in.tag.1
+
+INIT
+ !s2r_in.tag.0
+
+INIT
+ !s2r_out.tag.1
+
+INIT
+ !s2r_out.tag.0
+
+INIT
+ __expr2
+
+INIT
+ !receiver.state.0
+
+INIT
+ __expr3
+
+INIT
+ !r2s_in.tag.1
+
+INIT
+ !r2s_in.tag.0
+
+INIT
+ !r2s_out.tag.1
+
+INIT
+ !r2s_out.tag.0
+
+
+INVAR
+ (__expr0 | !sender.state.0)
+
+INVAR
+ (__expr2 | !receiver.state.0)
+
+
+TRANS
+ case
+_process_selector_.2 : !_process_selector_.0;
+TRUE : (__expr4 | !_process_selector_.0);
+esac
+
+TRANS
+ __expr18
+
+TRANS
+ __expr19
+
+TRANS
+ __expr24
+
+TRANS
+ __expr32
+
+TRANS
+ __expr44
+
+TRANS
+ __expr53
+
+TRANS
+ __expr18
+
+TRANS
+ __expr19
+
+TRANS
+ __expr24
+
+TRANS
+ __expr60
+
+TRANS
+ __expr72
+
+TRANS
+ __expr32
+
+TRANS
+ __expr44
+
+TRANS
+ __expr82
+
+TRANS
+ __expr94
+
+TRANS
+ __expr60
+
+TRANS
+ __expr72
+
+TRANS
+ __expr95
+
+TRANS
+ __expr100
+
+TRANS
+ __expr82
+
+TRANS
+ __expr95
+
+TRANS
+ __expr94
+
+TRANS
+ __expr100
+
+TRANS
+ __expr53
+
+
+FAIRNESS
+ __expr5
+
+
+FAIRNESS
+ __expr58
+
+
+FAIRNESS
+ __expr45
+
+
+FAIRNESS
+ (__expr13 | __expr14)
+
+
+FAIRNESS
+ __expr25
+
+
+FAIRNESS
+ (__expr73 | __expr74)
+
+
+
+-- LTLSPEC
+--  G (__expr101 |  X (__expr101 U __expr15))
+
+-- LTLSPEC
+--  G (__expr101 |  X ((__expr6 U __expr101) U __expr15))
+
+LTLSPEC
+ G ( F __expr6)
+
+-- LTLSPEC
+--  G (__expr102 |  Y ( H __expr102))
+
+-- LTLSPEC
+-- !( G (__expr102 |  Y ( H __expr102)))
+
+-- Symbols introduced by the dumper:
+DEFINE __expr91 := case
+receiver.data.1 : (next(receiver.data.1) & __expr90);
+TRUE : (__expr85 & __expr90);
+esac ;
+
+DEFINE __expr67 := !next(s2r_out.data.3) ;
+
+DEFINE __expr86 := case
+s2r_out.data.1 : (next(receiver.data.1) & __expr84);
+TRUE : (__expr85 & __expr84);
+esac ;
+
+DEFINE __expr12 := (__expr0 & sender.state.0) ;
+
+DEFINE __expr6 := (__expr0 & !sender.state.0) ;
+
+DEFINE __expr54 := !next(s2r_out.tag.0) ;
+
+DEFINE __expr70 := case
+s2r_out.data.2 : (next(s2r_out.data.2) & __expr69);
+TRUE : (__expr65 & __expr69);
+esac ;
+
+DEFINE __expr96 := !next(r2s_in.tag.1) ;
+
+DEFINE __expr16 := !next(sender.state.0) ;
+
+DEFINE __expr85 := !next(receiver.data.1) ;
+
+DEFINE __expr17 := (!r2s_out.tag.1 & !r2s_out.tag.0) ;
+
+DEFINE __expr50 := case
+r2s_out.tag.0 : next(r2s_out.tag.0);
+TRUE : __expr49;
+esac ;
+
+DEFINE __expr24 := case
+__expr5 : (__expr15 | __expr23);
+TRUE : __expr23;
+esac ;
+
+DEFINE __expr15 := (__expr12 & ((__expr1 & __expr13) | (sender.abp & __expr14))) ;
+
+DEFINE __expr95 := (next(receiver.abp) <-> case
+__expr58 : case
+receiver.state.1 : __expr3;
+TRUE : receiver.abp;
+esac;
+TRUE : receiver.abp;
+esac) ;
+
+DEFINE __expr23 := case
+sender.data.3 : (next(sender.data.3) & __expr22);
+TRUE : (!next(sender.data.3) & __expr22);
+esac ;
+
+DEFINE __expr33 := !next(s2r_in.data.0) ;
+
+DEFINE __expr14 := (!r2s_out.tag.1 & r2s_out.tag.0) ;
+
+DEFINE __expr42 := case
+sender.data.1 : (next(s2r_in.data.1) & __expr41);
+TRUE : (__expr35 & __expr41);
+esac ;
+
+DEFINE __expr99 := case
+r2s_in.tag.1 : (next(r2s_in.tag.1) & __expr98);
+TRUE : (__expr96 & __expr98);
+esac ;
+
+DEFINE __expr89 := !next(receiver.data.3) ;
+
+DEFINE __expr62 := case
+s2r_in.data.0 : next(s2r_out.data.0);
+TRUE : __expr61;
+esac ;
+
+DEFINE __expr18 := case
+__expr5 : case
+__expr6 : next(sender.state.1);
+__expr8 : __expr10;
+(sender.state.1 & __expr11) : next(sender.state.1);
+__expr15 : (__expr9 & __expr16);
+(__expr12 & (((sender.abp & __expr13) | (__expr1 & __expr14)) | (r2s_out.tag.1 & r2s_out.tag.0))) : next(sender.state.1);
+(__expr12 & __expr17) : __expr10;
+esac;
+sender.state.1 : next(sender.state.1);
+TRUE : (__expr9 & case
+sender.state.0 : next(sender.state.0);
+TRUE : __expr16;
+esac);
+esac ;
+
+DEFINE __expr78 := !next(receiver.state.0) ;
+
+DEFINE __expr9 := !next(sender.state.1) ;
+
+DEFINE __expr59 := (__expr2 & !receiver.state.0) ;
+
+DEFINE __expr92 := case
+receiver.data.2 : (next(receiver.data.2) & __expr91);
+TRUE : (__expr87 & __expr91);
+esac ;
+
+DEFINE __expr73 := (s2r_out.tag.1 & !s2r_out.tag.0) ;
+
+DEFINE __expr58 := (_process_selector_.2 & _process_selector_.1) ;
+
+DEFINE __expr29 := !next(s2r_in.tag.0) ;
+
+DEFINE __expr46 := (!r2s_in.tag.1 & !r2s_in.tag.0) ;
+
+DEFINE __expr49 := !next(r2s_out.tag.0) ;
+
+DEFINE __expr8 := (sender.state.1 & __expr7) ;
+
+DEFINE __expr71 := case
+s2r_out.data.3 : (next(s2r_out.data.3) & __expr70);
+TRUE : (__expr67 & __expr70);
+esac ;
+
+DEFINE __expr60 := case
+__expr25 : case
+__expr27 : case
+s2r_in.tag.1 : (next(s2r_out.tag.1) & (!s2r_in.tag.0 | next(s2r_out.tag.0)));
+(next(s2r_out.tag.1) | s2r_in.tag.0) : next(s2r_out.tag.0);
+TRUE : __expr54;
+esac;
+TRUE : __expr57;
+esac;
+__expr58 : case
+__expr59 : (__expr56 & __expr54);
+TRUE : __expr57;
+esac;
+TRUE : __expr57;
+esac ;
+
+DEFINE __expr27 := (__expr26 & __expr11) ;
+
+DEFINE __expr81 := (__expr80 & __expr46) ;
+
+DEFINE __expr2 := !receiver.state.1 ;
+
+DEFINE __expr36 := case
+s2r_in.data.1 : (next(s2r_in.data.1) & __expr34);
+TRUE : (__expr35 & __expr34);
+esac ;
+
+DEFINE __expr5 := (!_process_selector_.2 & (__expr4 & _process_selector_.0)) ;
+
+DEFINE __expr66 := case
+s2r_in.data.2 : (next(s2r_out.data.2) & __expr64);
+TRUE : (__expr65 & __expr64);
+esac ;
+
+DEFINE __expr57 := case
+s2r_out.tag.1 : (next(s2r_out.tag.1) & __expr55);
+TRUE : (__expr56 & __expr55);
+esac ;
+
+DEFINE __expr76 := !next(receiver.state.1) ;
+
+DEFINE __expr0 := !sender.state.1 ;
+
+DEFINE __expr35 := !next(s2r_in.data.1) ;
+
+DEFINE __expr20 := case
+sender.data.0 : next(sender.data.0);
+TRUE : !next(sender.data.0);
+esac ;
+
+DEFINE __expr65 := !next(s2r_out.data.2) ;
+
+DEFINE __expr84 := case
+s2r_out.data.0 : next(receiver.data.0);
+TRUE : __expr83;
+esac ;
+
+DEFINE __expr56 := !next(s2r_out.tag.1) ;
+
+DEFINE __expr43 := case
+sender.data.2 : (next(s2r_in.data.2) & __expr42);
+TRUE : (__expr37 & __expr42);
+esac ;
+
+DEFINE __expr11 := !__expr7 ;
+
+DEFINE __expr47 := !__expr46 ;
+
+DEFINE __expr26 := (!s2r_out.tag.1 & !s2r_out.tag.0) ;
+
+DEFINE __expr75 := (__expr59 & ((__expr3 & __expr73) | (receiver.abp & __expr74))) ;
+
+DEFINE __expr30 := case
+s2r_in.tag.0 : next(s2r_in.tag.0);
+TRUE : __expr29;
+esac ;
+
+DEFINE __expr40 := case
+s2r_in.data.3 : (next(s2r_in.data.3) & __expr38);
+TRUE : (__expr39 & __expr38);
+esac ;
+
+DEFINE __expr93 := case
+receiver.data.3 : (next(receiver.data.3) & __expr92);
+TRUE : (__expr89 & __expr92);
+esac ;
+
+DEFINE __expr68 := case
+s2r_out.data.0 : next(s2r_out.data.0);
+TRUE : __expr61;
+esac ;
+
+DEFINE __expr74 := (!s2r_out.tag.1 & s2r_out.tag.0) ;
+
+DEFINE __expr10 := (__expr9 & next(sender.state.0)) ;
+
+DEFINE __expr39 := !next(s2r_in.data.3) ;
+
+DEFINE __expr22 := case
+sender.data.2 : (next(sender.data.2) & __expr21);
+TRUE : (!next(sender.data.2) & __expr21);
+esac ;
+
+DEFINE __expr88 := case
+s2r_out.data.2 : (next(receiver.data.2) & __expr86);
+TRUE : (__expr87 & __expr86);
+esac ;
+
+DEFINE __expr28 := !next(s2r_in.tag.1) ;
+
+DEFINE __expr61 := !next(s2r_out.data.0) ;
+
+DEFINE __expr101 := !__expr6 ;
+
+DEFINE __expr4 := !_process_selector_.1 ;
+
+DEFINE __expr53 := case
+__expr45 : case
+__expr48 : case
+r2s_in.tag.1 : (next(r2s_out.tag.1) & (!r2s_in.tag.0 | next(r2s_out.tag.0)));
+(next(r2s_out.tag.1) | r2s_in.tag.0) : next(r2s_out.tag.0);
+TRUE : __expr49;
+esac;
+TRUE : __expr52;
+esac;
+__expr5 : case
+__expr12 : (__expr51 & __expr49);
+TRUE : __expr52;
+esac;
+TRUE : __expr52;
+esac ;
+
+DEFINE __expr87 := !next(receiver.data.2) ;
+
+DEFINE __expr52 := case
+r2s_out.tag.1 : (next(r2s_out.tag.1) & __expr50);
+TRUE : (__expr51 & __expr50);
+esac ;
+
+DEFINE __expr45 := (!_process_selector_.2 & _process_selector_.1) ;
+
+DEFINE __expr100 := case
+__expr45 : case
+__expr48 : (__expr96 & __expr97);
+TRUE : __expr99;
+esac;
+__expr58 : case
+__expr81 : case
+receiver.abp : (next(r2s_in.tag.1) & __expr97);
+__expr3 : (__expr96 & next(r2s_in.tag.0));
+esac;
+TRUE : __expr99;
+esac;
+TRUE : __expr99;
+esac ;
+
+DEFINE __expr7 := (!s2r_in.tag.1 & !s2r_in.tag.0) ;
+
+DEFINE __expr3 := !receiver.abp ;
+
+DEFINE __expr80 := (__expr2 & receiver.state.0) ;
+
+DEFINE __expr51 := !next(r2s_out.tag.1) ;
+
+DEFINE __expr32 := case
+__expr25 : case
+__expr27 : (__expr28 & __expr29);
+TRUE : __expr31;
+esac;
+__expr5 : case
+__expr8 : case
+sender.abp : (__expr28 & next(s2r_in.tag.0));
+__expr1 : (next(s2r_in.tag.1) & __expr29);
+esac;
+TRUE : __expr31;
+esac;
+TRUE : __expr31;
+esac ;
+
+DEFINE __expr77 := (__expr76 & next(receiver.state.0)) ;
+
+DEFINE __expr90 := case
+receiver.data.0 : next(receiver.data.0);
+TRUE : __expr83;
+esac ;
+
+DEFINE __expr31 := case
+s2r_in.tag.1 : (next(s2r_in.tag.1) & __expr30);
+TRUE : (__expr28 & __expr30);
+esac ;
+
+DEFINE __expr97 := !next(r2s_in.tag.0) ;
+
+DEFINE __expr1 := !sender.abp ;
+
+DEFINE __expr94 := case
+__expr58 : case
+__expr75 : case
+s2r_out.data.3 : (next(receiver.data.3) & __expr88);
+TRUE : (__expr89 & __expr88);
+esac;
+TRUE : __expr93;
+esac;
+TRUE : __expr93;
+esac ;
+
+DEFINE __expr48 := (__expr17 & __expr47) ;
+
+DEFINE __expr69 := case
+s2r_out.data.1 : (next(s2r_out.data.1) & __expr68);
+TRUE : (__expr63 & __expr68);
+esac ;
+
+DEFINE __expr34 := case
+s2r_in.data.0 : next(s2r_in.data.0);
+TRUE : __expr33;
+esac ;
+
+DEFINE __expr64 := case
+s2r_in.data.1 : (next(s2r_out.data.1) & __expr62);
+TRUE : (__expr63 & __expr62);
+esac ;
+
+DEFINE __expr83 := !next(receiver.data.0) ;
+
+DEFINE __expr55 := case
+s2r_out.tag.0 : next(s2r_out.tag.0);
+TRUE : __expr54;
+esac ;
+
+DEFINE __expr79 := case
+receiver.state.1 : next(receiver.state.1);
+TRUE : (__expr76 & case
+receiver.state.0 : next(receiver.state.0);
+TRUE : __expr78;
+esac);
+esac ;
+
+DEFINE __expr102 := !__expr12 ;
+
+DEFINE __expr63 := !next(s2r_out.data.1) ;
+
+DEFINE __expr25 := (_process_selector_.2 & __expr4) ;
+
+DEFINE __expr72 := case
+__expr25 : case
+__expr27 : case
+s2r_in.data.3 : (next(s2r_out.data.3) & __expr66);
+TRUE : (__expr67 & __expr66);
+esac;
+TRUE : __expr71;
+esac;
+TRUE : __expr71;
+esac ;
+
+DEFINE __expr82 := case
+__expr58 : case
+__expr75 : next(receiver.state.1);
+(__expr59 & (((receiver.abp & __expr73) | (__expr3 & __expr74)) | (s2r_out.tag.1 & s2r_out.tag.0))) : __expr77;
+(__expr59 & __expr26) : __expr79;
+receiver.state.1 : __expr77;
+__expr81 : (__expr76 & __expr78);
+(__expr80 & __expr47) : __expr79;
+esac;
+TRUE : __expr79;
+esac ;
+
+DEFINE __expr44 := case
+__expr25 : __expr40;
+__expr5 : case
+__expr8 : case
+sender.data.3 : (next(s2r_in.data.3) & __expr43);
+TRUE : (__expr39 & __expr43);
+esac;
+TRUE : __expr40;
+esac;
+TRUE : __expr40;
+esac ;
+
+DEFINE __expr19 := (next(sender.abp) <-> case
+__expr5 : case
+__expr15 : __expr1;
+TRUE : sender.abp;
+esac;
+TRUE : sender.abp;
+esac) ;
+
+DEFINE __expr13 := (r2s_out.tag.1 & !r2s_out.tag.0) ;
+
+DEFINE __expr41 := case
+sender.data.0 : next(s2r_in.data.0);
+TRUE : __expr33;
+esac ;
+
+DEFINE __expr38 := case
+s2r_in.data.2 : (next(s2r_in.data.2) & __expr36);
+TRUE : (__expr37 & __expr36);
+esac ;
+
+DEFINE __expr98 := case
+r2s_in.tag.0 : next(r2s_in.tag.0);
+TRUE : __expr97;
+esac ;
+
+DEFINE __expr37 := !next(s2r_in.data.2) ;
+
+DEFINE __expr21 := case
+sender.data.1 : (next(sender.data.1) & __expr20);
+TRUE : (!next(sender.data.1) & __expr20);
+esac ;
+

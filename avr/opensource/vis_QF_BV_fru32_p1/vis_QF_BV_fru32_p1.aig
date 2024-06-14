@@ -1,0 +1,376 @@
+aig 410 149 135 0 126 1
+2
+4
+6
+8
+10
+12
+575
+581
+587
+593
+599
+605
+611
+617
+623
+629
+635
+641
+647
+653
+659
+665
+671
+677
+683
+689
+695
+701
+707
+713
+719
+725
+731
+737
+743
+749
+755
+761
+170
+172
+174
+176
+178
+180
+766
+200
+92
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+42
+44
+46
+48
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+80
+82
+84
+86
+88
+90
+94
+96
+98
+100
+102
+104
+106
+108
+110
+112
+114
+116
+118
+120
+122
+124
+126
+128
+130
+132
+134
+136
+138
+140
+142
+144
+146
+148
+150
+152
+154
+156
+206
+773
+779
+785
+791
+797
+803
+204
+812
+14
+196
+158
+160
+162
+164
+166
+168
+202
+820
+dPµOhRªMlT¡KpV«ItXÕGxZ”E|\ŸCÄ^ﬂAÑ`Â?àbÎ=ådÒ;êf˜9îh˝7òjÉ5úlâ3†nè1§pï/®rõ-¨t°+∞vß)¥x≠'∏z≥%º|π#¿~ø!ƒÄ≈»ÇÀÃÑ—–Ü◊‘à›ÿä„‹åÈ‡éÔÛÛ‘¶Íëÿ®Óì‹™Úï‡¨ˆó‰Æ˙ôË∞˛õ˘ÙÔˇ≤∞∞∞i0 iDecode[5]
+i1 iDecode[4]
+i2 iDecode[3]
+i3 iDecode[2]
+i4 iDecode[1]
+i5 iDecode[0]
+i6 iEXU_Cond
+i7 iEXU_Dest[5]
+i8 iEXU_Dest[4]
+i9 iEXU_Dest[3]
+i10 iEXU_Dest[2]
+i11 iEXU_Dest[1]
+i12 iEXU_Dest[0]
+i13 iEXU_ResData[31]
+i14 iEXU_ResData[30]
+i15 iEXU_ResData[29]
+i16 iEXU_ResData[28]
+i17 iEXU_ResData[27]
+i18 iEXU_ResData[26]
+i19 iEXU_ResData[25]
+i20 iEXU_ResData[24]
+i21 iEXU_ResData[23]
+i22 iEXU_ResData[22]
+i23 iEXU_ResData[21]
+i24 iEXU_ResData[20]
+i25 iEXU_ResData[19]
+i26 iEXU_ResData[18]
+i27 iEXU_ResData[17]
+i28 iEXU_ResData[16]
+i29 iEXU_ResData[15]
+i30 iEXU_ResData[14]
+i31 iEXU_ResData[13]
+i32 iEXU_ResData[12]
+i33 iEXU_ResData[11]
+i34 iEXU_ResData[10]
+i35 iEXU_ResData[9]
+i36 iEXU_ResData[8]
+i37 iEXU_ResData[7]
+i38 iEXU_ResData[6]
+i39 iEXU_ResData[5]
+i40 iEXU_ResData[4]
+i41 iEXU_ResData[3]
+i42 iEXU_ResData[2]
+i43 iEXU_ResData[1]
+i44 iEXU_ResData[0]
+i45 iMAU_Cond
+i46 iMAU_Data[31]
+i47 iMAU_Data[30]
+i48 iMAU_Data[29]
+i49 iMAU_Data[28]
+i50 iMAU_Data[27]
+i51 iMAU_Data[26]
+i52 iMAU_Data[25]
+i53 iMAU_Data[24]
+i54 iMAU_Data[23]
+i55 iMAU_Data[22]
+i56 iMAU_Data[21]
+i57 iMAU_Data[20]
+i58 iMAU_Data[19]
+i59 iMAU_Data[18]
+i60 iMAU_Data[17]
+i61 iMAU_Data[16]
+i62 iMAU_Data[15]
+i63 iMAU_Data[14]
+i64 iMAU_Data[13]
+i65 iMAU_Data[12]
+i66 iMAU_Data[11]
+i67 iMAU_Data[10]
+i68 iMAU_Data[9]
+i69 iMAU_Data[8]
+i70 iMAU_Data[7]
+i71 iMAU_Data[6]
+i72 iMAU_Data[5]
+i73 iMAU_Data[4]
+i74 iMAU_Data[3]
+i75 iMAU_Data[2]
+i76 iMAU_Data[1]
+i77 iMAU_Data[0]
+i78 iMAU_Dest[5]
+i79 iMAU_Dest[4]
+i80 iMAU_Dest[3]
+i81 iMAU_Dest[2]
+i82 iMAU_Dest[1]
+i83 iMAU_Dest[0]
+i84 iRegA[5]
+i85 iRegA[4]
+i86 iRegA[3]
+i87 iRegA[2]
+i88 iRegA[1]
+i89 iRegA[0]
+i90 iRegB[5]
+i91 iRegB[4]
+i92 iRegB[3]
+i93 iRegB[2]
+i94 iRegB[1]
+i95 iRegB[0]
+i96 iResetn
+i97 iStep_EXU
+i98 iStep_MAU
+i99 iStep_WB
+i100 iWork_EXU
+i101 iWork_MAU
+i102 iWork_WB
+i103 sys_clk
+l0 Decode[5]
+l1 Decode[4]
+l2 Decode[3]
+l3 Decode[2]
+l4 Decode[1]
+l5 Decode[0]
+l6 WBp_Data[31]
+l7 WBp_Data[30]
+l8 WBp_Data[29]
+l9 WBp_Data[28]
+l10 WBp_Data[27]
+l11 WBp_Data[26]
+l12 WBp_Data[25]
+l13 WBp_Data[24]
+l14 WBp_Data[23]
+l15 WBp_Data[22]
+l16 WBp_Data[21]
+l17 WBp_Data[20]
+l18 WBp_Data[19]
+l19 WBp_Data[18]
+l20 WBp_Data[17]
+l21 WBp_Data[16]
+l22 WBp_Data[15]
+l23 WBp_Data[14]
+l24 WBp_Data[13]
+l25 WBp_Data[12]
+l26 WBp_Data[11]
+l27 WBp_Data[10]
+l28 WBp_Data[9]
+l29 WBp_Data[8]
+l30 WBp_Data[7]
+l31 WBp_Data[6]
+l32 WBp_Data[5]
+l33 WBp_Data[4]
+l34 WBp_Data[3]
+l35 WBp_Data[2]
+l36 WBp_Data[1]
+l37 WBp_Data[0]
+l38 RegA[5]
+l39 RegA[4]
+l40 RegA[3]
+l41 RegA[2]
+l42 RegA[1]
+l43 RegA[0]
+l44 WBp_Cond
+l45 LStep_WB
+l46 MAU_Cond
+l47 EXU_Dest[5]
+l48 EXU_Dest[4]
+l49 EXU_Dest[3]
+l50 EXU_Dest[2]
+l51 EXU_Dest[1]
+l52 EXU_Dest[0]
+l53 EXU_ResData[31]
+l54 EXU_ResData[30]
+l55 EXU_ResData[29]
+l56 EXU_ResData[28]
+l57 EXU_ResData[27]
+l58 EXU_ResData[26]
+l59 EXU_ResData[25]
+l60 EXU_ResData[24]
+l61 EXU_ResData[23]
+l62 EXU_ResData[22]
+l63 EXU_ResData[21]
+l64 EXU_ResData[20]
+l65 EXU_ResData[19]
+l66 EXU_ResData[18]
+l67 EXU_ResData[17]
+l68 EXU_ResData[16]
+l69 EXU_ResData[15]
+l70 EXU_ResData[14]
+l71 EXU_ResData[13]
+l72 EXU_ResData[12]
+l73 EXU_ResData[11]
+l74 EXU_ResData[10]
+l75 EXU_ResData[9]
+l76 EXU_ResData[8]
+l77 EXU_ResData[7]
+l78 EXU_ResData[6]
+l79 EXU_ResData[5]
+l80 EXU_ResData[4]
+l81 EXU_ResData[3]
+l82 EXU_ResData[2]
+l83 EXU_ResData[1]
+l84 EXU_ResData[0]
+l85 MAU_Data[31]
+l86 MAU_Data[30]
+l87 MAU_Data[29]
+l88 MAU_Data[28]
+l89 MAU_Data[27]
+l90 MAU_Data[26]
+l91 MAU_Data[25]
+l92 MAU_Data[24]
+l93 MAU_Data[23]
+l94 MAU_Data[22]
+l95 MAU_Data[21]
+l96 MAU_Data[20]
+l97 MAU_Data[19]
+l98 MAU_Data[18]
+l99 MAU_Data[17]
+l100 MAU_Data[16]
+l101 MAU_Data[15]
+l102 MAU_Data[14]
+l103 MAU_Data[13]
+l104 MAU_Data[12]
+l105 MAU_Data[11]
+l106 MAU_Data[10]
+l107 MAU_Data[9]
+l108 MAU_Data[8]
+l109 MAU_Data[7]
+l110 MAU_Data[6]
+l111 MAU_Data[5]
+l112 MAU_Data[4]
+l113 MAU_Data[3]
+l114 MAU_Data[2]
+l115 MAU_Data[1]
+l116 MAU_Data[0]
+l117 LWork_WB
+l118 WBp_add[5]
+l119 WBp_add[4]
+l120 WBp_add[3]
+l121 WBp_add[2]
+l122 WBp_add[1]
+l123 WBp_add[0]
+l124 LWork_MAU
+l125 EXUp_data_source
+l126 EXU_Cond
+l127 LStep_EXU
+l128 MAU_Dest[5]
+l129 MAU_Dest[4]
+l130 MAU_Dest[3]
+l131 MAU_Dest[2]
+l132 MAU_Dest[1]
+l133 MAU_Dest[0]
+l134 LWork_EXU

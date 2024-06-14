@@ -1,0 +1,1 @@
+!((G((srt.state=sort_ready)->((srt.state=sort_ready)S((srt.state=subst)S((srt.state=sort)S((srt.state=sort_req)S(srt.state=wait)))))))&(G(F(srt.state=sort_ready))))

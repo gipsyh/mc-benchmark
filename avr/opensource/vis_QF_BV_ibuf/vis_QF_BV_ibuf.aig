@@ -1,0 +1,27 @@
+aig 98 11 6 0 81 1
+96
+120
+142
+148
+154
+160
+197
+
+
+& ##2,#@:$B4VFR0VP0Xl]88jd8lÄ0Ax6?~$UÇ~àÉF?åååçëíñ	i0 clock
+i1 exeReady[1]
+i2 exeReady[0]
+i3 flush[2]
+i4 flush[1]
+i5 flush[0]
+i6 iqLoads[1]
+i7 iqLoads[0]
+i8 opsReady[2]
+i9 opsReady[1]
+i10 opsReady[0]
+l0 valid[2]
+l1 valid[1]
+l2 valid[0]
+l3 qAge[2]
+l4 qAge[1]
+l5 qAge[0]

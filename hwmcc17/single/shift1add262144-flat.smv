@@ -1,0 +1,421 @@
+-- Flattened Boolean FSM model  generated from shift1add262144.smv
+-- Dumped cwd->layers are: model model_bool determ determ_bool __TempLayer_0 
+
+MODULE main
+-- Input variables from layer 'model'
+-- Input variables from layer 'model_bool'
+-- Input variables from layer 'determ'
+-- Input variables from layer 'determ_bool'
+-- Input variables from layer '__TempLayer_0'
+-- State variables from layer 'model'
+VAR
+i2 : boolean;
+i4 : boolean;
+i6 : boolean;
+i8 : boolean;
+l10 : boolean;
+l12 : boolean;
+l14 : boolean;
+l16 : boolean;
+l18 : boolean;
+l20 : boolean;
+l22 : boolean;
+l24 : boolean;
+l26 : boolean;
+l28 : boolean;
+l30 : boolean;
+l32 : boolean;
+l34 : boolean;
+l36 : boolean;
+l38 : boolean;
+l40 : boolean;
+l42 : boolean;
+l44 : boolean;
+l46 : boolean;
+l48 : boolean;
+l50 : boolean;
+l52 : boolean;
+l54 : boolean;
+l56 : boolean;
+l58 : boolean;
+l60 : boolean;
+l62 : boolean;
+
+-- State variables from layer 'model_bool'
+-- State variables from layer 'determ'
+-- State variables from layer 'determ_bool'
+-- State variables from layer '__TempLayer_0'
+-- Frozen variables from layer 'model'
+-- Frozen variables from layer 'model_bool'
+-- Frozen variables from layer 'determ'
+-- Frozen variables from layer 'determ_bool'
+-- Frozen variables from layer '__TempLayer_0'
+INIT
+ __expr0
+
+INIT
+ __expr1
+
+INIT
+ __expr2
+
+INIT
+ __expr3
+
+INIT
+ __expr4
+
+INIT
+ __expr5
+
+INIT
+ __expr6
+
+INIT
+ __expr7
+
+INIT
+ __expr8
+
+INIT
+ __expr9
+
+INIT
+ __expr10
+
+INIT
+ __expr11
+
+INIT
+ __expr12
+
+INIT
+ __expr13
+
+INIT
+ __expr14
+
+INIT
+ __expr15
+
+INIT
+ __expr16
+
+INIT
+ !l44
+
+INIT
+ __expr17
+
+INIT
+ __expr18
+
+INIT
+ __expr19
+
+INIT
+ __expr20
+
+INIT
+ __expr21
+
+INIT
+ __expr22
+
+INIT
+ __expr23
+
+INIT
+ !l60
+
+INIT
+ __expr24
+
+
+
+TRANS
+ __expr25
+
+TRANS
+ __expr29
+
+TRANS
+ __expr34
+
+TRANS
+ __expr37
+
+TRANS
+ __expr38
+
+TRANS
+ __expr46
+
+TRANS
+ __expr47
+
+TRANS
+ __expr66
+
+TRANS
+ __expr67
+
+TRANS
+ __expr66
+
+TRANS
+ (next(l12) <-> ((!(__expr68 & __expr1) & __expr65) & l62))
+
+TRANS
+ (next(l14) <-> ((!(__expr69 & __expr2) & __expr68) & l62))
+
+TRANS
+ (next(l16) <-> ((!(__expr70 & __expr3) & __expr69) & l62))
+
+TRANS
+ (next(l18) <-> ((!(__expr71 & __expr4) & __expr70) & l62))
+
+TRANS
+ (next(l20) <-> ((!(__expr72 & __expr5) & __expr71) & l62))
+
+TRANS
+ (next(l22) <-> ((!(__expr73 & __expr6) & __expr72) & l62))
+
+TRANS
+ (next(l24) <-> ((!(__expr74 & __expr7) & __expr73) & l62))
+
+TRANS
+ (next(l26) <-> ((!(__expr75 & __expr8) & __expr74) & l62))
+
+TRANS
+ (next(l28) <-> ((!(__expr76 & __expr9) & __expr75) & l62))
+
+TRANS
+ (next(l30) <-> ((!(__expr77 & __expr10) & __expr76) & l62))
+
+TRANS
+ (next(l32) <-> ((!(__expr78 & __expr11) & __expr77) & l62))
+
+TRANS
+ (next(l34) <-> ((!(__expr79 & __expr12) & __expr78) & l62))
+
+TRANS
+ (next(l36) <-> ((!(__expr80 & __expr13) & __expr79) & l62))
+
+TRANS
+ (next(l38) <-> ((!(__expr81 & __expr14) & __expr80) & l62))
+
+TRANS
+ (next(l40) <-> ((!(__expr82 & __expr15) & __expr81) & l62))
+
+TRANS
+ (next(l42) <-> ((!(__expr83 & __expr16) & __expr82) & l62))
+
+TRANS
+ (next(l44) <-> ((!__expr84 & __expr83) & l62))
+
+TRANS
+ __expr67
+
+TRANS
+ __expr25
+
+TRANS
+ __expr38
+
+TRANS
+ __expr29
+
+TRANS
+ __expr34
+
+TRANS
+ __expr47
+
+TRANS
+ __expr37
+
+TRANS
+ __expr46
+
+TRANS
+ next(l62)
+
+
+
+LTLSPEC
+ G !(((__expr85 & l56) & l58) & l60)
+
+-- Symbols introduced by the dumper:
+DEFINE __expr65 := !__expr64 ;
+
+DEFINE __expr28 := (__expr20 & l46) ;
+
+DEFINE __expr51 := (__expr50 & l38) ;
+
+DEFINE __expr26 := !i4 ;
+
+DEFINE __expr11 := !l32 ;
+
+DEFINE __expr75 := !__expr56 ;
+
+DEFINE __expr41 := (!(((((((((((((((((l44 & l42) & l40) & l38) & l36) & l34) & l32) & l30) & l28) & l26) & l24) & l22) & l20) & l18) & l16) & l14) & l12) & l10) & __expr17) ;
+
+DEFINE __expr48 := (__expr17 & l44) ;
+
+DEFINE __expr31 := (__expr20 & i4) ;
+
+DEFINE __expr10 := !l30 ;
+
+DEFINE __expr78 := !__expr53 ;
+
+DEFINE __expr45 := (__expr44 & !i6) ;
+
+DEFINE __expr34 := (next(l54) <-> (!(!(!((!(!__expr33 & l50) & !(__expr33 & __expr19)) & __expr21) & __expr17) & !(l54 & l46)) & l62)) ;
+
+DEFINE __expr64 := (__expr63 & l12) ;
+
+DEFINE __expr9 := !l28 ;
+
+DEFINE __expr44 := !i8 ;
+
+DEFINE __expr81 := !__expr50 ;
+
+DEFINE __expr61 := (__expr60 & l18) ;
+
+DEFINE __expr8 := !l26 ;
+
+DEFINE __expr43 := (!(!((!__expr39 & !__expr40) & l56) & __expr41) & !(__expr42 & __expr22)) ;
+
+DEFINE __expr24 := !l62 ;
+
+DEFINE __expr58 := (__expr57 & l24) ;
+
+DEFINE __expr84 := (l46 & !l44) ;
+
+DEFINE __expr7 := !l24 ;
+
+DEFINE __expr70 := !__expr61 ;
+
+DEFINE __expr55 := (__expr54 & l30) ;
+
+DEFINE __expr6 := !l22 ;
+
+DEFINE __expr23 := !l58 ;
+
+DEFINE __expr73 := !__expr58 ;
+
+DEFINE __expr52 := (__expr51 & l36) ;
+
+DEFINE __expr38 := (next(l50) <-> i6) ;
+
+DEFINE __expr27 := (__expr20 & __expr26) ;
+
+DEFINE __expr5 := !l20 ;
+
+DEFINE __expr22 := !l56 ;
+
+DEFINE __expr49 := (__expr48 & l42) ;
+
+DEFINE __expr76 := !__expr55 ;
+
+DEFINE __expr36 := (__expr18 & i4) ;
+
+DEFINE __expr4 := !l18 ;
+
+DEFINE __expr21 := !l54 ;
+
+DEFINE __expr79 := !__expr52 ;
+
+DEFINE __expr3 := !l16 ;
+
+DEFINE __expr20 := !l52 ;
+
+DEFINE __expr62 := (__expr61 & l16) ;
+
+DEFINE __expr30 := (l52 & __expr26) ;
+
+DEFINE __expr82 := !__expr49 ;
+
+DEFINE __expr40 := (__expr18 & i6) ;
+
+DEFINE __expr2 := !l14 ;
+
+DEFINE __expr19 := !l50 ;
+
+DEFINE __expr59 := (__expr58 & l22) ;
+
+DEFINE __expr33 := (!(!__expr32 & l48) & !(__expr32 & __expr18)) ;
+
+DEFINE __expr68 := !__expr63 ;
+
+DEFINE __expr29 := (next(l52) <-> ((!(!(!(!(l52 & i4) & !(!__expr27 & l48)) & __expr21) & __expr17) & !__expr28) & l62)) ;
+
+DEFINE __expr1 := !l12 ;
+
+DEFINE __expr18 := !l48 ;
+
+DEFINE __expr56 := (__expr55 & l28) ;
+
+DEFINE __expr85 := (__expr21 & l46) ;
+
+DEFINE __expr71 := !__expr60 ;
+
+DEFINE __expr46 := (next(l60) <-> (!(!((!(__expr43 & __expr44) & !(!__expr43 & i8)) & l60) & l62) & !(!(!(i8 & i6) & !__expr45) & __expr24))) ;
+
+DEFINE __expr17 := !l46 ;
+
+DEFINE __expr53 := (__expr52 & l34) ;
+
+DEFINE __expr74 := !__expr57 ;
+
+DEFINE __expr50 := (__expr49 & l40) ;
+
+DEFINE __expr32 := (!__expr30 & !__expr31) ;
+
+DEFINE __expr77 := !__expr54 ;
+
+DEFINE __expr16 := !l42 ;
+
+DEFINE __expr37 := (next(l58) <-> (!(!(!((!__expr35 & !__expr36) & __expr23) & __expr17) & !(l58 & l46)) & l62)) ;
+
+DEFINE __expr25 := (next(l48) <-> i2) ;
+
+DEFINE __expr67 := (next(l46) <-> (__expr42 & l62)) ;
+
+DEFINE __expr63 := (__expr62 & l14) ;
+
+DEFINE __expr15 := !l40 ;
+
+DEFINE __expr80 := !__expr51 ;
+
+DEFINE __expr35 := (l48 & __expr26) ;
+
+DEFINE __expr60 := (__expr59 & l20) ;
+
+DEFINE __expr14 := !l38 ;
+
+DEFINE __expr83 := !__expr48 ;
+
+DEFINE __expr47 := (next(l56) <-> i8) ;
+
+DEFINE __expr66 := (next(l10) <-> ((!(__expr64 & l10) & !(__expr65 & __expr0)) & l62)) ;
+
+DEFINE __expr57 := (__expr56 & l26) ;
+
+DEFINE __expr69 := !__expr62 ;
+
+DEFINE __expr13 := !l36 ;
+
+DEFINE __expr42 := !__expr41 ;
+
+DEFINE __expr39 := (l48 & !i6) ;
+
+DEFINE __expr0 := !l10 ;
+
+DEFINE __expr54 := (__expr53 & l32) ;
+
+DEFINE __expr12 := !l34 ;
+
+DEFINE __expr72 := !__expr59 ;
+

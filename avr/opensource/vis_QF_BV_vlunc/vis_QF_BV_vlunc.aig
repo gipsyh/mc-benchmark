@@ -1,0 +1,54 @@
+aig 107 18 20 0 69 1
+78
+80
+82
+84
+86
+88
+90
+92
+94
+96
+98
+100
+102
+104
+106
+108
+145 1
+160
+182
+192
+215
+9;=?A	CEG8888888853443444VSSTTTSz2Scdd!
+‰'0	&Twxwx
+7Ÿ=.A©zz||~€	i0 clock
+i1 dataIn[7]
+i2 dataIn[6]
+i3 dataIn[5]
+i4 dataIn[4]
+i5 dataIn[3]
+i6 dataIn[2]
+i7 dataIn[1]
+i8 dataIn[0]
+i9 reset
+l0 regIn[7]
+l1 regIn[6]
+l2 regIn[5]
+l3 regIn[4]
+l4 regIn[3]
+l5 regIn[2]
+l6 regIn[1]
+l7 regIn[0]
+l8 c.prev[7]
+l9 c.prev[6]
+l10 c.prev[5]
+l11 c.prev[4]
+l12 c.prev[3]
+l13 c.prev[2]
+l14 c.prev[1]
+l15 c.prev[0]
+l16 c.Ncmd
+l17 c.Ccmd
+l18 c.Ucmd
+l19 c.Lcmd

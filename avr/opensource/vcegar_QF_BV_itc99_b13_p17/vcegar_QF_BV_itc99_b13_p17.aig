@@ -1,0 +1,19 @@
+aig 58 54 3 0 1 1
+111
+112
+114
+116
+i0 clock
+i1 data_in[7]
+i2 data_in[6]
+i3 data_in[5]
+i4 data_in[4]
+i5 data_in[3]
+i6 data_in[2]
+i7 data_in[1]
+i8 data_in[0]
+i9 dsr
+i10 eoc
+l0 S1
+l1 soc
+l2 send_data

@@ -1,0 +1,48 @@
+aig 118 60 17 0 41 1
+123
+161
+167
+173
+179
+185
+191
+197
+203
+207
+211
+215
+219
+223
+227
+231
+235
+236
+"t"(r&.p*4n.:l2	@j6Fh:Lf>@0B.D,F*H(J&L$N"`i0 AVERAGE
+i1 CLOCK
+i2 DATA_IN[7]
+i3 DATA_IN[6]
+i4 DATA_IN[5]
+i5 DATA_IN[4]
+i6 DATA_IN[3]
+i7 DATA_IN[2]
+i8 DATA_IN[1]
+i9 DATA_IN[0]
+i10 ENABLE
+i11 RESTART
+l0 stato
+l1 RMIN[7]
+l2 RMIN[6]
+l3 RMIN[5]
+l4 RMIN[4]
+l5 RMIN[3]
+l6 RMIN[2]
+l7 RMIN[1]
+l8 RMIN[0]
+l9 RMAX[7]
+l10 RMAX[6]
+l11 RMAX[5]
+l12 RMAX[4]
+l13 RMAX[3]
+l14 RMAX[2]
+l15 RMAX[1]
+l16 RMAX[0]

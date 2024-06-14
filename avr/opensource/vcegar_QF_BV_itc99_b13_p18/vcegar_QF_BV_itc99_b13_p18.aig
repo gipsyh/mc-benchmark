@@ -1,0 +1,24 @@
+aig 63 53 5 0 5 1
+108
+111
+124
+114
+116
+126
+	
+i0 clock
+i1 data_in[7]
+i2 data_in[6]
+i3 data_in[5]
+i4 data_in[4]
+i5 data_in[3]
+i6 data_in[2]
+i7 data_in[1]
+i8 data_in[0]
+i9 dsr
+i10 eoc
+l0 send_data
+l1 S1
+l2 S2
+l3 add_mpx2
+l4 mpx

@@ -1,0 +1,11 @@
+- brp
+  - replaced DEFINE of new with VAR/TRANS
+
+- dme4
+  - used configuration w/ 4 processes and only one token
+
+- pci
+  - removed apostrophes from comments
+
+- srg5
+  - rename i,e,r to inp,ena,res

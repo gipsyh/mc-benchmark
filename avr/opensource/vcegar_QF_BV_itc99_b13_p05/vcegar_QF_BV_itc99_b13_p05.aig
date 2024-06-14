@@ -1,0 +1,31 @@
+aig 72 48 9 0 15 1
+99
+100
+102
+104
+106
+108
+110
+112
+114
+145
+					i0 clock
+i1 data_in[7]
+i2 data_in[6]
+i3 data_in[5]
+i4 data_in[4]
+i5 data_in[3]
+i6 data_in[2]
+i7 data_in[1]
+i8 data_in[0]
+i9 dsr
+i10 eoc
+l0 S1
+l1 conta_tmp[3]
+l2 conta_tmp[2]
+l3 conta_tmp[1]
+l4 conta_tmp[0]
+l5 canale[3]
+l6 canale[2]
+l7 canale[1]
+l8 canale[0]

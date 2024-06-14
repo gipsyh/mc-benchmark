@@ -1,0 +1,673 @@
+aig 2435 38 285 0 2112 1 5
+900 78
+914 80
+928 82
+942 84
+956 86
+970 88
+984 90
+998 92
+1012 94
+1026 96
+1040 98
+1054 100
+1068 102
+1082 104
+1096 106
+1110 108
+1156 110
+1170 112
+1184 114
+1198 116
+1212 118
+1226 120
+1240 122
+1254 124
+1268 126
+1282 128
+1296 130
+1310 132
+1324 134
+1338 136
+1352 138
+1366 140
+1390 142
+1404 144
+1418 146
+1432 148
+1446 150
+1460 152
+1474 154
+1488 156
+1502 158
+1516 160
+1530 162
+1544 164
+1558 166
+1572 168
+1586 170
+1600 172
+1628 174
+1642 176
+1656 178
+1670 180
+1684 182
+1698 184
+1712 186
+1726 188
+1740 190
+1754 192
+1768 194
+1782 196
+1796 198
+1810 200
+1824 202
+1838 204
+1862 206
+1876 208
+1890 210
+1904 212
+1918 214
+1932 216
+1946 218
+1960 220
+1974 222
+1988 224
+2002 226
+2016 228
+2030 230
+2044 232
+2058 234
+2072 236
+2096 238
+2110 240
+2124 242
+2138 244
+2152 246
+2166 248
+2180 250
+2194 252
+2208 254
+2222 256
+2236 258
+2250 260
+2264 262
+2278 264
+2292 266
+2306 268
+2318 270
+2326 272
+2334 274
+2342 276
+2350 278
+2358 280
+2366 282
+2374 284
+2382 286
+2390 288
+2398 290
+2406 292
+2414 294
+2422 296
+2430 298
+2438 300
+2468 302
+2482 304
+2496 306
+2510 308
+2524 310
+2538 312
+2552 314
+2566 316
+2580 318
+2594 320
+2608 322
+2622 324
+2636 326
+2650 328
+2664 330
+2678 332
+2722 334
+2728 336
+2734 338
+2740 340
+2742 342
+2764 344
+2778 346
+2792 348
+2806 350
+2820 352
+2834 354
+2848 356
+2862 358
+2876 360
+2890 362
+2904 364
+2918 366
+2932 368
+2946 370
+2960 372
+2974 374
+2978 376
+3006 378
+3020 380
+3034 382
+3048 384
+3062 386
+3076 388
+3090 390
+3104 392
+3118 394
+3132 396
+3146 398
+3160 400
+3174 402
+3188 404
+3202 406
+3216 408
+3220 410
+3296 412
+3302 414
+3308 416
+3314 418
+3320 420
+3344 422
+3358 424
+3372 426
+3386 428
+3400 430
+3414 432
+3428 434
+3442 436
+3456 438
+3470 440
+3484 442
+3498 444
+3512 446
+3526 448
+3540 450
+3554 452
+3580 454
+3594 456
+3608 458
+3622 460
+3636 462
+3650 464
+3664 466
+3678 468
+3692 470
+3706 472
+3720 474
+3734 476
+3748 478
+3762 480
+3776 482
+3790 484
+0 1
+3816 488
+3830 490
+3844 492
+3858 494
+3872 496
+3886 498
+3900 500
+3914 502
+3928 504
+3942 506
+3956 508
+3970 510
+3984 512
+3998 514
+4012 516
+4026 518
+4040 520
+4048 522
+4056 524
+4064 526
+4072 528
+4080 530
+4088 532
+4096 534
+4104 536
+4112 538
+4120 540
+4128 542
+4136 544
+4144 546
+4152 548
+4160 550
+4186 552
+4200 554
+4214 556
+4228 558
+4242 560
+4256 562
+4270 564
+4284 566
+4298 568
+4312 570
+4326 572
+4340 574
+4354 576
+4368 578
+4382 580
+4396 582
+4422 584
+4436 586
+4450 588
+4464 590
+4478 592
+4492 594
+4506 596
+4520 598
+4534 600
+4548 602
+4562 604
+4576 606
+4590 608
+4604 610
+4618 612
+4632 614
+4660 616
+4674 618
+4688 620
+4702 622
+4716 624
+4730 626
+4744 628
+4758 630
+4772 632
+4786 634
+4800 636
+4814 638
+4828 640
+4842 642
+4856 644
+4870 646
+838
+849
+851
+856
+851
+849
+íÕ²²ÊÊ¶¶ÄÄÌÌÔÔìçååå¦!îIïKòIóKøIùKşIÿK„I…KŠI‹KI‘K–I—KœIK¢I£K¨I©K®I¯K´IµKºI»KÀIÁKÆIÇKİ©§§§Š¶ÖíŸğ¼¹¹ºš–ÆİÇßÌàÍà°ôÖâº"”òâäÈ0’ğîæÖ>,îúè-äL:ì†ê;òZŒHê’ìI€hŠVèîWvˆdæªğeœ„†rä¶òsª’„€âÂô¸ ‚àÎöÆ®€œŞÚøÔ¼şªÜæú«âÊü¸Úòü¹ğØúÆØşşÇşæøÔÖŠ€ÕŒ¨¶¶–šòÆÙÇÛËÌÜÍÜ…€°ôªº&ğòš¬È4îğ¦®ÖBì,î²°-äPê:ì¾²;ò^èHêÊ´I€	læVèÖ¶W	zädæâ¸eœ	ˆâräîºsª	–à€âú¼¸	¤Şà†¾Æ	²ÜœŞ’ÀÔ	ÀÚªÜÂ«â	ÎØ¸ÚªÄ¹ğ	ÜÖÆØ¶ÆÇş	êÔÔÖÂÈÕŒ
+şµ’
+–
+Î	†åš
+Ş
+ø	*¤
+Ì	Ü
+„
+,²
+"Ê	Ú
+
+.À
+0È	,Ø
+œ
+0-Î
+>Æ	:Ö
+¨
+2;Ü
+LÄ	HÔ
+´
+4Iê
+ZÂ	VÒ
+À
+6Wø
+hÀ	dĞ
+Ì
+8e†v¾	rÎ
+Ø
+:s”„¼	€Ì
+ä
+<¢’º	Ê
+ğ
+>° ¸	œÈ
+ü
+@¾®¶	ªÆ
+ˆB«Ì¼´	¸Ä
+”D¹ÚÊ²	ÆÂ
+ FÇèØ°	ÔÀ
+¬HÕöêµ	ş‚šôìØˆÌÆJ’˜ÊÒL $–ÈŞN®2”,ÆêP-¼@’:ÄöR;ÊNHÂ‚TIØ\VÀVWæjŒd¾šXeôxŠr¼¦Zs‚†ˆ€º²\”†¸¾^¢„œ¶Ê`¬°‚ª´Öb«º¾€¸²âd¹ÈÌş
+Æ°îfÇÖÚü
+Ô®úhÕäî	êîæöÍò¶jüä´œlŠ"â²¨n˜0à,°´p-¦>Ş:®Àr;´LÜH¬ÌtIÂZÚVªØvWĞhØd¨äxeŞvÖr¦ğzsì„Ô€¤ü|ú’Ò¢ˆ~ˆ Ğœ ”€–®Îª ‚«¤¼Ì¸œ¬„¹²ÊÊÆš¸†ÇÀØÈÔ˜ÄˆÕÎ¼	¹ÔØ°­	Ü Ú
+æ®æô"¬œò‚0ª,šş->¨:˜Š;L¦H––I¬Z¤V”¢Wºh¢d’®eÈv rºsÖ„€Æä’œŒÒò šœŠŞ €®˜ªˆê"«¼–¸†ö$¹œÊ”Æ„‚&ÇªØ’Ô‚(Õ¸ºé‚ùÄ
+€÷ÌşõÔüóÜ"ú#ñä*ø+ïì2ö3íô:ô;ëüBòCé„JğKçŒRîSå”Zì[ãœbêcá¤jèkß¬ræsİ´zä{Û¼¬ºäÄÈà¡
+—¥ Ğ”Ö‚ÚŞ’â„è&Üî†ö4Ú,úˆ-„BØ:Œ†Š;’PÖHŠ’ŒI ^ÔVˆW®lÒd†ªe¼zĞr„¶’sÊˆÎ€‚Â”Ø–Ì€Î–æ¤ÊœşÚ˜ô²Èªüæš«‚ÀÆ¸úòœ¹ÎÄÆøşÇÜÂÔöŠ Õ¬ÒâÚÜâÖãÖğåÜçâêèëè×İ! ã/ğ.é¢ËêˆôâÉ)ø¼œä‚àº¨æ"Ş¸´è0Ü,¶Àê-¬>Ú:´Ìì;ºLØH²ØîIÈZÖV°äğWÖhÔd®ğòeävÒr¬üôsò„Ğ€ªˆö€’Î¨”ø Ìœ¦ úœ®Êª¤¬ü«ª¼È¸¢¸ş¹¸ÊÆÆ Ä€ÇÆØÄÔĞ‚ÕÔÛÌØÊº‚âæ²
+±ê®®Äô°¬ºÆ‚"®ªÆÈ0¬,¨ÒÊ->ª:¦ŞÌ;¬L¨H¤êÎIºZ¦V¢öĞWÈh¤d ‚ÒeÖv¢rÔsä„ €œšÖò’š¦Ø€ œœ˜²Ú®šª–¾Ü«œ¼˜¸”ÊŞ¹ªÊ–Æ’ÖàÇ¸Ø”ÔââÕÆêÊòŞôøüüÜø
+âôè‹Şî	èâ%Ü$(2€3€•›'&¡54§Aî@­òã´¸Øú“¼€ÚêÆÖşæìÔ"Ôüòîâ0Ò,úşğ-ğ>Ğ:øŠò;şLÎHö–ôIŒZÌVô¢öWšhÊdò®øe¨vÈrğºús¶„Æ€îÆüÄ’ÄìÒşÒ ÂœêŞ€à®Àªèê‚«î¼¾¸æö„¹üÊ¼Æä‚†ÇŠØºÔâˆÕ˜À¿ ¤¤
+ï¨ìŒ¤²¢ê˜¦À" è¤¨Î0,æ°ª-Ü>œ:ä¼¬;êLšHâÈ®IøZ˜VàÔ°W†h–dŞà²e”v”rÜì´s¢„’€Úø¶°’Ø„¸¾ œÖºÌ®ŒªÔœ¼«Ú¼Š¸Ò¨¾¹èÊˆÆĞ´ÀÇöØ†ÔÎÀÂÕ„ìÀŠì´¸ä”Øæ¶êÖò¸¬$èÔşºº2æ,ÒŠ¼-È@ä:Ğ–¾;ÖNâHÎ¢ÀIä\àVÌ®ÂWòjŞdÊºÄe€xÜrÈÆÆs†Ú€ÆÒÈœ”ØÄŞÊª¢ÖœÂêÌ¸°ÔªÀöÎ«Æ¾Ò¸¾‚Ğ¹ÔÌĞÆ¼ÒÇâÚÎÔºšÔÕğ–‚öú¸ş
+¶›†´™²—–"°#•*®+“¦2¬3‘®:ª;¶B¨C¾J¦K‹ÆR¤S‰ÎZ¢[‡Öb c…Şjkƒærœsîzš{ÿöö¨ü€ Ş"Ö† Ê Š„ œÈ –† $šÆ ¢ˆ¬ 2˜,Ä ®Š-º @–:Â ºŒ;È N”HÀ ÆIÖ \’V¾ ÒWä jd¼ Ş’eò xrº ê”s€!†Œ€¸ ö–!”Š¶ ‚˜œ!¢ˆœ´ šª!°†ª² šœ«¸!¾„¸° ¦¹Æ!Ì‚Æ® ² ÇÔ!Ú€Ô¬ ¾¢Õâ!ä¨‰ê!î!ì
+¹ò!¶"Ö¤ü!ê´"â¦Š""è²"î¨˜"0æ,°"úª-¦">ä:®"†¬;´"LâH¬"’®IÂ"ZàVª"°WĞ"hŞd¨"ª²eŞ"vÜr¦"¶´sì"„Ú€¤"Â¶ú"’Ø¢"Î¸ˆ# Öœ "Úº–#®Ôª"æ¼«¤#¼Ò¸œ"ò¾¹²#ÊĞÆš"şÀÇÀ#ØÎÔ˜"ŠÂÕÎ#ìŠÔ#Ø#¶±©µ°à#¤$Ş"Šê#´¢$ê"Œø#&² $ö"†$4°,$‚#-”$B®:œ$#’;¢$P¬Hš$š#”I°$^ªV˜$¦#–W¾$l¨d–$²#˜eÌ$z¦r”$¾#šsÚ$ˆ¤€’$Ê#œè$–¢$Ö#ö$¤ œ$â# „%²ªŒ$î#¢«’%Àœ¸Š$ú#¤¹ %ÎšÆˆ$†$¦Ç®%Ü˜Ô†$’$¨Õ¼%i0 clk
+i1 data_in[15]
+i2 data_in[14]
+i3 data_in[13]
+i4 data_in[12]
+i5 data_in[11]
+i6 data_in[10]
+i7 data_in[9]
+i8 data_in[8]
+i9 data_in[7]
+i10 data_in[6]
+i11 data_in[5]
+i12 data_in[4]
+i13 data_in[3]
+i14 data_in[2]
+i15 data_in[1]
+i16 data_in[0]
+i17 dut.regs[15].reg_inst.D[15]
+i18 dut.regs[15].reg_inst.D[14]
+i19 dut.regs[15].reg_inst.D[13]
+i20 dut.regs[15].reg_inst.D[12]
+i21 dut.regs[15].reg_inst.D[11]
+i22 dut.regs[15].reg_inst.D[10]
+i23 dut.regs[15].reg_inst.D[9]
+i24 dut.regs[15].reg_inst.D[8]
+i25 dut.regs[15].reg_inst.D[7]
+i26 dut.regs[15].reg_inst.D[6]
+i27 dut.regs[15].reg_inst.D[5]
+i28 dut.regs[15].reg_inst.D[4]
+i29 dut.regs[15].reg_inst.D[3]
+i30 dut.regs[15].reg_inst.D[2]
+i31 dut.regs[15].reg_inst.D[1]
+i32 dut.regs[15].reg_inst.D[0]
+i33 pop
+i34 push
+i35 rst
+i36 start
+i37 n38
+l0 dut.regs[9].reg_inst.Q[15]
+l1 dut.regs[9].reg_inst.Q[14]
+l2 dut.regs[9].reg_inst.Q[13]
+l3 dut.regs[9].reg_inst.Q[12]
+l4 dut.regs[9].reg_inst.Q[11]
+l5 dut.regs[9].reg_inst.Q[10]
+l6 dut.regs[9].reg_inst.Q[9]
+l7 dut.regs[9].reg_inst.Q[8]
+l8 dut.regs[9].reg_inst.Q[7]
+l9 dut.regs[9].reg_inst.Q[6]
+l10 dut.regs[9].reg_inst.Q[5]
+l11 dut.regs[9].reg_inst.Q[4]
+l12 dut.regs[9].reg_inst.Q[3]
+l13 dut.regs[9].reg_inst.Q[2]
+l14 dut.regs[9].reg_inst.Q[1]
+l15 dut.regs[9].reg_inst.Q[0]
+l16 dut.regs[7].reg_inst.Q[15]
+l17 dut.regs[7].reg_inst.Q[14]
+l18 dut.regs[7].reg_inst.Q[13]
+l19 dut.regs[7].reg_inst.Q[12]
+l20 dut.regs[7].reg_inst.Q[11]
+l21 dut.regs[7].reg_inst.Q[10]
+l22 dut.regs[7].reg_inst.Q[9]
+l23 dut.regs[7].reg_inst.Q[8]
+l24 dut.regs[7].reg_inst.Q[7]
+l25 dut.regs[7].reg_inst.Q[6]
+l26 dut.regs[7].reg_inst.Q[5]
+l27 dut.regs[7].reg_inst.Q[4]
+l28 dut.regs[7].reg_inst.Q[3]
+l29 dut.regs[7].reg_inst.Q[2]
+l30 dut.regs[7].reg_inst.Q[1]
+l31 dut.regs[7].reg_inst.Q[0]
+l32 dut.regs[6].reg_inst.Q[15]
+l33 dut.regs[6].reg_inst.Q[14]
+l34 dut.regs[6].reg_inst.Q[13]
+l35 dut.regs[6].reg_inst.Q[12]
+l36 dut.regs[6].reg_inst.Q[11]
+l37 dut.regs[6].reg_inst.Q[10]
+l38 dut.regs[6].reg_inst.Q[9]
+l39 dut.regs[6].reg_inst.Q[8]
+l40 dut.regs[6].reg_inst.Q[7]
+l41 dut.regs[6].reg_inst.Q[6]
+l42 dut.regs[6].reg_inst.Q[5]
+l43 dut.regs[6].reg_inst.Q[4]
+l44 dut.regs[6].reg_inst.Q[3]
+l45 dut.regs[6].reg_inst.Q[2]
+l46 dut.regs[6].reg_inst.Q[1]
+l47 dut.regs[6].reg_inst.Q[0]
+l48 dut.regs[5].reg_inst.Q[15]
+l49 dut.regs[5].reg_inst.Q[14]
+l50 dut.regs[5].reg_inst.Q[13]
+l51 dut.regs[5].reg_inst.Q[12]
+l52 dut.regs[5].reg_inst.Q[11]
+l53 dut.regs[5].reg_inst.Q[10]
+l54 dut.regs[5].reg_inst.Q[9]
+l55 dut.regs[5].reg_inst.Q[8]
+l56 dut.regs[5].reg_inst.Q[7]
+l57 dut.regs[5].reg_inst.Q[6]
+l58 dut.regs[5].reg_inst.Q[5]
+l59 dut.regs[5].reg_inst.Q[4]
+l60 dut.regs[5].reg_inst.Q[3]
+l61 dut.regs[5].reg_inst.Q[2]
+l62 dut.regs[5].reg_inst.Q[1]
+l63 dut.regs[5].reg_inst.Q[0]
+l64 dut.regs[4].reg_inst.Q[15]
+l65 dut.regs[4].reg_inst.Q[14]
+l66 dut.regs[4].reg_inst.Q[13]
+l67 dut.regs[4].reg_inst.Q[12]
+l68 dut.regs[4].reg_inst.Q[11]
+l69 dut.regs[4].reg_inst.Q[10]
+l70 dut.regs[4].reg_inst.Q[9]
+l71 dut.regs[4].reg_inst.Q[8]
+l72 dut.regs[4].reg_inst.Q[7]
+l73 dut.regs[4].reg_inst.Q[6]
+l74 dut.regs[4].reg_inst.Q[5]
+l75 dut.regs[4].reg_inst.Q[4]
+l76 dut.regs[4].reg_inst.Q[3]
+l77 dut.regs[4].reg_inst.Q[2]
+l78 dut.regs[4].reg_inst.Q[1]
+l79 dut.regs[4].reg_inst.Q[0]
+l80 dut.regs[8].reg_inst.Q[15]
+l81 dut.regs[8].reg_inst.Q[14]
+l82 dut.regs[8].reg_inst.Q[13]
+l83 dut.regs[8].reg_inst.Q[12]
+l84 dut.regs[8].reg_inst.Q[11]
+l85 dut.regs[8].reg_inst.Q[10]
+l86 dut.regs[8].reg_inst.Q[9]
+l87 dut.regs[8].reg_inst.Q[8]
+l88 dut.regs[8].reg_inst.Q[7]
+l89 dut.regs[8].reg_inst.Q[6]
+l90 dut.regs[8].reg_inst.Q[5]
+l91 dut.regs[8].reg_inst.Q[4]
+l92 dut.regs[8].reg_inst.Q[3]
+l93 dut.regs[8].reg_inst.Q[2]
+l94 dut.regs[8].reg_inst.Q[1]
+l95 dut.regs[8].reg_inst.Q[0]
+l96 sb.ff_magic_packet.Q[15]
+l97 sb.ff_magic_packet.Q[14]
+l98 sb.ff_magic_packet.Q[13]
+l99 sb.ff_magic_packet.Q[12]
+l100 sb.ff_magic_packet.Q[11]
+l101 sb.ff_magic_packet.Q[10]
+l102 sb.ff_magic_packet.Q[9]
+l103 sb.ff_magic_packet.Q[8]
+l104 sb.ff_magic_packet.Q[7]
+l105 sb.ff_magic_packet.Q[6]
+l106 sb.ff_magic_packet.Q[5]
+l107 sb.ff_magic_packet.Q[4]
+l108 sb.ff_magic_packet.Q[3]
+l109 sb.ff_magic_packet.Q[2]
+l110 sb.ff_magic_packet.Q[1]
+l111 sb.ff_magic_packet.Q[0]
+l112 dut.regs[11].reg_inst.Q[15]
+l113 dut.regs[11].reg_inst.Q[14]
+l114 dut.regs[11].reg_inst.Q[13]
+l115 dut.regs[11].reg_inst.Q[12]
+l116 dut.regs[11].reg_inst.Q[11]
+l117 dut.regs[11].reg_inst.Q[10]
+l118 dut.regs[11].reg_inst.Q[9]
+l119 dut.regs[11].reg_inst.Q[8]
+l120 dut.regs[11].reg_inst.Q[7]
+l121 dut.regs[11].reg_inst.Q[6]
+l122 dut.regs[11].reg_inst.Q[5]
+l123 dut.regs[11].reg_inst.Q[4]
+l124 dut.regs[11].reg_inst.Q[3]
+l125 dut.regs[11].reg_inst.Q[2]
+l126 dut.regs[11].reg_inst.Q[1]
+l127 dut.regs[11].reg_inst.Q[0]
+l128 sb.mpt.ff_cnt.Q[4]
+l129 sb.mpt.ff_cnt.Q[3]
+l130 sb.mpt.ff_cnt.Q[2]
+l131 sb.mpt.ff_cnt.Q[1]
+l132 sb.mpt.ff_cnt.Q[0]
+l133 dut.regs[0].reg_inst.Q[15]
+l134 dut.regs[0].reg_inst.Q[14]
+l135 dut.regs[0].reg_inst.Q[13]
+l136 dut.regs[0].reg_inst.Q[12]
+l137 dut.regs[0].reg_inst.Q[11]
+l138 dut.regs[0].reg_inst.Q[10]
+l139 dut.regs[0].reg_inst.Q[9]
+l140 dut.regs[0].reg_inst.Q[8]
+l141 dut.regs[0].reg_inst.Q[7]
+l142 dut.regs[0].reg_inst.Q[6]
+l143 dut.regs[0].reg_inst.Q[5]
+l144 dut.regs[0].reg_inst.Q[4]
+l145 dut.regs[0].reg_inst.Q[3]
+l146 dut.regs[0].reg_inst.Q[2]
+l147 dut.regs[0].reg_inst.Q[1]
+l148 dut.regs[0].reg_inst.Q[0]
+l149 sb.ff_magic_packet_exited.Q
+l150 dut.regs[14].reg_inst.Q[15]
+l151 dut.regs[14].reg_inst.Q[14]
+l152 dut.regs[14].reg_inst.Q[13]
+l153 dut.regs[14].reg_inst.Q[12]
+l154 dut.regs[14].reg_inst.Q[11]
+l155 dut.regs[14].reg_inst.Q[10]
+l156 dut.regs[14].reg_inst.Q[9]
+l157 dut.regs[14].reg_inst.Q[8]
+l158 dut.regs[14].reg_inst.Q[7]
+l159 dut.regs[14].reg_inst.Q[6]
+l160 dut.regs[14].reg_inst.Q[5]
+l161 dut.regs[14].reg_inst.Q[4]
+l162 dut.regs[14].reg_inst.Q[3]
+l163 dut.regs[14].reg_inst.Q[2]
+l164 dut.regs[14].reg_inst.Q[1]
+l165 dut.regs[14].reg_inst.Q[0]
+l166 sb.ff_en.Q
+l167 dut.count[4]
+l168 dut.count[3]
+l169 dut.count[2]
+l170 dut.count[1]
+l171 dut.count[0]
+l172 dut.regs[10].reg_inst.Q[15]
+l173 dut.regs[10].reg_inst.Q[14]
+l174 dut.regs[10].reg_inst.Q[13]
+l175 dut.regs[10].reg_inst.Q[12]
+l176 dut.regs[10].reg_inst.Q[11]
+l177 dut.regs[10].reg_inst.Q[10]
+l178 dut.regs[10].reg_inst.Q[9]
+l179 dut.regs[10].reg_inst.Q[8]
+l180 dut.regs[10].reg_inst.Q[7]
+l181 dut.regs[10].reg_inst.Q[6]
+l182 dut.regs[10].reg_inst.Q[5]
+l183 dut.regs[10].reg_inst.Q[4]
+l184 dut.regs[10].reg_inst.Q[3]
+l185 dut.regs[10].reg_inst.Q[2]
+l186 dut.regs[10].reg_inst.Q[1]
+l187 dut.regs[10].reg_inst.Q[0]
+l188 dut.regs[12].reg_inst.Q[15]
+l189 dut.regs[12].reg_inst.Q[14]
+l190 dut.regs[12].reg_inst.Q[13]
+l191 dut.regs[12].reg_inst.Q[12]
+l192 dut.regs[12].reg_inst.Q[11]
+l193 dut.regs[12].reg_inst.Q[10]
+l194 dut.regs[12].reg_inst.Q[9]
+l195 dut.regs[12].reg_inst.Q[8]
+l196 dut.regs[12].reg_inst.Q[7]
+l197 dut.regs[12].reg_inst.Q[6]
+l198 dut.regs[12].reg_inst.Q[5]
+l199 dut.regs[12].reg_inst.Q[4]
+l200 dut.regs[12].reg_inst.Q[3]
+l201 dut.regs[12].reg_inst.Q[2]
+l202 dut.regs[12].reg_inst.Q[1]
+l203 dut.regs[12].reg_inst.Q[0]
+l204 initstate
+l205 dut.regs[13].reg_inst.Q[15]
+l206 dut.regs[13].reg_inst.Q[14]
+l207 dut.regs[13].reg_inst.Q[13]
+l208 dut.regs[13].reg_inst.Q[12]
+l209 dut.regs[13].reg_inst.Q[11]
+l210 dut.regs[13].reg_inst.Q[10]
+l211 dut.regs[13].reg_inst.Q[9]
+l212 dut.regs[13].reg_inst.Q[8]
+l213 dut.regs[13].reg_inst.Q[7]
+l214 dut.regs[13].reg_inst.Q[6]
+l215 dut.regs[13].reg_inst.Q[5]
+l216 dut.regs[13].reg_inst.Q[4]
+l217 dut.regs[13].reg_inst.Q[3]
+l218 dut.regs[13].reg_inst.Q[2]
+l219 dut.regs[13].reg_inst.Q[1]
+l220 dut.regs[13].reg_inst.Q[0]
+l221 dut.regs[15].reg_inst.Q[15]
+l222 dut.regs[15].reg_inst.Q[14]
+l223 dut.regs[15].reg_inst.Q[13]
+l224 dut.regs[15].reg_inst.Q[12]
+l225 dut.regs[15].reg_inst.Q[11]
+l226 dut.regs[15].reg_inst.Q[10]
+l227 dut.regs[15].reg_inst.Q[9]
+l228 dut.regs[15].reg_inst.Q[8]
+l229 dut.regs[15].reg_inst.Q[7]
+l230 dut.regs[15].reg_inst.Q[6]
+l231 dut.regs[15].reg_inst.Q[5]
+l232 dut.regs[15].reg_inst.Q[4]
+l233 dut.regs[15].reg_inst.Q[3]
+l234 dut.regs[15].reg_inst.Q[2]
+l235 dut.regs[15].reg_inst.Q[1]
+l236 dut.regs[15].reg_inst.Q[0]
+l237 dut.regs[1].reg_inst.Q[15]
+l238 dut.regs[1].reg_inst.Q[14]
+l239 dut.regs[1].reg_inst.Q[13]
+l240 dut.regs[1].reg_inst.Q[12]
+l241 dut.regs[1].reg_inst.Q[11]
+l242 dut.regs[1].reg_inst.Q[10]
+l243 dut.regs[1].reg_inst.Q[9]
+l244 dut.regs[1].reg_inst.Q[8]
+l245 dut.regs[1].reg_inst.Q[7]
+l246 dut.regs[1].reg_inst.Q[6]
+l247 dut.regs[1].reg_inst.Q[5]
+l248 dut.regs[1].reg_inst.Q[4]
+l249 dut.regs[1].reg_inst.Q[3]
+l250 dut.regs[1].reg_inst.Q[2]
+l251 dut.regs[1].reg_inst.Q[1]
+l252 dut.regs[1].reg_inst.Q[0]
+l253 dut.regs[2].reg_inst.Q[15]
+l254 dut.regs[2].reg_inst.Q[14]
+l255 dut.regs[2].reg_inst.Q[13]
+l256 dut.regs[2].reg_inst.Q[12]
+l257 dut.regs[2].reg_inst.Q[11]
+l258 dut.regs[2].reg_inst.Q[10]
+l259 dut.regs[2].reg_inst.Q[9]
+l260 dut.regs[2].reg_inst.Q[8]
+l261 dut.regs[2].reg_inst.Q[7]
+l262 dut.regs[2].reg_inst.Q[6]
+l263 dut.regs[2].reg_inst.Q[5]
+l264 dut.regs[2].reg_inst.Q[4]
+l265 dut.regs[2].reg_inst.Q[3]
+l266 dut.regs[2].reg_inst.Q[2]
+l267 dut.regs[2].reg_inst.Q[1]
+l268 dut.regs[2].reg_inst.Q[0]
+l269 dut.regs[3].reg_inst.Q[15]
+l270 dut.regs[3].reg_inst.Q[14]
+l271 dut.regs[3].reg_inst.Q[13]
+l272 dut.regs[3].reg_inst.Q[12]
+l273 dut.regs[3].reg_inst.Q[11]
+l274 dut.regs[3].reg_inst.Q[10]
+l275 dut.regs[3].reg_inst.Q[9]
+l276 dut.regs[3].reg_inst.Q[8]
+l277 dut.regs[3].reg_inst.Q[7]
+l278 dut.regs[3].reg_inst.Q[6]
+l279 dut.regs[3].reg_inst.Q[5]
+l280 dut.regs[3].reg_inst.Q[4]
+l281 dut.regs[3].reg_inst.Q[3]
+l282 dut.regs[3].reg_inst.Q[2]
+l283 dut.regs[3].reg_inst.Q[1]
+l284 dut.regs[3].reg_inst.Q[0]
+b0 n39
+c0 n40
+c1 n41
+c2 n42
+c3 n43
+c4 n44
+c
+../mc-benchmark/hwmcc1920/aig/shift_register_top_w16_d16_e0 
+This file was written by ABC on Fri Jun  7 11:41:30 2024
+For information about AIGER format, refer to http://fmv.jku.at/aiger

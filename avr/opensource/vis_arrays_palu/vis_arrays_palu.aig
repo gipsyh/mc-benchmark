@@ -1,0 +1,76 @@
+aig 177 32 30 0 115 1
+58 66
+60 68
+62 70
+64 72
+131
+137
+143
+149
+176
+188
+200
+212
+219
+225
+234
+240
+246
+252
+262
+268
+274
+280
+124
+287
+293
+302
+308
+314
+320
+22
+354
+2;0	9.7,5'*7-053R9$<?	PE"H=NQ T;!%L]`9-Z"[` aBs†7„
++‚€]šS˜
+G–;”/ªZ…®\‹…·´{²
+o°c®WËÉÊßİŞíëìÿışäi0 clock
+i1 dest[1]
+i2 dest[0]
+i3 opcode[2]
+i4 opcode[1]
+i5 opcode[0]
+i6 src1[1]
+i7 src1[0]
+i8 src2[1]
+i9 src2[0]
+i10 stall
+l0 $func$\ALU$output/work_v2s14/palu.v:96$5$\ALU[3]
+l1 $func$\ALU$output/work_v2s14/palu.v:96$5$\ALU[2]
+l2 $func$\ALU$output/work_v2s14/palu.v:96$5$\ALU[1]
+l3 $func$\ALU$output/work_v2s14/palu.v:96$5$\ALU[0]
+l4 aluOut[3]
+l5 aluOut[2]
+l6 aluOut[1]
+l7 aluOut[0]
+l8 regFile[3][3]
+l9 regFile[3][2]
+l10 regFile[3][1]
+l11 regFile[3][0]
+l12 destWb[1]
+l13 destWb[0]
+l14 regFile[1][3]
+l15 regFile[1][2]
+l16 regFile[1][1]
+l17 regFile[1][0]
+l18 regFile[2][3]
+l19 regFile[2][2]
+l20 regFile[2][1]
+l21 regFile[2][0]
+l22 bubbleWb
+l23 destEx[1]
+l24 destEx[0]
+l25 regFile[0][3]
+l26 regFile[0][2]
+l27 regFile[0][1]
+l28 regFile[0][0]
+l29 bubbleEx

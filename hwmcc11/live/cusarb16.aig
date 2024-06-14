@@ -1,0 +1,126 @@
+aig 145 17 50 1 78 0 0 1
+8
+34
+220
+77
+42
+58
+46
+32
+10
+22
+44
+122
+48
+28
+224
+228
+232
+236
+12
+240
+95
+98
+244
+18
+248
+252
+24
+259
+106
+60
+2
+100
+92
+4
+6
+120
+26
+14
+262
+266
+270
+30
+56
+78
+274
+278
+282
+286
+290
+20
+208
+1
+208
+.1/2> BB&&:$$&.D",R2>48Jx>ZyB∫Cu3´J~R{"iÖØm4è£É¢i°ç°&•$….t¶ì«ïBÂó:°ì.€ïµó´ôJ˜õZŸi0 req<7>0
+i1 req<14>0
+i2 req<2>0
+i3 req<13>0
+i4 req<6>0
+i5 req<1>0
+i6 req<5>0
+i7 nd0
+i8 req<12>0
+i9 req<0>0
+i10 req<9>0
+i11 req<4>0
+i12 req<11>0
+i13 req<15>0
+i14 req<8>0
+i15 req<10>0
+i16 req<3>0
+l0 lreq<13>0
+l1 lreq<3>0
+l2 prop.ast<0>0
+l3 c1.token0
+l4 c2.token0
+l5 c12.token0
+l6 c13.token0
+l7 lreq<10>0
+l8 lreq<6>0
+l9 lreq<9>0
+l10 c3.token0
+l11 c11.token0
+l12 c14.token0
+l13 lreq<15>0
+l14 c8.waiting0
+l15 c6.waiting0
+l16 c4.waiting0
+l17 c2.waiting0
+l18 lreq<1>0
+l19 c0.waiting0
+l20 c0.ntoken0
+l21 c9.token0
+l22 c14.waiting0
+l23 lreq<12>0
+l24 c12.waiting0
+l25 c10.waiting0
+l26 lreq<4>0
+l27 prop.ast<1>0
+l28 c6.token0
+l29 c15.token0
+l30 lreq<7>0
+l31 c8.token0
+l32 c7.token0
+l33 lreq<14>0
+l34 lreq<2>0
+l35 c5.token0
+l36 lreq<11>0
+l37 lreq<5>0
+l38 c15.waiting0
+l39 c13.waiting0
+l40 c11.waiting0
+l41 lreq<8>0
+l42 c4.token0
+l43 c10.token0
+l44 c9.waiting0
+l45 c7.waiting0
+l46 c5.waiting0
+l47 c3.waiting0
+l48 c1.waiting0
+l49 lreq<0>0
+o0 fair0
+c
+bliftoaig
+20071012
+syncarb16.blif

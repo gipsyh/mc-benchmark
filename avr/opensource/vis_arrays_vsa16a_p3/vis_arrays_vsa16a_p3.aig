@@ -1,0 +1,42 @@
+aig 217 202 3 0 12 1
+424
+430
+432
+434
+	
+i0 clock
+i1 datain[15]
+i2 datain[14]
+i3 datain[13]
+i4 datain[12]
+i5 datain[11]
+i6 datain[10]
+i7 datain[9]
+i8 datain[8]
+i9 datain[7]
+i10 datain[6]
+i11 datain[5]
+i12 datain[4]
+i13 datain[3]
+i14 datain[2]
+i15 datain[1]
+i16 datain[0]
+i17 instruction[15]
+i18 instruction[14]
+i19 instruction[13]
+i20 instruction[12]
+i21 instruction[11]
+i22 instruction[10]
+i23 instruction[9]
+i24 instruction[8]
+i25 instruction[7]
+i26 instruction[6]
+i27 instruction[5]
+i28 instruction[4]
+i29 instruction[3]
+i30 instruction[2]
+i31 instruction[1]
+i32 instruction[0]
+l0 State[2]
+l1 State[1]
+l2 State[0]

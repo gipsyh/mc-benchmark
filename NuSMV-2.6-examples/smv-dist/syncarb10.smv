@@ -1,0 +1,43 @@
+--syncarb.smv:
+
+MODULE arbiter-element(above,below,init-token)
+
+VAR
+  Persistent : boolean;
+  Token : boolean;
+  Request : boolean;
+
+ASSIGN
+  init(Token) := init-token;
+  next(Token) := token-in;
+  init(Persistent) := FALSE;
+  next(Persistent) := Request & (Persistent | Token);
+
+DEFINE
+  above.token-in := Token;
+  override-out := above.override-out | (Persistent & Token);
+  grant-out := !Request & below.grant-out;
+  ack-out := Request & (Persistent & Token | below.grant-out);
+
+MODULE main
+
+VAR
+  e10 : arbiter-element(self,e9,FALSE);
+  e9 : arbiter-element(e10,e8,FALSE);
+  e8 : arbiter-element(e9,e7,FALSE);
+  e7 : arbiter-element(e8,e6,FALSE);
+  e6 : arbiter-element(e7,e5,FALSE);
+  e5 : arbiter-element(e6,e4,FALSE);
+  e4 : arbiter-element(e5,e3,FALSE);
+  e3 : arbiter-element(e4,e2,FALSE);
+  e2 : arbiter-element(e3,e1,FALSE);
+  e1 : arbiter-element(e2,self,TRUE);
+
+DEFINE
+  grant-in := TRUE;
+  e1.token-in := token-in;
+  override-out := FALSE;
+  grant-out := grant-in & !e1.override-out;
+
+LTLSPEC
+  G ((e1.ack-out -> e1.Request) & F (!e1.Request | e1.ack-out))

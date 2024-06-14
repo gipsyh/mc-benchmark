@@ -1,0 +1,25 @@
+aig 80 11 6 0 63 1
+124
+150
+154
+120
+94
+146
+161
+		(4(<084R@>R/#XL>Tn_[F+nbFj„]:Ax{i0 clock
+i1 exeReady[1]
+i2 exeReady[0]
+i3 flush[2]
+i4 flush[1]
+i5 flush[0]
+i6 iqLoads[1]
+i7 iqLoads[0]
+i8 opsReady[2]
+i9 opsReady[1]
+i10 opsReady[0]
+l0 qAge[2]
+l1 qAge[1]
+l2 qAge[0]
+l3 valid[2]
+l4 valid[1]
+l5 valid[0]

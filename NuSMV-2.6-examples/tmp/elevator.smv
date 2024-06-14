@@ -1,0 +1,313 @@
+
+----------------------------------------------------------------------------------------
+--Elevator MODULE
+----------------------------------------------------------------------------------------	
+MODULE Elevator(resetButton1, resetButton2, resetButton3, resetButtonOpenDoor, move_cmd)
+  VAR
+	button1				: Button(resetButton1);
+	button2             : Button(resetButton2);
+	button3             : Button(resetButton3);
+	buttonOpenDoor		: Button(resetButtonOpenDoor);
+	moving 				: boolean;
+	position			: { 10, 15, 20, 25, 30 };
+	waiting				: boolean;
+	move_counter        : { 0, 1, 2, 3, 4, 5 };
+	
+  ASSIGN 
+														
+
+	init(waiting)    := TRUE;
+	next(waiting)    :=	case
+							move_cmd = wait	     : TRUE;
+							move_cmd = move_up   : FALSE;
+							move_cmd = move_down : FALSE;
+							move_cmd = nothing   : FALSE;
+							move_cmd = stop	     : FALSE;
+							TRUE			     : waiting;
+						esac;
+							
+	init(moving)     := FALSE;
+	next(moving)     :=  case
+							move_cmd = move_up    : TRUE;
+							move_cmd = move_down  : TRUE;
+							move_cmd = stop       : FALSE;
+							TRUE				  : moving;
+						  esac;
+	
+	init(position) := 10;
+	next(position) :=   case		
+							move_cmd = move_up	  :   
+													case
+														position=30 : 30;
+														TRUE	 : position + 5;
+													esac;
+							move_cmd = move_down	  :   
+													case
+														position=10 : 10;
+														TRUE	 : position - 5;
+													esac;					
+							TRUE : position;
+						esac;	
+	
+	init(move_counter) := 	0;
+	next(move_counter) :=   case
+								move_cmd       = stop               : 0;
+								move_counter   = 5                  : 5;
+								move_cmd       = move_up            : (move_counter + 1);
+								move_cmd       = move_down          : (move_counter + 1);
+								TRUE                                : move_counter;
+							esac;
+	
+  DEFINE    
+	button1pressed 		    := button1.pressed;
+	button2pressed			:= button2.pressed;
+	button3pressed			:= button3.pressed;
+	buttonOpenDoorPressed   := buttonOpenDoor.pressed;
+	
+  --Should not press the open door button while moving
+	FAIRNESS !(moving & buttonOpenDoorPressed)
+  
+----------------------------------------------------------------------------------------
+--BUTTON Module
+----------------------------------------------------------------------------------------
+MODULE Button(reset)
+  VAR 
+    pressed : boolean;
+  ASSIGN
+    init(pressed) := FALSE;
+	next(pressed) := case 
+						  pressed & reset  : FALSE;
+						  !pressed & reset : FALSE;
+						  pressed & !reset : TRUE;
+						  !pressed         : {FALSE,TRUE};
+					  esac;
+					  
+----------------------------------------------------------------------------------------
+-- FLOOR Module                                                            
+----------------------------------------------------------------------------------------
+MODULE Floor(resetFloorButton, doorOpened, floorPosition, elevatorPosition)
+  VAR 
+	requestButton    : Button(resetFloorButton);
+	location     : { 10, 20, 30 };
+  ASSIGN
+	init(location)  := floorPosition;
+	next(location)  := floorPosition;
+  DEFINE
+	pressed  := requestButton.pressed;
+    
+	serviced := (floorPosition = elevatorPosition & doorOpened);
+	
+-------------------------------------------------------------------------------------
+-- Door Module                                                                 
+-------------------------------------------------------------------------------------
+MODULE Door(door_action)   -- door_action can be  {open, close, nothing};  
+  VAR
+    status         : { open, closed };
+	door_counter   : { 0, 1, 2, 3, 4 };
+  ASSIGN
+	init(status) := open;
+    next(status) :=
+      case
+        door_action = open      : open;
+        door_action = close     : closed;
+        door_action = nothing   : status;
+      esac;
+	
+	--counter for calculating extra time unit of door open
+	-- It is checked in specification when it is 2
+	next(door_counter) :=	case
+								door_action     = stop  : 0;
+								door_counter = 4        : 4;
+								door_action     = open	: (door_counter + 1);
+								TRUE                : 0;
+							esac;
+				
+ 
+  --Door open command  should only be issued if the door is closed.
+  SPEC (door_action = open   ->  status = closed)
+  --Door closed command  should only be issued if the door is open.
+  SPEC (door_action = close  ->  status = open)
+
+-----------------------------------------------------------------------------------------
+-- Controller Module                                                                 
+-----------------------------------------------------------------------------------------
+MODULE Controller(elevatorPosition, moving, waiting, door, btn1Pressed, btn2Pressed, btn3Pressed, buttonOpenDoor, f1Pressed, f2Pressed, f3Pressed)
+  VAR 
+    resetFloor1btn : boolean;
+	resetFloor2btn : boolean;
+	resetFloor3btn : boolean;
+	resetButton1      : boolean;
+	resetButton2      : boolean;
+	resetButton3      : boolean;
+	resetButtonOpenDoor : boolean;
+	
+	move_cmd    : {move_up ,move_down, stop, wait, nothing};
+    door_action : {open, close, nothing};    
+	
+	last_dir : boolean;
+	prev_direction_up : boolean;
+
+  DEFINE
+	ReqestAtSameFloor:= (f1Pressed & elevatorPosition = 10)	| (f2Pressed & elevatorPosition = 20)  | (f3Pressed & elevatorPosition = 30)|
+						(btn1Pressed & elevatorPosition = 10)| (btn2Pressed & elevatorPosition = 20)|(btn3Pressed & elevatorPosition = 30);				
+	--if request is different from current floor
+	AnyOtherRequest  := (anyButtonPressed & !ReqestAtSameFloor);
+	arrived			 := ReqestAtSameFloor & !waiting;
+	anyButtonPressed := (btn1Pressed | btn2Pressed | btn3Pressed | f1Pressed | f2Pressed | f3Pressed);
+	
+	-- THESE are the different stages which determine the door action and move commands
+	IDLE           := !moving  & !arrived & waiting & (door=open); 
+	BUTTON_PRESSED := !moving & !(door=open) & (anyButtonPressed | buttonOpenDoor) & !arrived & !waiting;
+	STARTED        := moving & !(door=open) & anyButtonPressed & !arrived & !waiting;
+	ARRIVING       := moving & !(door=open) & ReqestAtSameFloor & arrived & !waiting;
+	ARRIVED        := !moving & !(door=open) & ReqestAtSameFloor & arrived & !waiting;
+	SERVICED       := !moving & (door=open) & !ReqestAtSameFloor & !buttonOpenDoor & !arrived & !waiting;
+	
+	--If this is true the elevator goes up, if !(direction_up) then it goes down
+	direction_up   := (elevatorPosition = 10 & ((f2Pressed |btn2Pressed)  | (f3Pressed | btn3Pressed)))  |
+					  (elevatorPosition = 15 & ((f2Pressed |btn2Pressed)  | (f3Pressed | btn3Pressed)))  | 
+					  (elevatorPosition = 20 & (!(f1Pressed | btn1Pressed) & (f3Pressed | btn3Pressed))) |
+					  (elevatorPosition = 20 & ((f1Pressed | btn1Pressed)	& (f3Pressed | btn3Pressed)) & !prev_direction_up) |
+					  (elevatorPosition = 25 & ((f3Pressed | btn3Pressed))) ;
+	
+	--This means that elevator fulfilled the corrosponding button request, Used in Specifications
+	Floor1btnServiced :=  (!moving & (door=open) & elevatorPosition  = 10);
+	Floor2btnServiced :=  (!moving & (door=open) & elevatorPosition  = 20);
+	Floor3btnServiced :=  (!moving & (door=open) & elevatorPosition  = 30);	
+	elevButton1Serviced  :=  (!moving & (door=open)  & elevatorPosition  = 10);
+	elevButton2Serviced  :=  (!moving & (door=open)  & elevatorPosition  = 20);
+	elevButton3Serviced  :=  (!moving & (door=open)  & elevatorPosition  = 30);
+
+
+
+  ASSIGN 
+	next(last_dir) := 	case
+						  BUTTON_PRESSED : direction_up;
+						  TRUE    : last_dir;
+						esac;
+
+	next(prev_direction_up) := case
+								BUTTON_PRESSED & elevatorPosition=20 : direction_up;
+								TRUE    : prev_direction_up;
+							  esac;
+
+	move_cmd := case		
+					ARRIVING    : stop; -- Next floor is the destination
+					SERVICED	: wait; -- Now have to go to idle stage
+					--Still at same floor
+					IDLE & (ReqestAtSameFloor | buttonOpenDoor)	&!AnyOtherRequest   : wait; 
+					IDLE & !(anyButtonPressed | buttonOpenDoor)						: wait;	
+					
+					--Decide the direction to move up or down
+					BUTTON_PRESSED & !buttonOpenDoor & anyButtonPressed   : case
+																			direction_up : move_up;
+																			TRUE		 : move_down;																
+																		  esac; 
+					BUTTON_PRESSED  & buttonOpenDoor & anyButtonPressed : 
+																		  case 
+																			direction_up : move_up;
+																			TRUE		 : move_down;																
+																		  esac; 		  
+					STARTED :										  
+																		  case 										  
+																			last_dir     : move_up;
+																			TRUE		 : move_down;																
+																		  esac;
+					TRUE:nothing;
+				esac;
+				
+	door_action := case
+					ARRIVED : open;
+					BUTTON_PRESSED & !anyButtonPressed & buttonOpenDoor  : open; 
+					BUTTON_PRESSED & anyButtonPressed  & buttonOpenDoor  : nothing;
+					IDLE & AnyOtherRequest : close;-- Close the door to move to other floor
+					TRUE:nothing;
+				  esac;
+    
+    
+	resetButton1 := (elevatorPosition = 10 & door_action = close) | (elevatorPosition = 10 & (move_cmd = wait | door_action=open )) ;
+	resetButton2 := (elevatorPosition = 20 & door_action = close) |(elevatorPosition = 20 & (move_cmd = wait | door_action=open ));
+	resetButton3 := (elevatorPosition = 30 & door_action = close) |(elevatorPosition = 30 & (move_cmd = wait | door_action=open )) ;
+	resetButtonOpenDoor := buttonOpenDoor & (move_cmd = wait | door_action=open ) ;
+    
+	resetFloor1btn := (elevatorPosition = 10 & (door_action=open | move_cmd = wait)) | (elevatorPosition = 10 & door_action = close);
+	resetFloor2btn := (elevatorPosition = 20 & (door_action=open | move_cmd = wait)) | (elevatorPosition = 20 & door_action = close);
+	resetFloor3btn := (elevatorPosition = 30 & (door_action=open | move_cmd = wait)) | (elevatorPosition = 30 & door_action = close);
+
+
+-----------------------------------------------------------------------------------------
+-- MAIN Module                                                                 
+-----------------------------------------------------------------------------------------	
+	
+MODULE main
+  VAR 
+	elevator  : Elevator(ctrl.resetButton1, ctrl.resetButton2,ctrl.resetButton3, ctrl.resetButtonOpenDoor, ctrl.move_cmd);
+	Floor1btn : Floor(ctrl.resetFloor1btn, door.status=open, 10, elevator.position);
+	Floor2btn : Floor(ctrl.resetFloor2btn, door.status=open, 20, elevator.position );
+	Floor3btn : Floor(ctrl.resetFloor3btn, door.status=open, 30, elevator.position);
+	door      : Door(ctrl.door_action);
+	ctrl      : Controller(elevator.position, elevator.moving, elevator.waiting, door.status,elevator.button1pressed, elevator.button2pressed,elevator.button3pressed, elevator.buttonOpenDoorPressed,Floor1btn.pressed,Floor2btn.pressed,Floor3btn.pressed);
+
+  DEFINE 
+	betweenTheFloors := (elevator.position=15 |elevator.position=25);
+
+
+-----------------------------------------------------------------------------------------
+-- SPECIFICATIONS                                                              
+-----------------------------------------------------------------------------------------
+	
+	-- 1. Calls to the elevator from floors (i.e., floor button) are eventually serviced.
+			CTLSPEC AG (Floor1btn.pressed -> AF(ctrl.Floor1btnServiced))
+			CTLSPEC AG (Floor2btn.pressed  -> AF(ctrl.Floor2btnServiced))
+			CTLSPEC AG (Floor3btn.pressed  -> AF(ctrl.Floor3btnServiced))
+	
+	-- 2. Calls from within the elevator (elev. button) are eventually serviced.
+			CTLSPEC AG (elevator.button1pressed -> AF(ctrl.elevButton1Serviced))
+			CTLSPEC AG (elevator.button2pressed -> AF(ctrl.elevButton2Serviced))
+			CTLSPEC AG (elevator.button3pressed -> AF(ctrl.elevButton3Serviced))
+			CTLSPEC AG (elevator.buttonOpenDoorPressed -> AF(door.status=open))
+			
+	
+	-- 3. The elevator never moves with its doors open
+			CTLSPEC AG !( elevator.moving & (door.status=open))
+				
+	-- 4. The elevator doors remain open until there is a request to use it
+			CTLSPEC AG( (door.status=open) -> A[(door.status=open) U ctrl.anyButtonPressed]|(door.status=open))
+			
+	--5. It takes exactly 2 time units for the elevator to move between two consecutive floors.
+			CTLSPEC AG(elevator.position = 20 & elevator.move_counter = 0 -> EF(elevator.position=30 & elevator.move_counter = 2))
+			--detailed versions
+			CTLSPEC AG(elevator.position = 10 & ctrl.move_cmd = move_up & ctrl.BUTTON_PRESSED  & elevator.move_counter = 0 -> EF(elevator.position=20 & ctrl.ARRIVING & elevator.move_counter = 2))
+			CTLSPEC AG(elevator.position = 20 & ctrl.move_cmd = move_up & ctrl.BUTTON_PRESSED  & elevator.move_counter = 0 -> EF(elevator.position=30 & ctrl.ARRIVING & elevator.move_counter = 2))
+			CTLSPEC AG(elevator.position = 30 & ctrl.move_cmd = move_down & ctrl.BUTTON_PRESSED  & elevator.move_counter = 0 -> EF(elevator.position=20 & ctrl.ARRIVING & elevator.move_counter = 2))
+			CTLSPEC AG(elevator.position = 20 & ctrl.move_cmd = move_down & ctrl.BUTTON_PRESSED  & elevator.move_counter = 0 -> EF(elevator.position=10 & ctrl.ARRIVING & elevator.move_counter = 2))
+	
+	
+	-- 6. If there are no requests for another floor, the elevator should not move
+			CTLSPEC AG (!(ctrl.anyButtonPressed) -> !(elevator.moving) )
+	
+	-- 7. The elevator cannot change direction between floors.
+			CTLSPEC AG ( elevator.moving & betweenTheFloors & (ctrl.direction_up) -> AX!(elevator.moving & betweenTheFloors & !ctrl.direction_up))
+			CTLSPEC AG ( elevator.moving & betweenTheFloors & !(ctrl.direction_up) -> AX!(elevator.moving & betweenTheFloors & ctrl.direction_up))
+			
+	
+	-- 8. A button should be reset when the elevator stops at the corresponding floor with the door open.
+			CTLSPEC AG ((elevator.button1pressed & elevator.position = 10 & (door.status=open)) ->  AX ! elevator.button1pressed)
+			CTLSPEC AG ((elevator.button2pressed & elevator.position = 20 & (door.status=open)) ->  AX ! elevator.button2pressed)
+			CTLSPEC AG ((elevator.button3pressed & elevator.position = 30 & (door.status=open)) ->  AX ! elevator.button3pressed)
+		
+	-- 9.  No button can reach a state where it remains pressed forever.
+			CTLSPEC AG AF (! elevator.button1pressed)
+			CTLSPEC AG AF (! elevator.button2pressed)
+			CTLSPEC AG AF (! elevator.button3pressed)
+			CTLSPEC AG AF (! elevator.buttonOpenDoorPressed)
+			CTLSPEC AG AF (! Floor1btn.pressed)
+			CTLSPEC AG AF (! Floor2btn.pressed)
+			CTLSPEC AG AF (! Floor3btn.pressed)
+		
+
+	--	When the OpenDoor button is pressed, the doors should remain open for an extra time unit
+			CTLSPEC  (elevator.buttonOpenDoorPressed & door.door_counter = 0 -> AF( (door.status=open) & door.door_counter = 2 ))			
+	
+--The user should not be able to keep the door open infinitely often if there is a request for service.
+FAIRNESS  !(elevator.buttonOpenDoorPressed & (door.status=open))

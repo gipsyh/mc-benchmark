@@ -1,0 +1,105 @@
+MODULE and-gate(in1,in2)
+VAR
+  out : boolean;
+ASSIGN
+  init(out) := FALSE;
+  next(out) := (in1 & in2) union out;
+
+MODULE and-gate-init(in1,in2,init-out)
+VAR
+  out : boolean;
+ASSIGN
+  init(out) := init-out;
+  next(out) := (in1 & in2) union out;
+
+MODULE or-gate(in1,in2)
+VAR
+  out : boolean;
+ASSIGN
+  init(out) := FALSE;
+  next(out) := (in1 | in2) union out;
+
+MODULE c-element(in1,in2)
+VAR
+  out : boolean;
+ASSIGN
+  init(out) := FALSE;
+  next(out) := 
+    case
+      in1 = in2 : in1 union out;
+      TRUE : out;
+    esac;
+
+MODULE mutex-half(inp,other-out)
+VAR
+  out : boolean;
+ASSIGN
+  init(out) := FALSE;
+  next(out) := inp union out;
+TRANS
+  !(next(out) & next(other-out))
+
+MODULE user
+VAR
+  req : boolean;
+ASSIGN
+  init(req) := FALSE;
+  next(req) := (!ack) union req;
+
+MODULE cell(left,right,token)
+VAR
+  q : and-gate(f.out,n.out);
+  f : c-element(d.out,i.out);
+  d : and-gate(b.out,!u.ack);
+  b : mutex-half(left.req,a.out);
+  i : and-gate(h.out,!j.out);
+  h : c-element(g.out,j.out);
+  n : and-gate-init(!e.out,!m.out,!token);
+  u : user;
+  a : mutex-half(u.req,b.out);
+  c : and-gate(a.out,!left.ack);
+  g : or-gate(c.out,d.out);
+  e : c-element(c.out,i.out);
+  k : and-gate(g.out,!h.out);
+  l : and-gate(k.out,m.out);
+  p : and-gate(k.out,n.out);
+  m : and-gate-init(!f.out,!n.out,token);
+  r : and-gate(e.out,m.out);
+  j : or-gate(l.out,ack);
+DEFINE
+  req := p.out;
+  left.ack := q.out;
+  u.ack := r.out;
+
+MODULE main
+VAR
+  e_3 : cell(e_1,e_2,TRUE);
+  e_2 : cell(e_3,e_1,FALSE);
+  e_1 : cell(e_2,e_3,FALSE);
+
+LTLSPEC
+  G (
+      !(e_1.u.ack & e_2.u.ack)
+      & !(e_1.u.ack & e_3.u.ack)
+      & !(e_2.u.ack & e_3.u.ack)
+     )
+
+-- p1
+LTLSPEC
+G(((e_3.ack)&(X(!(e_3.ack))))->(X((G(!(e_3.ack)))|(((!(e_3.ack))U(e_2.ack))U(e_1.ack)))))
+
+-- !p1
+LTLSPEC
+!(G(((e_3.ack)&(X(!(e_3.ack))))->(X((G(!(e_3.ack)))|(((!(e_3.ack))U(e_2.ack))U(e_1.ack))))))
+
+-- ptimo
+LTLSPEC
+G((e_2.u.ack)->((e_2.u.ack)T((!(e_2.u.ack))T(!(e_1.req)))))
+
+-- !ptimo
+LTLSPEC
+!(G((e_2.u.ack)->((e_2.u.ack)T((!(e_2.u.ack))T(!(e_1.req))))))
+
+-- !ptimo nv
+LTLSPEC
+!((G((e_2.u.ack)->((e_2.u.ack)T((!(e_2.u.ack))T(!(e_1.req))))))&(G(F(e_2.u.ack))))

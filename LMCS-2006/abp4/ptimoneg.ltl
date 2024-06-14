@@ -1,0 +1,1 @@
+!(G((sender.state=wait_for_ack)->(Y(H(sender.state!=wait_for_ack)))))

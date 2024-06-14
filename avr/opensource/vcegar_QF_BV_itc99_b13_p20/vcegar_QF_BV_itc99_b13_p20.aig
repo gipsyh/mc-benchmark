@@ -1,0 +1,24 @@
+aig 72 54 5 0 13 1
+111
+126
+140
+116
+143
+144
+
+i0 clock
+i1 data_in[7]
+i2 data_in[6]
+i3 data_in[5]
+i4 data_in[4]
+i5 data_in[3]
+i6 data_in[2]
+i7 data_in[1]
+i8 data_in[0]
+i9 dsr
+i10 eoc
+l0 S1
+l1 S2
+l2 rdy
+l3 send_data
+l4 shot

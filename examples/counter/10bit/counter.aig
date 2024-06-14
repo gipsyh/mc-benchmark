@@ -1,0 +1,27 @@
+aig 37 0 10 0 27 1
+3
+26
+32
+38
+44
+50
+56
+62
+68
+74
+70
+  $$((,,l0 bit1.value
+l1 bit2.value
+l2 bit3.value
+l3 bit4.value
+l4 bit5.value
+l5 bit6.value
+l6 bit7.value
+l7 bit8.value
+l8 bit9.value
+l9 bit10.value
+b0 AIGER_NEVER_0
+c
+smvtoaig
+1.9
+<stdin>

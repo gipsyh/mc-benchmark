@@ -1,0 +1,78 @@
+MODULE philosopher(lfork, rfork)
+VAR
+	state: {thinking, eating};
+ASSIGN
+	init(state) := thinking;
+	next(lfork) :=
+		case
+			(lfork = ready): busy;
+			(lfork = busy): ready;
+			TRUE: lfork;
+		esac;
+	next(rfork) :=
+		case
+			(rfork = ready): busy;
+			(rfork = busy): ready;
+			TRUE: rfork;
+		esac;
+	next(state):=
+		case
+			(state = thinking & lfork = ready & rfork = ready): eating;
+			(state = eating): thinking;
+			TRUE: state;
+		esac;
+FAIRNESS
+running
+
+
+MODULE main
+VAR
+	fork0 : {ready, busy};
+	fork1 : {ready, busy};
+	fork2 : {ready, busy};
+	fork3 : {ready, busy};
+	fork4 : {ready, busy};
+	fork5 : {ready, busy};
+	fork6 : {ready, busy};
+	fork7 : {ready, busy};
+	fork8 : {ready, busy};
+	fork9 : {ready, busy};
+	fork10 : {ready, busy};
+	fork11 : {ready, busy};
+	fork12 : {ready, busy};
+	fork13 : {ready, busy};
+	phil0 : process philosopher (fork0, fork1);
+	phil1 : process philosopher (fork1, fork2);
+	phil2 : process philosopher (fork2, fork3);
+	phil3 : process philosopher (fork3, fork4);
+	phil4 : process philosopher (fork4, fork5);
+	phil5 : process philosopher (fork5, fork6);
+	phil6 : process philosopher (fork6, fork7);
+	phil7 : process philosopher (fork7, fork8);
+	phil8 : process philosopher (fork8, fork9);
+	phil9 : process philosopher (fork9, fork10);
+	phil10 : process philosopher (fork10, fork11);
+	phil11 : process philosopher (fork11, fork12);
+	phil12 : process philosopher (fork12, fork13);
+	phil13 : process philosopher (fork13, fork0);
+ASSIGN
+	init (fork0) := ready;
+	init (fork1) := ready;
+	init (fork2) := ready;
+	init (fork3) := ready;
+	init (fork4) := ready;
+	init (fork5) := ready;
+	init (fork6) := ready;
+	init (fork7) := ready;
+	init (fork8) := ready;
+	init (fork9) := ready;
+	init (fork10) := ready;
+	init (fork11) := ready;
+	init (fork12) := ready;
+	init (fork13) := ready;
+
+DEFINE
+	donoteat := phil0.state = thinking;
+
+LTLSPEC
+G ( F phil0.state = thinking &  F phil0.state = eating)

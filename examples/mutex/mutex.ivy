@@ -1,0 +1,28 @@
+#lang ivy1.7
+
+type thread
+
+relation mutex_busy
+relation own_mutex(T: thread)
+
+after init {
+    mutex_busy := false;
+    own_mutex(T) := false;
+}
+
+action get(t: thread) = {
+    require ~mutex_busy;
+    mutex_busy() := true;
+    own_mutex(t) := true;
+}
+
+action put(t: thread) = {
+    require own_mutex(t);
+    mutex_busy() := false;
+    own_mutex(t) := false;
+}
+
+export get
+export put
+
+invariant [p] (T1 ~= T2) -> ~(own_mutex(T1) & own_mutex(T2))

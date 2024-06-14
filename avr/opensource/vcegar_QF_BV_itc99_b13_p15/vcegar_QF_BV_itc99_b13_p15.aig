@@ -1,0 +1,61 @@
+aig 202 57 21 0 124 1
+159
+180
+120
+183
+192
+200
+169
+208
+133
+252 1
+283
+295
+307
+319
+331
+343
+355
+367
+377
+385
+402
+404
+'&)	)•
+2
+77;9>#?C
+F%GG
+J+KK]&;?EHMPTW[_s$‘v
+
+"ƒ(dhlptx|€„„,€8ªš|D¶¤-x,PÂ®;t:\Î¸IpHhÚÂWlVtæÌehd€òÖq(ŠüŞ!”K„ä#‹,* ˜‘£—šøi0 clock
+i1 data_in[7]
+i2 data_in[6]
+i3 data_in[5]
+i4 data_in[4]
+i5 data_in[3]
+i6 data_in[2]
+i7 data_in[1]
+i8 data_in[0]
+i9 dsr
+i10 eoc
+l0 shot
+l1 send_en
+l2 send_data
+l3 send
+l4 load
+l5 itfc_state
+l6 tre
+l7 S2
+l8 S1
+l9 next_bit
+l10 tx_conta[9]
+l11 tx_conta[8]
+l12 tx_conta[7]
+l13 tx_conta[6]
+l14 tx_conta[5]
+l15 tx_conta[4]
+l16 tx_conta[3]
+l17 tx_conta[2]
+l18 tx_conta[1]
+l19 tx_conta[0]
+l20 tx_end

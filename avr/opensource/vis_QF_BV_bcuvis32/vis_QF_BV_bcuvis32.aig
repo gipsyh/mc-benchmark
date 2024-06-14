@@ -1,0 +1,167 @@
+aig 448 370 11 0 67 1
+204
+136
+270
+134
+132
+66
+202
+798
+820 1
+861
+897
+802
+
+
+
+-/ )
+.1B
+<D=FK<DFI ?ONY
+US[kbSegswin*v+Mz„i0 iDcache_address[31]
+i1 iDcache_address[30]
+i2 iDcache_address[29]
+i3 iDcache_address[28]
+i4 iDcache_address[27]
+i5 iDcache_address[26]
+i6 iDcache_address[25]
+i7 iDcache_address[24]
+i8 iDcache_address[23]
+i9 iDcache_address[22]
+i10 iDcache_address[21]
+i11 iDcache_address[20]
+i12 iDcache_address[19]
+i13 iDcache_address[18]
+i14 iDcache_address[17]
+i15 iDcache_address[16]
+i16 iDcache_address[15]
+i17 iDcache_address[14]
+i18 iDcache_address[13]
+i19 iDcache_address[12]
+i20 iDcache_address[11]
+i21 iDcache_address[10]
+i22 iDcache_address[9]
+i23 iDcache_address[8]
+i24 iDcache_address[7]
+i25 iDcache_address[6]
+i26 iDcache_address[5]
+i27 iDcache_address[4]
+i28 iDcache_address[3]
+i29 iDcache_address[2]
+i30 iDcache_address[1]
+i31 iDcache_address[0]
+i32 iDcache_request_n
+i33 iIcache_address[31]
+i34 iIcache_address[30]
+i35 iIcache_address[29]
+i36 iIcache_address[28]
+i37 iIcache_address[27]
+i38 iIcache_address[26]
+i39 iIcache_address[25]
+i40 iIcache_address[24]
+i41 iIcache_address[23]
+i42 iIcache_address[22]
+i43 iIcache_address[21]
+i44 iIcache_address[20]
+i45 iIcache_address[19]
+i46 iIcache_address[18]
+i47 iIcache_address[17]
+i48 iIcache_address[16]
+i49 iIcache_address[15]
+i50 iIcache_address[14]
+i51 iIcache_address[13]
+i52 iIcache_address[12]
+i53 iIcache_address[11]
+i54 iIcache_address[10]
+i55 iIcache_address[9]
+i56 iIcache_address[8]
+i57 iIcache_address[7]
+i58 iIcache_address[6]
+i59 iIcache_address[5]
+i60 iIcache_address[4]
+i61 iIcache_address[3]
+i62 iIcache_address[2]
+i63 iIcache_address[1]
+i64 iIcache_address[0]
+i65 iIcache_request_n
+i66 iResetn
+i67 imem_ack
+i68 imem_busin[31]
+i69 imem_busin[30]
+i70 imem_busin[29]
+i71 imem_busin[28]
+i72 imem_busin[27]
+i73 imem_busin[26]
+i74 imem_busin[25]
+i75 imem_busin[24]
+i76 imem_busin[23]
+i77 imem_busin[22]
+i78 imem_busin[21]
+i79 imem_busin[20]
+i80 imem_busin[19]
+i81 imem_busin[18]
+i82 imem_busin[17]
+i83 imem_busin[16]
+i84 imem_busin[15]
+i85 imem_busin[14]
+i86 imem_busin[13]
+i87 imem_busin[12]
+i88 imem_busin[11]
+i89 imem_busin[10]
+i90 imem_busin[9]
+i91 imem_busin[8]
+i92 imem_busin[7]
+i93 imem_busin[6]
+i94 imem_busin[5]
+i95 imem_busin[4]
+i96 imem_busin[3]
+i97 imem_busin[2]
+i98 imem_busin[1]
+i99 imem_busin[0]
+i100 imem_data_read_ack
+i101 imem_enable_n
+i102 iwrite_data[31]
+i103 iwrite_data[30]
+i104 iwrite_data[29]
+i105 iwrite_data[28]
+i106 iwrite_data[27]
+i107 iwrite_data[26]
+i108 iwrite_data[25]
+i109 iwrite_data[24]
+i110 iwrite_data[23]
+i111 iwrite_data[22]
+i112 iwrite_data[21]
+i113 iwrite_data[20]
+i114 iwrite_data[19]
+i115 iwrite_data[18]
+i116 iwrite_data[17]
+i117 iwrite_data[16]
+i118 iwrite_data[15]
+i119 iwrite_data[14]
+i120 iwrite_data[13]
+i121 iwrite_data[12]
+i122 iwrite_data[11]
+i123 iwrite_data[10]
+i124 iwrite_data[9]
+i125 iwrite_data[8]
+i126 iwrite_data[7]
+i127 iwrite_data[6]
+i128 iwrite_data[5]
+i129 iwrite_data[4]
+i130 iwrite_data[3]
+i131 iwrite_data[2]
+i132 iwrite_data[1]
+i133 iwrite_data[0]
+i134 iwrite_request_n
+i135 iwrite_size
+i136 sys_clk
+l0 mem_enable_n
+l1 mem_ack
+l2 write_request_n
+l3 Resetn
+l4 Icache_request_n
+l5 Dcache_request_n
+l6 mem_data_read_ack
+l7 data_in_next_cycle
+l8 write_accept_n_reg
+l9 customer[1]
+l10 customer[0]

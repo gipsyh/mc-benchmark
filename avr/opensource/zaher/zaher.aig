@@ -1,0 +1,138 @@
+aig 252 65 51 0 136 1
+134
+236
+238 136
+240
+1 1
+242 142
+244 144
+246 146
+0
+248
+400 152
+444 154
+490 156
+148
+158
+152 162
+154 164
+156 166
+136
+4 170
+6 172
+8 174
+10 176
+12 178
+14 180
+16 182
+18 184
+20 186
+22 188
+24 190
+26 192
+28 194
+30 196
+32 198
+34 200
+36 202
+38 204
+40 206
+42 208
+44 210
+46 212
+48 214
+50 216
+52 218
+54 220
+56 222
+58 224
+60 226
+62 228
+64 230
+66 232
+504
+XCUKI	GE_MKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK–69£QSÉDGØ_a}QSk^LßßbL´nL∑∑∑√¬¡¬¬
+¡…  *®"°\Œêì°´≠Åhû°≠πª{´≠iOT1ÃàÃºøü◊Ÿî Õ´ÂÁy◊Ÿg{Ç[`˚·ﬂ≈⁄›’’i0 Clk
+i1 imemout_tmp[31]
+i2 imemout_tmp[30]
+i3 imemout_tmp[29]
+i4 imemout_tmp[28]
+i5 imemout_tmp[27]
+i6 imemout_tmp[26]
+i7 imemout_tmp[25]
+i8 imemout_tmp[24]
+i9 imemout_tmp[23]
+i10 imemout_tmp[22]
+i11 imemout_tmp[21]
+i12 imemout_tmp[20]
+i13 imemout_tmp[19]
+i14 imemout_tmp[18]
+i15 imemout_tmp[17]
+i16 imemout_tmp[16]
+i17 imemout_tmp[15]
+i18 imemout_tmp[14]
+i19 imemout_tmp[13]
+i20 imemout_tmp[12]
+i21 imemout_tmp[11]
+i22 imemout_tmp[10]
+i23 imemout_tmp[9]
+i24 imemout_tmp[8]
+i25 imemout_tmp[7]
+i26 imemout_tmp[6]
+i27 imemout_tmp[5]
+i28 imemout_tmp[4]
+i29 imemout_tmp[3]
+i30 imemout_tmp[2]
+i31 imemout_tmp[1]
+i32 imemout_tmp[0]
+l0 MEM_WB_valid
+l1 EX_MEM_valid
+l2 EX_valid
+l3 MEM_WB_update_pc
+l4 PC_valid
+l5 EX_MEM_MEMCTRL[2]
+l6 EX_MEM_MEMCTRL[1]
+l7 EX_MEM_MEMCTRL[0]
+l8 IF_ID_update_pc
+l9 IF_ID_valid
+l10 MEMCtrl[2]
+l11 MEMCtrl[1]
+l12 MEMCtrl[0]
+l13 ID_EX_update_pc
+l14 EX_MEM_update_pc
+l15 ID_EX_MEMCTRL[2]
+l16 ID_EX_MEMCTRL[1]
+l17 ID_EX_MEMCTRL[0]
+l18 ID_EX_valid
+l19 IF_ID_IR[31]
+l20 IF_ID_IR[30]
+l21 IF_ID_IR[29]
+l22 IF_ID_IR[28]
+l23 IF_ID_IR[27]
+l24 IF_ID_IR[26]
+l25 IF_ID_IR[25]
+l26 IF_ID_IR[24]
+l27 IF_ID_IR[23]
+l28 IF_ID_IR[22]
+l29 IF_ID_IR[21]
+l30 IF_ID_IR[20]
+l31 IF_ID_IR[19]
+l32 IF_ID_IR[18]
+l33 IF_ID_IR[17]
+l34 IF_ID_IR[16]
+l35 IF_ID_IR[15]
+l36 IF_ID_IR[14]
+l37 IF_ID_IR[13]
+l38 IF_ID_IR[12]
+l39 IF_ID_IR[11]
+l40 IF_ID_IR[10]
+l41 IF_ID_IR[9]
+l42 IF_ID_IR[8]
+l43 IF_ID_IR[7]
+l44 IF_ID_IR[6]
+l45 IF_ID_IR[5]
+l46 IF_ID_IR[4]
+l47 IF_ID_IR[3]
+l48 IF_ID_IR[2]
+l49 IF_ID_IR[1]
+l50 IF_ID_IR[0]

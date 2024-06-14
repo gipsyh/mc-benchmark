@@ -1,0 +1,1 @@
+!((r_mac1.qtail=0)&((F(r_mac1.qtail=5))->((((((r_mac1.qtail<=0)U(r_mac1.qtail=1))U(r_mac1.qtail=2))U(r_mac1.qtail=3))U(r_mac1.qtail=4))U(r_mac1.qtail=5))))
