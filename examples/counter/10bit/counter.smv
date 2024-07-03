@@ -4,14 +4,8 @@ VAR
 	bit2 : counter_cell(bit1.carry_out);
 	bit3 : counter_cell(bit2.carry_out);
 	bit4 : counter_cell(bit3.carry_out);
-	bit5 : counter_cell(bit4.carry_out);
-	bit6 : counter_cell(bit5.carry_out);
-	bit7 : counter_cell(bit6.carry_out);
-	bit8 : counter_cell(bit7.carry_out);
-	bit9 : counter_cell(bit8.carry_out);
-	bit10 : counter_cell(bit9.carry_out);
-LTLSPEC
-	G !(bit1.value & bit2.value & bit3.value & bit4.value & bit5.value & bit6.value & bit7.value & bit8.value & bit9.value & bit10.value)
+SPEC
+	AG !(bit1.value & bit2.value & bit3.value & bit4.value)
 MODULE counter_cell(carry_in)
 VAR
   value : boolean;
