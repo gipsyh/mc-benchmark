@@ -1,0 +1,20 @@
+[tasks]
+prf
+
+[options]
+mode bmc
+prf:  depth 32
+
+[engines]
+btor pono
+
+[script]
+read_verilog -formal firtap.v
+read_verilog -formal fastfir.v
+read_verilog -formal abs_mpy.v
+prep -top fastfir
+
+[files]
+firtap.v
+fastfir.v
+abs_mpy.v
