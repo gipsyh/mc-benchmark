@@ -1,9 +1,5 @@
-[tasks]
-prf
-
 [options]
 mode bmc
-prf:  depth 32
 
 [engines]
 btor pono
