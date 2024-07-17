@@ -14,7 +14,8 @@ module main(
         end
     end
 
-    wire prop = (count != `W'b1111111111);
-    assert property ( prop );
+    always @(*) begin
+        assert(count != `W'b1111111111);
+    end
 
 endmodule
