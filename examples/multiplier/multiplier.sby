@@ -1,0 +1,12 @@
+[options]
+mode bmc
+
+[engines]
+btor pono
+
+[script]
+read_verilog -formal multiplier.v
+prep -top main
+
+[files]
+multiplier.v
