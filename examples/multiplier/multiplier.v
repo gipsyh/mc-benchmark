@@ -1,5 +1,5 @@
-`define WL 64
-`define WS 32
+`define WL 32
+`define WS 16
 
 module main(
     input wire iex,
