@@ -1,0 +1,13 @@
+[options]
+mode bmc
+multiclock on
+
+[engines]
+btor pono
+
+[script]
+read_verilog -DABSTRACT -DATXFIFO -formal atxfifo.v
+prep -top atxfifo
+
+[files]
+./atxfifo.v
