@@ -23,19 +23,16 @@
 23 ite 3 15 4 21
 24 not 3 23
 25 and 3 4 24
-26 bad 25
 27 state 3
 28 init 3 27 4
 29 ite 3 15 4 27
 30 not 3 29
 31 and 3 4 30
-32 bad 31
 33 state 3
 34 init 3 33 4
 35 ite 3 15 4 33
 36 not 3 35
 37 and 3 4 36
-38 bad 37
 39 state 3
 40 init 3 39 14
 41 ite 3 15 14 39
